@@ -21,6 +21,13 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   openGraph: { siteName: SITE_NAME, type: "website", description: DESCRIPTION },
   twitter: { card: "summary_large_image" },
+  icons: {
+    icon: [
+      { url: "/image/dexisphere-icon100.png", type: "image/png", sizes: "100x100" },
+      { url: "/image/dexisphere-icon512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: { url: "/image/dexisphere-icon512.png", sizes: "512x512" },
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -1,6 +1,19 @@
 @import "tailwindcss";
 @import "../styles/tokens.css";
 
+/* `dark:` follows the site's own theme switch (data-theme), falling back to the
+   OS preference — the same rule the colour tokens use. */
+@custom-variant dark {
+  @media (prefers-color-scheme: dark) {
+    &:where(:root:not([data-theme="light"]) *) {
+      @slot;
+    }
+  }
+  &:where(:root[data-theme="dark"] *) {
+    @slot;
+  }
+}
+
 @theme inline {
   --color-ground: var(--ground);
   --color-surface: var(--surface);

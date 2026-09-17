@@ -1,16 +1,42 @@
+import Image from "next/image";
 import { cn } from "@/lib/cn";
 
-/** Ink tile holding a lagoon sphere with an orbiting dot: agents working the platform. */
-export function Logo({ withWordmark = true, className }: { withWordmark?: boolean; className?: string }) {
+const MARK = "/image/dexisphere-icon100.png";
+/** The wordmark's lettering is near-black in one file and white in the other. */
+const WORDMARK_ON_LIGHT = "/image/dexisphere-logo-dark.png";
+const WORDMARK_ON_DARK = "/image/dexisphere-logo-white.png";
+
+type LogoProps = {
+  withWordmark?: boolean;
+  /** Tailwind height for the image; the width follows the artwork. */
+  className?: string;
+};
+
+/** The brand mark, with the wordmark swapping artwork between light and dark. */
+export function Logo({ withWordmark = true, className }: LogoProps) {
+  if (!withWordmark) {
+    return <Image src={MARK} alt="Dexisphere" width={100} height={100} priority className={cn("h-9 w-auto", className)} />;
+  }
+
   return (
-    <span className={cn("inline-flex items-center gap-2.5", className)}>
-      <span aria-hidden className="relative grid size-7 place-items-center rounded-[8px] bg-ink">
-        <span className="size-3 rounded-full bg-accent" />
-        <span className="absolute right-[5px] top-[5px] size-1 rounded-full bg-ground" />
-      </span>
-      {withWordmark && (
-        <span className="font-display text-[17px] font-semibold tracking-[-0.02em] text-ink">Dexisphere</span>
-      )}
+    <span className="inline-flex">
+      <Image
+        src={WORDMARK_ON_LIGHT}
+        alt="Dexisphere"
+        width={300}
+        height={100}
+        priority
+        className={cn("h-10 w-auto dark:hidden", className)}
+      />
+      <Image
+        src={WORDMARK_ON_DARK}
+        alt=""
+        aria-hidden
+        width={300}
+        height={100}
+        priority
+        className={cn("hidden h-10 w-auto dark:block", className)}
+      />
     </span>
   );
 }
