@@ -1,0 +1,77 @@
+/* ── Quiet Operator tokens (shared with the Dexisphere app) ─────────────────
+   Light lives on bare :root. Dark redefines the same tokens twice: once for
+   the OS preference (unless the user picked light), once for an explicit
+   dark choice. Components only ever read tokens, through globals.css. */
+:root {
+  --ground: #f3f6f6;
+  --surface: #ffffff;
+  --raised: #f7fafa;
+  --ink: #0f1a1c;
+  --muted: #566769;
+  --faint: #86979a;
+  --line: #dae2e2;
+  --accent: #0b7a84;
+  --accent-hover: #09656d;
+  --accent-ink: #ffffff;
+  --accent-soft: #ddf0f1;
+  --iris: #5a55d6;
+  --good: #1f8455;
+  --good-soft: #e1f2e8;
+  --warn: #a86c06;
+  --warn-soft: #faefd8;
+  --bad: #c23c3c;
+  --bad-soft: #fae5e3;
+  --shadow-float: 0 1px 2px rgb(15 26 28 / 0.06), 0 8px 24px -8px rgb(15 26 28 / 0.14);
+  --shadow-lift: 0 1px 2px rgb(15 26 28 / 0.05), 0 24px 60px -24px rgb(15 26 28 / 0.28);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0a1012;
+    --surface: #10181b;
+    --raised: #152024;
+    --ink: #e3eced;
+    --muted: #93a6a9;
+    --faint: #62767a;
+    --line: #21302f;
+    --accent: #3bc0cb;
+    --accent-hover: #5fd0d9;
+    --accent-ink: #04282c;
+    --accent-soft: #0f3337;
+    --iris: #9d99f5;
+    --good: #4cc38a;
+    --good-soft: #0f2a1e;
+    --warn: #e6ae45;
+    --warn-soft: #2b2210;
+    --bad: #f07a72;
+    --bad-soft: #2e1614;
+    --shadow-float: 0 1px 2px rgb(0 0 0 / 0.4), 0 10px 28px -10px rgb(0 0 0 / 0.6);
+    --shadow-lift: 0 1px 2px rgb(0 0 0 / 0.4), 0 30px 70px -24px rgb(0 0 0 / 0.75);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --ground: #0a1012;
+  --surface: #10181b;
+  --raised: #152024;
+  --ink: #e3eced;
+  --muted: #93a6a9;
+  --faint: #62767a;
+  --line: #21302f;
+  --accent: #3bc0cb;
+  --accent-hover: #5fd0d9;
+  --accent-ink: #04282c;
+  --accent-soft: #0f3337;
+  --iris: #9d99f5;
+  --good: #4cc38a;
+  --good-soft: #0f2a1e;
+  --warn: #e6ae45;
+  --warn-soft: #2b2210;
+  --bad: #f07a72;
+  --bad-soft: #2e1614;
+  --shadow-float: 0 1px 2px rgb(0 0 0 / 0.4), 0 10px 28px -10px rgb(0 0 0 / 0.6);
+  --shadow-lift: 0 1px 2px rgb(0 0 0 / 0.4), 0 30px 70px -24px rgb(0 0 0 / 0.75);
+  color-scheme: dark;
+}
