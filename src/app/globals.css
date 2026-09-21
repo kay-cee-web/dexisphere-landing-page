@@ -14,6 +14,9 @@
   }
 }
 
+/* Devices with a real pointer. Hover-only reveals use it, so touch screens always see the control. */
+@custom-variant can-hover (@media (hover: hover));
+
 @theme inline {
   --color-ground: var(--ground);
   --color-surface: var(--surface);
@@ -26,7 +29,15 @@
   --color-accent-hover: var(--accent-hover);
   --color-accent-ink: var(--accent-ink);
   --color-accent-soft: var(--accent-soft);
-  --color-iris: var(--iris);
+  --color-teal: var(--teal);
+  --color-teal-soft: var(--teal-soft);
+  --color-violet: var(--violet);
+  --color-pink: var(--pink);
+  --color-sky: var(--sky);
+  --color-night: var(--night);
+  --color-night-ink: var(--night-ink);
+  --color-logo-anthropic: var(--logo-anthropic);
+  --color-logo-gemini: var(--logo-gemini);
   --color-good: var(--good);
   --color-good-soft: var(--good-soft);
   --color-warn: var(--warn);
@@ -39,13 +50,69 @@
   --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", Consolas, monospace;
   --font-display: var(--font-bricolage), var(--font-geist), ui-sans-serif, sans-serif;
   --animate-trace: trace 1.6s cubic-bezier(0.6, 0, 0.4, 1) infinite;
+  --animate-fade-in: fade-in 150ms ease-out;
+  --animate-aurora: aurora 14s ease-in-out infinite alternate;
   --animate-marquee: marquee 45s linear infinite;
   --animate-blink: blink 1s steps(2, start) infinite;
+}
+
+/* The logo gradient, as a fill and as clipped text. */
+@utility bg-brand {
+  background-image: linear-gradient(135deg, var(--brand-from), var(--brand-to));
+}
+
+@utility text-brand {
+  background-image: linear-gradient(135deg, var(--brand-from), var(--brand-to));
+  background-clip: text;
+  color: transparent;
+}
+
+/* Alias kept for landing-page hero text. */
+@utility text-gradient {
+  background-image: linear-gradient(135deg, var(--brand-from), var(--brand-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility shadow-glow {
+  box-shadow: 0 12px 40px -8px var(--glow);
+}
+
+/* Page backdrop: a drifting colour glow over a faded grid. */
+@utility bg-aurora {
+  background: var(--aurora);
+}
+
+/* Soft accent light behind heroes and CTAs. */
+@utility bg-glow {
+  background:
+    radial-gradient(40% 50% at 30% 0%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%),
+    radial-gradient(35% 45% at 75% 10%, color-mix(in srgb, var(--violet) 16%, transparent), transparent 70%);
+}
+
+/* A faint engineering grid for hero backdrops. */
+@utility bg-grid {
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+@keyframes aurora {
+  0% { transform: translate(-8%, -6%) scale(1) rotate(0); }
+  50% { transform: translate(6%, 8%) scale(1.15) rotate(12deg); }
+  to { transform: translate(-4%, 4%) scale(1.05) rotate(-8deg); }
 }
 
 @keyframes trace {
   from { transform: translateX(-100%); }
   to { transform: translateX(260%); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes marquee {
@@ -57,30 +124,12 @@
   to { visibility: hidden; }
 }
 
-/* A faint engineering grid for hero backdrops; fades out toward the edges. */
-@utility bg-grid {
-  background-image:
-    linear-gradient(to right, var(--line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 100%);
-}
-
-/* Soft accent light behind heroes and CTAs. */
-@utility bg-glow {
-  background:
-    radial-gradient(40% 50% at 30% 0%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%),
-    radial-gradient(35% 45% at 75% 10%, color-mix(in srgb, var(--iris) 16%, transparent), transparent 70%);
-}
-
-@utility text-gradient {
-  background-image: linear-gradient(100deg, var(--accent) 10%, var(--iris) 90%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
 @layer base {
+  /* Grid items default to min-width: auto, so one row that is wide by design
+     stretches its whole column past a phone screen. Let columns shrink. */
+  .grid > * {
+    min-width: 0;
+  }
   html {
     scroll-behavior: smooth;
   }

@@ -9,7 +9,7 @@ const sizes = {
 
 const tones = {
   accent: "bg-accent-soft text-accent",
-  iris: "bg-iris/10 text-iris",
+  violet: "bg-violet/10 text-violet",
   neutral: "bg-raised text-ink ring-1 ring-inset ring-line",
 };
 

@@ -1,77 +1,114 @@
-/* ── Quiet Operator tokens (shared with the Dexisphere app) ─────────────────
+/* ── Dexisphere tokens (synced with macrid-clone) ──────────────────────────
+   Brand = the logo gradient: indigo #5b5bf7 → teal #00c7ac on ink #0b1020.
    Light lives on bare :root. Dark redefines the same tokens twice: once for
    the OS preference (unless the user picked light), once for an explicit
    dark choice. Components only ever read tokens, through globals.css. */
 :root {
-  --ground: #f3f6f6;
+  --ground: #f7f8fc;
   --surface: #ffffff;
-  --raised: #f7fafa;
-  --ink: #0f1a1c;
-  --muted: #566769;
-  --faint: #86979a;
-  --line: #dae2e2;
-  --accent: #0b7a84;
-  --accent-hover: #09656d;
+  --raised: #eef0f8;
+  --ink: #0b1020;
+  --muted: #4d5468;
+  --faint: #737a90;
+  --line: #e1e4ee;
+  --accent: #5b5bf7;
+  --accent-hover: #4848e6;
   --accent-ink: #ffffff;
-  --accent-soft: #ddf0f1;
-  --iris: #5a55d6;
-  --good: #1f8455;
-  --good-soft: #e1f2e8;
-  --warn: #a86c06;
-  --warn-soft: #faefd8;
-  --bad: #c23c3c;
-  --bad-soft: #fae5e3;
-  --shadow-float: 0 1px 2px rgb(15 26 28 / 0.06), 0 8px 24px -8px rgb(15 26 28 / 0.14);
-  --shadow-lift: 0 1px 2px rgb(15 26 28 / 0.05), 0 24px 60px -24px rgb(15 26 28 / 0.28);
+  --accent-soft: #efeffe;
+  --teal: #007d6d;
+  --teal-soft: #dcf7f2;
+  --violet: #8b5cf6;
+  --pink: #ff4ecd;
+  --sky: #0369a1;
+  --grid-line: rgb(11 16 32 / 0.05);
+  --good: #057338;
+  --good-soft: #dcf5e6;
+  --warn: #8f5a00;
+  --warn-soft: #fff1d6;
+  --bad: #c01d42;
+  --bad-soft: #ffe4ea;
+  --glow: rgb(91 91 247 / 0.25);
+  --brand-from: #5b5bf7;
+  --brand-to: #00c7ac;
+  /* Dark artwork: the same in both themes, so dark doesn't redefine them. */
+  --night: #070b1c;
+  --night-ink: #f5f6fc;
+  /* Provider logo colours, drawn on a light tile in both themes. */
+  --logo-anthropic: #d97757;
+  --logo-gemini: #4285f4;
+  /* Hero glow; the same in both themes, so dark doesn't redefine it. */
+  --aurora:
+    radial-gradient(ellipse 40% 50% at 30% 40%, rgb(91 91 247 / 0.5), transparent 70%),
+    radial-gradient(ellipse 45% 45% at 70% 30%, rgb(139 92 246 / 0.42), transparent 70%),
+    radial-gradient(ellipse 35% 40% at 55% 70%, rgb(0 245 212 / 0.22), transparent 70%),
+    radial-gradient(ellipse 30% 35% at 20% 75%, rgb(255 78 205 / 0.2), transparent 70%);
+  --shadow-float: 0 1px 2px rgb(11 16 32 / 0.04), 0 12px 32px -20px rgb(11 16 32 / 0.2);
+  --shadow-lift: 0 1px 2px rgb(11 16 32 / 0.05), 0 24px 48px -24px rgb(11 16 32 / 0.3);
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --ground: #0a1012;
-    --surface: #10181b;
-    --raised: #152024;
-    --ink: #e3eced;
-    --muted: #93a6a9;
-    --faint: #62767a;
-    --line: #21302f;
-    --accent: #3bc0cb;
-    --accent-hover: #5fd0d9;
-    --accent-ink: #04282c;
-    --accent-soft: #0f3337;
-    --iris: #9d99f5;
-    --good: #4cc38a;
-    --good-soft: #0f2a1e;
-    --warn: #e6ae45;
-    --warn-soft: #2b2210;
-    --bad: #f07a72;
-    --bad-soft: #2e1614;
-    --shadow-float: 0 1px 2px rgb(0 0 0 / 0.4), 0 10px 28px -10px rgb(0 0 0 / 0.6);
-    --shadow-lift: 0 1px 2px rgb(0 0 0 / 0.4), 0 30px 70px -24px rgb(0 0 0 / 0.75);
+    --ground: #050816;
+    --surface: #0e1325;
+    --raised: #131a30;
+    --ink: #e8eaf6;
+    --muted: #9ba3bb;
+    --faint: #6b7390;
+    --line: #1c2238;
+    --accent: #8385ff;
+    --accent-hover: #a5a5ff;
+    --accent-ink: #050816;
+    --accent-soft: #1a1e45;
+    --teal: #00f5d4;
+    --teal-soft: #06302e;
+    --violet: #a78bfa;
+    --pink: #ff4ecd;
+    --sky: #38bdf8;
+    --grid-line: rgb(232 234 246 / 0.045);
+    --good: #2fd67a;
+    --good-soft: #0b2a1b;
+    --warn: #ffb020;
+    --warn-soft: #2e2208;
+    --bad: #ff4d6d;
+    --bad-soft: #321221;
+    --glow: rgb(91 91 247 / 0.35);
+    --brand-from: #5b5bf7;
+    --brand-to: #00f5d4;
+    --shadow-float: 0 1px 2px rgb(0 0 0 / 0.32), 0 16px 40px -24px rgb(0 0 0 / 0.72);
+    --shadow-lift: 0 1px 2px rgb(0 0 0 / 0.4), 0 28px 56px -28px rgb(0 0 0 / 0.85);
     color-scheme: dark;
   }
 }
 
 :root[data-theme="dark"] {
-  --ground: #0a1012;
-  --surface: #10181b;
-  --raised: #152024;
-  --ink: #e3eced;
-  --muted: #93a6a9;
-  --faint: #62767a;
-  --line: #21302f;
-  --accent: #3bc0cb;
-  --accent-hover: #5fd0d9;
-  --accent-ink: #04282c;
-  --accent-soft: #0f3337;
-  --iris: #9d99f5;
-  --good: #4cc38a;
-  --good-soft: #0f2a1e;
-  --warn: #e6ae45;
-  --warn-soft: #2b2210;
-  --bad: #f07a72;
-  --bad-soft: #2e1614;
-  --shadow-float: 0 1px 2px rgb(0 0 0 / 0.4), 0 10px 28px -10px rgb(0 0 0 / 0.6);
-  --shadow-lift: 0 1px 2px rgb(0 0 0 / 0.4), 0 30px 70px -24px rgb(0 0 0 / 0.75);
+  --ground: #050816;
+  --surface: #0e1325;
+  --raised: #131a30;
+  --ink: #e8eaf6;
+  --muted: #9ba3bb;
+  --faint: #6b7390;
+  --line: #1c2238;
+  --accent: #8385ff;
+  --accent-hover: #a5a5ff;
+  --accent-ink: #050816;
+  --accent-soft: #1a1e45;
+  --teal: #00f5d4;
+  --teal-soft: #06302e;
+  --violet: #a78bfa;
+  --pink: #ff4ecd;
+  --sky: #38bdf8;
+  --grid-line: rgb(232 234 246 / 0.045);
+  --good: #2fd67a;
+  --good-soft: #0b2a1b;
+  --warn: #ffb020;
+  --warn-soft: #2e2208;
+  --bad: #ff4d6d;
+  --bad-soft: #321221;
+  --glow: rgb(91 91 247 / 0.35);
+  --brand-from: #5b5bf7;
+  --brand-to: #00f5d4;
+  --shadow-float: 0 1px 2px rgb(0 0 0 / 0.32), 0 16px 40px -24px rgb(0 0 0 / 0.72);
+  --shadow-lift: 0 1px 2px rgb(0 0 0 / 0.4), 0 28px 56px -28px rgb(0 0 0 / 0.85);
   color-scheme: dark;
 }

@@ -2,11 +2,11 @@ import { Calendar, MapPin, MessageCircle, MessageSquare, Send, AtSign, type Luci
 import type { Integration } from "@/data/integrations";
 
 /** Auth labels as pills: how each connector is set up. */
-export const AUTH_TONES: Record<Integration["auth"], "accent" | "iris" | "good" | "neutral"> = {
+export const AUTH_TONES: Record<Integration["auth"], "accent" | "violet" | "good" | "neutral"> = {
   OAuth: "accent",
-  "API key": "iris",
+  "API key": "violet",
   "Pairing code": "good",
-  "In the Macrid app": "neutral",
+  "In the Dexisphere app": "neutral",
 };
 
 export type ConnectorStatus = "ready" | "shared" | "connect";
@@ -17,7 +17,7 @@ export const PANEL_ROWS: { name: string; detail: string; Icon: LucideIcon; statu
   { name: "Google Calendar", detail: "2 calendars", Icon: Calendar, status: "ready" },
   { name: "Google Places", detail: "Shared key · daily limit", Icon: MapPin, status: "shared" },
   { name: "SMS", detail: "Shared sender", Icon: MessageSquare, status: "shared" },
-  { name: "WhatsApp Business", detail: "Set up in the Macrid app", Icon: MessageCircle, status: "connect" },
+  { name: "WhatsApp Business", detail: "Set up in the Dexisphere app", Icon: MessageCircle, status: "connect" },
   { name: "Mailchimp", detail: "API key", Icon: AtSign, status: "connect" },
 ];
 

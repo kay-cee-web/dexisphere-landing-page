@@ -26,13 +26,14 @@ export type NavGroup = { label: string; links: NavLink[]; footer?: NavLink[] };
 
 export const PRIMARY_NAV: (NavGroup | NavLink)[] = [
   {
-    label: "Product",
+    label: "Products",
     links: PRODUCTS.map((p) => ({ label: p.name, href: ROUTES.product(p.slug), description: p.tagline, Icon: p.Icon })),
     footer: [
       { label: "All features", href: ROUTES.features, Icon: Sparkles },
       { label: "Integrations", href: ROUTES.integrations, Icon: Plug },
     ],
   },
+  { label: "Features", href: ROUTES.features },
   { label: "Pricing", href: ROUTES.pricing },
   {
     label: "Resources",
@@ -42,14 +43,7 @@ export const PRIMARY_NAV: (NavGroup | NavLink)[] = [
       { label: "Changelog", href: ROUTES.changelog, description: "What shipped, release by release.", Icon: Zap },
     ],
   },
-  {
-    label: "Company",
-    links: [
-      { label: "About", href: ROUTES.about, description: "Why we're building Dexisphere.", Icon: Building },
-      { label: "Careers", href: ROUTES.careers, description: "Open roles on a small team.", Icon: Briefcase },
-      { label: "Contact", href: ROUTES.contact, description: "Talk to sales or support.", Icon: Mail },
-    ],
-  },
+  { label: "About", href: ROUTES.about },
 ];
 
 export const isNavGroup = (item: NavGroup | NavLink): item is NavGroup => "links" in item;

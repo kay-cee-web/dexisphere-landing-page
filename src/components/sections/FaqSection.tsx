@@ -19,12 +19,26 @@ export function FaqSection({ faqs, title = "Questions, answered", eyebrow = "FAQ
   return (
     <Section tone={tone} id="faq">
       <Container width="wide" className="grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
-        <div className="grid content-start gap-6">
+        <div className="grid content-start gap-6 lg:sticky lg:top-28">
           <SectionHeading eyebrow={eyebrow} title={title} align="left" />
-          <Reveal delay={0.1} className="text-[15px] text-muted">
-            Can&apos;t find what you need?{" "}
-            <Link href={ROUTES.contact} className="inline-flex items-center gap-0.5 font-medium text-accent hover:underline">
+          <Reveal delay={0.1} className="max-w-[38ch] text-[15px] leading-relaxed text-muted">
+            Everything you need to know about Dexisphere agents, pricing, privacy and integrations.
+            Can&apos;t find what you need?
+          </Reveal>
+          <Reveal delay={0.15}>
+            <Link
+              href={ROUTES.contact}
+              className="inline-flex items-center gap-1 rounded-[10px] border border-line bg-surface px-4 py-2.5 text-[14px] font-medium text-ink transition-colors hover:border-accent/40 hover:text-accent"
+            >
               Talk to us <ArrowUpRight aria-hidden className="size-3.5" />
+            </Link>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <Link
+              href={ROUTES.docs}
+              className="inline-flex items-center gap-1 text-[14px] font-medium text-accent hover:underline"
+            >
+              Browse the docs <ArrowUpRight aria-hidden className="size-3.5" />
             </Link>
           </Reveal>
         </div>

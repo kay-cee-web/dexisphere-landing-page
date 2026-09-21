@@ -3,7 +3,7 @@ import type { Department } from "@/data/careers/jobs";
 
 const TONES: Record<Department, PillTone> = {
   Engineering: "accent",
-  Design: "iris",
+  Design: "violet",
   Marketing: "good",
   Customer: "neutral",
 };

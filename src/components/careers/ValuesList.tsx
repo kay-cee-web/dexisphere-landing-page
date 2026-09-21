@@ -15,7 +15,7 @@ export function ValuesList({ values }: { values: Feature[] }) {
           <span aria-hidden className="absolute right-6 top-5 font-mono text-[13px] text-faint">
             {String(index + 1).padStart(2, "0")}
           </span>
-          <IconTile Icon={value.Icon} tone="iris" />
+          <IconTile Icon={value.Icon} tone="violet" />
           <h3 className="text-[21px] font-semibold leading-snug text-ink">{value.title}</h3>
           <p className="text-[15px] leading-relaxed text-muted">{value.description}</p>
         </StaggerItem>

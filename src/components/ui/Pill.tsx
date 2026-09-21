@@ -1,14 +1,14 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
-export type PillTone = "good" | "warn" | "bad" | "accent" | "iris" | "neutral";
+export type PillTone = "good" | "warn" | "bad" | "accent" | "violet" | "neutral";
 
 const tones: Record<PillTone, string> = {
   good: "bg-good-soft text-good",
   warn: "bg-warn-soft text-warn",
   bad: "bg-bad-soft text-bad",
   accent: "bg-accent-soft text-accent",
-  iris: "bg-iris/10 text-iris",
+  violet: "bg-violet/10 text-violet",
   neutral: "bg-raised text-muted ring-1 ring-inset ring-line",
 };
 

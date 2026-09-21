@@ -40,7 +40,7 @@ export const RECEIPT_LOG: ReceiptLogEntry[] = [
   { time: "09:02", area: "Lists", tone: "good", text: "Added 24 leads to Leeds gyms · week 38" },
   { time: "09:03", area: "Outreach", tone: "warn", text: "Drafted Intro email, waiting for approval" },
   { time: "11:40", area: "CRM", tone: "accent", text: "Moved Harbor Physio to Proposal" },
-  { time: "11:41", area: "Calendar", tone: "iris", text: "Booked Northside Dental, Thu 10:00" },
+  { time: "11:41", area: "Calendar", tone: "violet", text: "Booked Northside Dental, Thu 10:00" },
 ];
 
 export const SENDING_COUNTS = { sent: 142, blocked: 9 };

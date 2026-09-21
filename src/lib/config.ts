@@ -15,8 +15,8 @@ export const APP_LINKS = {
 };
 
 /**
- * Plans are managed in the main Macrid app, exactly as the Dexisphere app links
- * to them: buy a licence at checkout, then redeem its code on this page.
+ * Paid plans check out through Macrid's Lemon Squeezy store, then the buyer
+ * redeems the licence code on this page in the Dexisphere app.
  */
 export const MACRID_APP_URL = trimSlash(process.env.NEXT_PUBLIC_MACRID_APP_URL || "https://app.macrid.com");
 export const REDEEM_URL = `${MACRID_APP_URL}/settings/plans`;

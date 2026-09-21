@@ -7,6 +7,7 @@ import { SmartLink } from "@/components/ui/SmartLink";
 import { ROUTES } from "@/data/navigation";
 import { APP_LINKS } from "@/lib/config";
 import { HeroDemo } from "./HeroDemo";
+import { Typewriter } from "./Typewriter";
 
 const ASSURANCES = ["Free forever plan", "No credit card required", "Lifetime deals from $59"];
 
@@ -31,7 +32,7 @@ export function HomeHero() {
             <h1 className="text-[42px] font-semibold leading-[1.02] tracking-[-0.035em] sm:text-[64px] lg:text-[76px]">
               Tell an agent the job.
               <br />
-              <span className="text-gradient">Get the busywork done.</span>
+              <Typewriter />
             </h1>
           </Reveal>
           <Reveal delay={0.1}>

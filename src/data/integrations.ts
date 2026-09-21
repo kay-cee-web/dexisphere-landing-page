@@ -11,7 +11,7 @@ export type Integration = {
   Icon: LucideIcon;
   description: string;
   /** How it connects, in the app's words. */
-  auth: "OAuth" | "API key" | "Pairing code" | "In the Macrid app";
+  auth: "OAuth" | "API key" | "Pairing code" | "In the Dexisphere app";
 };
 
 export const INTEGRATION_CATEGORIES: IntegrationCategory[] = [
@@ -30,10 +30,10 @@ export const INTEGRATIONS: Integration[] = [
   { name: "Google Calendar", category: "Email & calendar", Icon: Calendar, auth: "OAuth", description: "Let agents see meetings and brief you beforehand." },
   { name: "Google Sheets", category: "Email & calendar", Icon: Sheet, auth: "OAuth", description: "Export lead lists and pipeline reports." },
   { name: "SMS (Twilio)", category: "Messaging", Icon: MessageSquare, auth: "API key", description: "Text from your own number, or use the shared sender." },
-  { name: "WhatsApp Business", category: "Messaging", Icon: MessageCircle, auth: "In the Macrid app", description: "Broadcast from your business number via Meta." },
+  { name: "WhatsApp Business", category: "Messaging", Icon: MessageCircle, auth: "In the Dexisphere app", description: "Broadcast from your business number via Meta." },
   { name: "Google Places", category: "Prospect sources", Icon: MapPin, auth: "API key", description: "Find local businesses by niche, city and radius." },
   { name: "Google Business Profile", category: "Prospect sources", Icon: Store, auth: "OAuth", description: "Read your listings, hours, reviews and posts." },
-  { name: "Facebook", category: "Prospect sources", Icon: Users, auth: "In the Macrid app", description: "Pull pages and businesses engaging with your niche." },
+  { name: "Facebook", category: "Prospect sources", Icon: Users, auth: "In the Dexisphere app", description: "Pull pages and businesses engaging with your niche." },
   { name: "Mailchimp", category: "Email platforms", Icon: AtSign, auth: "API key", description: "Push captured leads into an audience." },
   { name: "Brevo", category: "Email platforms", Icon: Send, auth: "API key", description: "Sync a list and send from Brevo." },
   { name: "Klaviyo", category: "Email platforms", Icon: Layers, auth: "API key", description: "Keep a Klaviyo list in step with your CRM." },

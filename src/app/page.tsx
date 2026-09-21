@@ -3,6 +3,8 @@ import { BlogPreview } from "@/components/home/BlogPreview";
 import { ChannelsSpotlight } from "@/components/home/ChannelsSpotlight";
 import { HomeHero } from "@/components/home/HomeHero";
 import { HowItWorks } from "@/components/home/HowItWorks";
+import { TrustedBy } from "@/components/home/TrustedBy";
+import { VideoSection } from "@/components/home/VideoSection";
 import { IntegrationsMarquee } from "@/components/home/IntegrationsMarquee";
 import { PlatformBento } from "@/components/home/PlatformBento";
 import { ProductCards } from "@/components/home/ProductCards";
@@ -23,6 +25,8 @@ export default function HomePage() {
   return (
     <>
       <HomeHero />
+      <TrustedBy />
+      <VideoSection />
       <PlatformBento />
       <ProductCards />
       <HowItWorks />

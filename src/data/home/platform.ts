@@ -45,6 +45,6 @@ export const TOOL_CHIPS: { area: string; tools: string[] }[] = [
 
 export const MODEL_ROWS = [
   { family: "Anthropic", model: "Claude Sonnet 5", note: "Best balance" },
-  { family: "OpenAI", model: "GPT-5.6 Terra", note: "Flagship balanced" },
+  { family: "OpenAI", model: "GPT-5.6 Terra", note: "Balanced" },
   { family: "Google", model: "Gemini 3 Flash", note: "Fast & efficient" },
 ];

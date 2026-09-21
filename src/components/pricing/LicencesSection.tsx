@@ -30,11 +30,11 @@ export function LicencesSection() {
         />
         <StepsList steps={LICENCE_STEPS} />
         <Reveal className="grid gap-6 rounded-[20px] border border-line bg-surface p-6 sm:p-8 lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-8">
-          <IconTile Icon={Handshake} size="lg" tone="iris" />
+          <IconTile Icon={Handshake} size="lg" tone="violet" />
           <div className="grid gap-2">
             <div className="flex flex-wrap items-center gap-2">
               <h3 className="text-[20px] font-semibold text-ink">Agencies</h3>
-              <Pill tone="iris">Business · Agency</Pill>
+              <Pill tone="violet">Business · Agency</Pill>
             </div>
             <p className="max-w-[62ch] text-[14.5px] leading-relaxed text-muted">
               Business and Agency licences include reseller access, so you can set up and run Dexisphere agents for your

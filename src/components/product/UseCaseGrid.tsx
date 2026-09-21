@@ -13,7 +13,7 @@ export function UseCaseGrid({ items }: { items: UseCase[] }) {
           className="grid h-full content-start gap-5 rounded-[18px] border border-line bg-surface p-6 sm:p-7"
         >
           <div className="flex items-center gap-3">
-            <IconTile Icon={useCase.Icon} tone="iris" />
+            <IconTile Icon={useCase.Icon} tone="violet" />
             <h3 className="text-[18px] font-semibold text-ink">{useCase.title}</h3>
           </div>
           <figure className="grid gap-2 rounded-[12px] border border-line bg-raised px-4 py-3">

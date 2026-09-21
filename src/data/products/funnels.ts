@@ -30,7 +30,7 @@ export const FUNNELS_CONTENT: ProductContent = {
     visual: { kind: "funnel", title: "Whiter teeth, booked in two minutes.", url: "yourstudio.com/whitening" },
     receipt: {
       area: "Funnels",
-      badge: { label: "Ready to review", tone: "iris" },
+      badge: { label: "Ready to review", tone: "violet" },
       stats: [
         { label: "Created", value: 1 },
         { label: "Updated", value: 1 },
