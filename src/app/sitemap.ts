@@ -19,6 +19,7 @@ const STATIC_PATHS = [
   ROUTES.docs,
   ROUTES.privacy,
   ROUTES.terms,
+  ROUTES.refunds,
 ];
 
 /** Built from the same data that generates each dynamic route, so it can't drift. */

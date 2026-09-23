@@ -16,6 +16,7 @@ export const ROUTES = {
   docs: "/docs",
   privacy: "/privacy",
   terms: "/terms",
+  refunds: "/refund-policy",
   product: (slug: string) => `/${slug}`,
   post: (slug: string) => `/blog/${slug}`,
   job: (slug: string) => `/careers/${slug}`,
@@ -80,6 +81,7 @@ export const FOOTER_COLUMNS: { title: string; links: NavLink[] }[] = [
     links: [
       { label: "Privacy Policy", href: ROUTES.privacy },
       { label: "Terms of Service", href: ROUTES.terms },
+      { label: "Refund Policy", href: ROUTES.refunds },
     ],
   },
 ];

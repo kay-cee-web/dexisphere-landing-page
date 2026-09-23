@@ -43,7 +43,7 @@ const SECTIONS_EARLY: LegalSection[] = [
           "\"Lifetime\" means for as long as we operate the Dexisphere service. It isn't a licence to the software itself.",
           "Each plan comes with the allowances listed at purchase, such as tokens, campaigns and lead searches. When an allowance is used up, the related features stop until you upgrade.",
           "Licence codes are for the buyer's own use. Don't resell or share them unless your plan includes reseller access.",
-          "Refunds follow the policy shown at checkout. Taxes are added where required.",
+          `Paid plans come with a 30-day money-back guarantee. See our [Refund Policy](${ROUTES.refunds}). Taxes are added where required.`,
         ],
       },
     ],
