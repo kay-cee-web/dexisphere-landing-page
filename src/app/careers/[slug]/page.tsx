@@ -13,6 +13,7 @@ import { PERKS } from "@/data/careers/company";
 import { JOBS, jobBySlug } from "@/data/careers/jobs";
 import { jobDetail } from "@/data/careers/roles";
 import { ROUTES } from "@/data/navigation";
+import { pageMeta } from "@/lib/seo";
 
 export const dynamicParams = false;
 
@@ -24,11 +25,10 @@ export async function generateMetadata(props: PageProps<"/careers/[slug]">): Pro
   const { slug } = await props.params;
   const job = jobBySlug(slug);
   if (!job) return {};
-  return {
+  return pageMeta(ROUTES.job(job.slug), {
     title: `${job.title} · Careers`,
     description: `${job.summary} ${job.type}, ${job.location}.`,
-    alternates: { canonical: ROUTES.job(job.slug) },
-  };
+  });
 }
 
 /** Six benefits recapped on every job page. */

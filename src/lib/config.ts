@@ -1,7 +1,7 @@
 const trimSlash = (url: string) => url.replace(/\/$/, "");
 
 export const SITE_NAME = "Dexisphere";
-export const SITE_URL = trimSlash(process.env.NEXT_PUBLIC_SITE_URL || "https://dexisphere.com");
+export const SITE_URL = trimSlash(process.env.NEXT_PUBLIC_SITE_URL || "https://www.dexisphere.com");
 
 /** The Dexisphere app (the agents workspace). Every sign-in flow lives there. */
 export const APP_URL = trimSlash(process.env.NEXT_PUBLIC_APP_URL || "https://app.dexisphere.com");

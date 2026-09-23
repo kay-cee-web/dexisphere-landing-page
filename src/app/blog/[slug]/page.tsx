@@ -14,6 +14,7 @@ import { POSTS, postBySlug } from "@/data/blog/posts";
 import { relatedPosts } from "@/data/blog/related";
 import { ROUTES } from "@/data/navigation";
 import { SITE_URL } from "@/lib/config";
+import { pageMeta } from "@/lib/seo";
 
 export const dynamicParams = false;
 
@@ -25,10 +26,9 @@ export async function generateMetadata(props: PageProps<"/blog/[slug]">): Promis
   const { slug } = await props.params;
   const post = postBySlug(slug);
   if (!post) return {};
-  return {
+  return pageMeta(ROUTES.post(post.slug), {
     title: post.title,
     description: post.excerpt,
-    alternates: { canonical: ROUTES.post(post.slug) },
     openGraph: {
       type: "article",
       title: post.title,
@@ -37,7 +37,7 @@ export async function generateMetadata(props: PageProps<"/blog/[slug]">): Promis
       authors: [post.author.name],
       tags: post.tags,
     },
-  };
+  });
 }
 
 export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {

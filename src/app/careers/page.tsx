@@ -13,12 +13,13 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { HIRING_STEPS, PERKS, VALUES } from "@/data/careers/company";
 import { JOBS } from "@/data/careers/jobs";
 import { ROUTES } from "@/data/navigation";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta(ROUTES.careers, {
   title: "Careers",
   description:
     "Join the small, remote team building Dexisphere: AI agents that do real marketing and sales work and show a receipt for every change.",
-};
+});
 
 export default function CareersPage() {
   return (

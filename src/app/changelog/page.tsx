@@ -6,12 +6,14 @@ import { CtaSection } from "@/components/sections/CtaSection";
 import { PageHero } from "@/components/sections/PageHero";
 import { Container } from "@/components/ui/Container";
 import { RELEASES } from "@/data/changelog";
+import { ROUTES } from "@/data/navigation";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta(ROUTES.changelog, {
   title: "Changelog",
   description:
     "What shipped in Dexisphere, release by release: work receipts, ask before sending, channels, records and analytics, connectors and more.",
-};
+});
 
 /** The subscribe card sits after this many releases. */
 const SUBSCRIBE_AFTER = 2;

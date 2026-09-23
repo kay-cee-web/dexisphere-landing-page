@@ -15,7 +15,7 @@ export function ProductCards() {
         <SectionHeading
           eyebrow="Six areas, one workspace"
           title="An agent for every part of the pipeline"
-          lede="From the first search to the booked call, each area comes with the tools and ready-made tasks an agent needs."
+          lede="From the first search to the booked call and the support that follows, each area comes with the tools and ready-made tasks an agent needs."
           actions={
             <Link href={ROUTES.features} className="inline-flex items-center gap-1 text-[14.5px] font-medium text-accent hover:underline">
               Explore every feature <ArrowRight aria-hidden className="size-4" />

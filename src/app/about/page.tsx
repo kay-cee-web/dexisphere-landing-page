@@ -14,12 +14,13 @@ import { VALUES } from "@/data/about/values";
 import { ROUTES } from "@/data/navigation";
 import { STATS, STATS_CAPTION } from "@/data/stats";
 import { APP_LINKS } from "@/lib/config";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta(ROUTES.about, {
   title: "About",
   description:
     "Why we're building Dexisphere: AI agents that take the busywork off small marketing and sales teams, and show a receipt for everything they do.",
-};
+});
 
 export default function AboutPage() {
   return (

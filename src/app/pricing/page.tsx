@@ -6,12 +6,14 @@ import { CtaSection } from "@/components/sections/CtaSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { PricingPlans } from "@/components/sections/PricingPlans";
 import { PRICING_FAQS } from "@/data/faqs";
+import { ROUTES } from "@/data/navigation";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta(ROUTES.pricing, {
   title: "Pricing",
   description:
     "Lifetime licences for Dexisphere's AI agents. Start free, or pay once for Solo, Business or Agency. No subscriptions, nothing renews.",
-};
+});
 
 export default function PricingPage() {
   return (

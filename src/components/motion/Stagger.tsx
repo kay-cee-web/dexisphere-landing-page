@@ -2,11 +2,12 @@
 
 import { motion, type Variants } from "framer-motion";
 import type { ReactNode } from "react";
+import { introDelay } from "./intro";
 import { EASE_OUT } from "./Reveal";
 
 const container: Variants = {
   hidden: {},
-  shown: { transition: { staggerChildren: 0.07 } },
+  shown: () => ({ transition: { staggerChildren: 0.07, delayChildren: introDelay() } }),
 };
 
 const item: Variants = {

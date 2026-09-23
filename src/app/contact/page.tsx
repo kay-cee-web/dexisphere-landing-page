@@ -7,12 +7,14 @@ import { CtaSection } from "@/components/sections/CtaSection";
 import { PageHero } from "@/components/sections/PageHero";
 import { Container, Section } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ROUTES } from "@/data/navigation";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta(ROUTES.contact, {
   title: "Contact",
   description:
     "Talk to a human at Dexisphere. Email sales, support or press, or send us a message about plans, licences, agencies or your agents.",
-};
+});
 
 export default function ContactPage() {
   return (

@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
+import { PageLoader } from "@/components/layout/PageLoader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { InlineScript } from "@/components/ui/InlineScript";
 import { SITE_NAME, SITE_URL } from "@/lib/config";
+import { OPEN_GRAPH_BASE, SITE_DESCRIPTION, SITE_KEYWORDS, SITE_TITLE } from "@/lib/seo";
 import { THEME_BOOT_SCRIPT } from "@/lib/theme";
 import "./globals.css";
 
@@ -12,14 +14,19 @@ const geist = Geist({ variable: "--font-geist", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 const bricolage = Bricolage_Grotesque({ variable: "--font-bricolage", subsets: ["latin"] });
 
-const DESCRIPTION =
-  "AI agents that find prospects, run email, SMS and WhatsApp outreach, keep your CRM current and build funnels, with a receipt for every change.";
-
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: `${SITE_NAME} · AI agents for marketing and sales`, template: `%s · ${SITE_NAME}` },
-  description: DESCRIPTION,
-  openGraph: { siteName: SITE_NAME, type: "website", description: DESCRIPTION },
+  title: { default: SITE_TITLE, template: `%s · ${SITE_NAME}` },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  keywords: SITE_KEYWORDS,
+  category: "technology",
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
+  // og:title/description fall back to each page's own; the share image comes
+  // from app/opengraph-image.tsx and applies to every route.
+  openGraph: OPEN_GRAPH_BASE,
   twitter: { card: "summary_large_image" },
   icons: {
     icon: [
@@ -58,6 +65,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </main>
           <SiteFooter />
         </MotionProvider>
+        <PageLoader />
       </body>
     </html>
   );

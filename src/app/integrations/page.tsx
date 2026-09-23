@@ -5,12 +5,14 @@ import { WorkspaceConnections } from "@/components/integrations/WorkspaceConnect
 import { CtaSection } from "@/components/sections/CtaSection";
 import { PageHero } from "@/components/sections/PageHero";
 import { INTEGRATIONS } from "@/data/integrations";
+import { ROUTES } from "@/data/navigation";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta(ROUTES.integrations, {
   title: "Integrations",
   description:
     "Connect Gmail, Outlook, SMTP, Twilio, WhatsApp Business, Google Places, Mailchimp and more once, and every Dexisphere agent can use them.",
-};
+});
 
 export default function IntegrationsPage() {
   return (

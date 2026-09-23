@@ -60,7 +60,7 @@ const SECTIONS_EARLY: LegalSection[] = [
         items: [
           "send messages to people who haven't consented where consent is required, or ignore opt-outs and unsubscribe requests;",
           "break anti-spam and marketing laws such as CAN-SPAM, GDPR and ePrivacy rules, CASL or the TCPA;",
-          "break the policies of the platforms you send through, including Meta's WhatsApp Business policies, Twilio's acceptable use policy and messaging rules, and your email provider's terms;",
+          "break the policies of the platforms you connect or send through, including Meta's Platform Terms and WhatsApp Business policies, Google's and Microsoft's API terms, Twilio's acceptable use policy and messaging rules, and your email provider's terms;",
           "send misleading, harassing, hateful, illegal or fraudulent content, or impersonate anyone;",
           "collect or use personal data in ways the law doesn't allow;",
           "probe, overload or get around the limits and security of the service, or resell it without permission.",
@@ -85,7 +85,9 @@ const SECTIONS_EARLY: LegalSection[] = [
         type: "ul",
         items: [
           "You confirm you have the rights and permissions for the content and contact data you bring into Dexisphere.",
-          "When you connect an account, you authorise Dexisphere and your agents to act in it as you instruct, for example sending email from your mailbox.",
+          "When you connect an account, you authorise Dexisphere and your agents to act in it as you instruct, for example sending email from your mailbox or reading your calendar.",
+          "Only connect accounts you own or are authorised to manage, such as a Facebook Page, Google Business Profile listing or WhatsApp Business number. What your agents read from or do in them must follow that platform's rules.",
+          `The [Privacy Policy](${ROUTES.privacy}) lists every integration and what it can access.`,
           "You can disconnect accounts, unlink channels and delete agents or records at any time.",
         ],
       },
@@ -96,8 +98,8 @@ const SECTIONS_EARLY: LegalSection[] = [
 export const TERMS: LegalDocument = {
   title: "Terms of Service",
   description: "The agreement between you and Dexisphere: your account, lifetime licences, responsible outreach, AI output and our responsibilities.",
-  lastUpdated: "September 1, 2026",
-  lastUpdatedIso: "2026-09-01",
+  lastUpdated: "September 23, 2026",
+  lastUpdatedIso: "2026-09-23",
   summary: [
     "Paid plans are one-time lifetime licences. Nothing renews.",
     "You own your content and workspace data.",

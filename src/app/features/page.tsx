@@ -18,12 +18,13 @@ import { DEEP_DIVES } from "@/data/features/deep-dives";
 import { ROUTES } from "@/data/navigation";
 import { STATS, STATS_CAPTION } from "@/data/stats";
 import { APP_LINKS } from "@/lib/config";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta(ROUTES.features, {
   title: "Features",
   description:
     "Everything Dexisphere agents can do: real tools, work receipts, ask before sending, a sending switch, WhatsApp and Telegram channels, scheduled work and your choice of AI model.",
-};
+});
 
 export default function FeaturesPage() {
   return (

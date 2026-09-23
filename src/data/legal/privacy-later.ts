@@ -4,7 +4,7 @@ import type { LegalSection } from "./types";
 
 const privacyMail = `[${CONTACT_EMAILS.privacy}](mailto:${CONTACT_EMAILS.privacy})`;
 
-/** Privacy Policy sections 6–10. */
+/** Privacy Policy sections 7–11. */
 export const PRIVACY_SECTIONS_LATER: LegalSection[] = [
   {
     title: "Security",

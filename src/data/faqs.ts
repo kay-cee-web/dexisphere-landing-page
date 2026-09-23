@@ -35,7 +35,7 @@ export const GENERAL_FAQS: Faq[] = [
   {
     question: "What's the difference between Dexisphere and doing it myself with automation tools?",
     answer:
-      "With traditional tools you build workflows, manage integrations and maintain automations yourself. Dexisphere removes all of that complexity. Tell the agent what you need done and it handles prospecting, outreach, CRM updates and funnels on its own — so you can focus on closing deals, not managing software. If you need full control, you can still connect your own accounts and keys.",
+      "With traditional tools you build workflows, manage integrations and maintain automations yourself. Dexisphere removes all of that complexity. Tell the agent what you need done and it handles prospecting, outreach, support triage, data syncing, CRM updates and funnels on its own, with connection checks and receipts so you can see it's all running — so you can focus on closing deals, not managing software. If you need full control, you can still connect your own accounts and keys.",
   },
   {
     question: "How does pricing work?",
@@ -45,7 +45,7 @@ export const GENERAL_FAQS: Faq[] = [
   {
     question: "What can I do with a Dexisphere agent?",
     answer:
-      "Your agent works around the clock, even when your laptop is closed. It can find prospects on Google, verify emails, draft and send outreach over email, SMS and WhatsApp, manage your CRM pipeline, build landing pages and funnels, and report back with receipts for every change. Think of it as a digital team member that never sleeps and is always ready to help.",
+      "Your agent works around the clock, even when your laptop is closed. It can automate recurring workflows on a schedule, find prospects on Google, clean, dedupe and sync your lead data, draft and send outreach over email, SMS and WhatsApp, triage incoming messages into tasks and deals, manage your CRM pipeline, build landing pages and funnels, and report back with receipts for every change. Think of it as a digital team member that never sleeps and is always ready to help.",
   },
   {
     question: "Which tools and channels does it work with?",

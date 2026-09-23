@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { DocArticle } from "@/components/docs/DocArticle";
 import { ARTICLE_SLUGS, docBySlug } from "@/data/docs";
+import { ROUTES } from "@/data/navigation";
+import { pageMeta } from "@/lib/seo";
 
 export const dynamicParams = false;
 
@@ -16,7 +18,7 @@ export async function generateMetadata(props: PageProps<"/docs/[slug]">): Promis
   const { slug } = await props.params;
   const page = articleBySlug(slug);
   if (!page) return {};
-  return { title: `${page.title} · Docs`, description: page.description };
+  return pageMeta(ROUTES.doc(slug), { title: `${page.title} · Docs`, description: page.description });
 }
 
 export default async function DocPage(props: PageProps<"/docs/[slug]">) {

@@ -7,12 +7,14 @@ import { PageHero } from "@/components/sections/PageHero";
 import { Container } from "@/components/ui/Container";
 import { POST_CATEGORIES } from "@/data/blog/posts";
 import { postsNewestFirst } from "@/data/blog/related";
+import { ROUTES } from "@/data/navigation";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta(ROUTES.blog, {
   title: "Blog",
   description:
     "Playbooks, product notes and engineering stories from the team building Dexisphere, AI agents for marketing and sales.",
-};
+});
 
 export default function BlogPage() {
   const posts = postsNewestFirst();

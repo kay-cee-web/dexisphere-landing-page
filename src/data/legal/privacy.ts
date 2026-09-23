@@ -1,5 +1,6 @@
 /** PLACEHOLDER — draft legal text for layout only; have counsel review and replace before launch. */
 import { CONTACT_EMAILS } from "@/lib/config";
+import { PRIVACY_INTEGRATIONS } from "./privacy-integrations";
 import { PRIVACY_SECTIONS_LATER } from "./privacy-later";
 import type { LegalDocument, LegalSection } from "./types";
 
@@ -14,7 +15,7 @@ const SECTIONS_EARLY: LegalSection[] = [
           "**Account details:** your name, email address, password, plan and any licence code you redeem.",
           "**What you give agents:** your messages, each agent's name and instructions, images you attach, and the agents' replies.",
           "**Workspace data:** the lists, leads, companies, deals, tasks, appointments, campaigns and funnels you or your agents create, including the contact details of the people in them.",
-          "**Connected accounts:** the credentials you add for connectors, such as OAuth grants, API keys, SMTP details, Twilio credentials and your own AI keys.",
+          "**Connected accounts:** the credentials you add for connectors, such as OAuth grants, API keys, SMTP details, Twilio credentials and your own AI keys, and the data those accounts let us access (see Connected accounts and integrations below).",
           "**Channel data:** messages you send your agent over WhatsApp, Telegram or the browser extension, plus a label or masked number for each link and when it was last used.",
           "**Usage data:** tokens used per chat turn, send and block counts, and technical logs such as IP address, browser and timestamps.",
           "**Funnel analytics:** when people visit funnels you publish, we record events such as views and clicks with their country, city, browser, operating system, device type and referrer.",
@@ -66,9 +67,9 @@ const SECTIONS_EARLY: LegalSection[] = [
         rows: [
           ["Macrid", "Operates the platform and backend that Dexisphere runs on."],
           ["Anthropic, OpenAI, Google", "AI models that power agents."],
-          ["Twilio, Meta (WhatsApp), Telegram", "Delivering SMS and WhatsApp messages, and agent channels."],
-          ["Google, Microsoft, your SMTP provider", "Sending and reading email and calendars you connect."],
-          ["Email platforms you connect", "Syncing leads to Mailchimp, Brevo, Klaviyo and similar tools, when you ask."],
+          ["Twilio, Meta (WhatsApp, Facebook), Telegram", "Delivering SMS and WhatsApp messages, Facebook Pages you connect, and agent channels."],
+          ["Google, Microsoft, your SMTP provider", "Email, calendars, spreadsheets, Business Profile listings and place search you connect or use."],
+          ["Email platforms you connect", "Syncing leads to Mailchimp, Brevo, Klaviyo, ConvertKit, ActiveCampaign, MailerLite, GetResponse or Systeme.io, when you ask."],
           ["Payment processor", "Handling checkout for paid licences. We don't see your full card details."],
           ["Hosting and infrastructure providers", "Storing data and running the service."],
         ],
@@ -76,6 +77,7 @@ const SECTIONS_EARLY: LegalSection[] = [
       { type: "p", text: "We may also disclose information to comply with the law, to protect people's safety or our rights, or as part of a merger or acquisition, in which case this policy continues to apply." },
     ],
   },
+  PRIVACY_INTEGRATIONS,
   {
     title: "Data retention",
     blocks: [
@@ -85,6 +87,7 @@ const SECTIONS_EARLY: LegalSection[] = [
           "Account details are kept while your account is open.",
           "An agent's instructions, conversation and channel links are kept until you delete the agent.",
           "Workspace records are kept until you delete them or close your account.",
+          "A connected account's tokens or keys are deleted as soon as you disconnect it.",
           "Work receipts aren't stored: they exist only in your browser for the current session.",
           "Channel pairing codes expire after 15 minutes. Unused conversation copies are removed automatically.",
           "After you close your account, we delete or anonymise your data within 30 days, except where we must keep it longer for legal, tax or security reasons. Backups roll off on their normal schedule.",
@@ -96,12 +99,13 @@ const SECTIONS_EARLY: LegalSection[] = [
 
 export const PRIVACY: LegalDocument = {
   title: "Privacy Policy",
-  description: "What Dexisphere collects, how agents and AI providers use it, who we share it with, and the choices you have.",
-  lastUpdated: "September 1, 2026",
-  lastUpdatedIso: "2026-09-01",
+  description: "What Dexisphere collects, how agents, AI providers and connected accounts use it, who we share it with, and the choices you have.",
+  lastUpdated: "September 23, 2026",
+  lastUpdatedIso: "2026-09-23",
   summary: [
     "We collect your account details, what you give your agents, and the workspace data they work with.",
     "Your messages and relevant data go to the AI provider for the model each agent uses.",
+    "Connected accounts such as Gmail, Outlook, Facebook and WhatsApp Business are used only for the features you use, and you can disconnect them any time.",
     "We don't sell your personal information.",
     "You control your data: delete agents, disconnect accounts, or ask us to export or erase everything.",
     `Questions? Email [${CONTACT_EMAILS.privacy}](mailto:${CONTACT_EMAILS.privacy}).`,

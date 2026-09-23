@@ -37,8 +37,8 @@ export function HomeHero() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="max-w-[62ch] text-[16px] leading-relaxed text-muted sm:text-[19px]">
-              Dexisphere agents find your prospects, run email, SMS and WhatsApp outreach, keep your CRM current and
-              build funnels, then show you a receipt for every change.
+              Dexisphere agents automate your workflows: they find prospects, run email, SMS and WhatsApp outreach,
+              triage incoming messages, keep your CRM and data clean, then show you a receipt for every change.
             </p>
           </Reveal>
           <Reveal delay={0.15} className="flex flex-wrap justify-center gap-3">

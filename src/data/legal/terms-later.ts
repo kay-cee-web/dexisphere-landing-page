@@ -31,7 +31,11 @@ export const TERMS_SECTIONS_LATER: LegalSection[] = [
     blocks: [
       {
         type: "p",
-        text: "Dexisphere works with services we don't control, including AI model providers, Twilio, Meta and WhatsApp, Telegram, Google, Microsoft, email platforms and your SMTP provider. Your use of them is governed by their own terms. We aren't responsible for their availability, their decisions (such as suspending a number or sending domain), or changes they make that affect Dexisphere.",
+        text: "Dexisphere works with services we don't control, including AI model providers, Twilio, Meta (Facebook and WhatsApp), Telegram, Google (Gmail, Calendar, Sheets, Business Profile and Places), Microsoft, email platforms such as Mailchimp and Brevo, and your SMTP provider. Your use of them is governed by their own terms. We aren't responsible for their availability, their decisions (such as suspending a number, Page or sending domain), or changes they make that affect Dexisphere.",
+      },
+      {
+        type: "p",
+        text: "If a provider limits or withdraws access, the related integration may stop working, and we may pause or remove it. We'll tell you when that affects an account you've connected.",
       },
     ],
   },
