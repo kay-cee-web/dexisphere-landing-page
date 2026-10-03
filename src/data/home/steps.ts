@@ -1,25 +1,20 @@
-import { MessageSquareText, Plug, Receipt, Workflow } from "lucide-react";
+import { BellRing, MessageSquareText, Plug } from "lucide-react";
 import type { Step } from "@/types/marketing";
 
 export const HOW_IT_WORKS: Step[] = [
   {
-    title: "Describe the task",
-    description: "Type what you'd do by hand, or pick a ready-made idea. The agent is created from your words, no setup screens.",
-    Icon: MessageSquareText,
-  },
-  {
-    title: "Connect your accounts",
-    description: "Link your mailbox, Twilio or Google Places once. Every agent in the workspace can use them.",
+    title: "Connect what you use",
+    description: "Your email, calendar, payment processors, mailing list, store, social and ad accounts. One at a time, with your permission, and switched off again whenever you want.",
     Icon: Plug,
   },
   {
-    title: "The agent does the work",
-    description: "It searches, fills lists, updates deals, drafts messages and schedules follow-ups with real tools.",
-    Icon: Workflow,
+    title: "Say what you want handled",
+    description: "In plain language. “Find me customers in Lagos.” “Run my social.” “Sit in my calls.” No flowcharts, no automation builder.",
+    Icon: MessageSquareText,
   },
   {
-    title: "Review the receipt",
-    description: "Every reply ends with what changed and links to each record. Approve the send, or ask for changes.",
-    Icon: Receipt,
+    title: "Get on with your work",
+    description: "It runs whether or not you're logged in. When something needs a decision, it messages you. When nothing does, it stays quiet.",
+    Icon: BellRing,
   },
 ];

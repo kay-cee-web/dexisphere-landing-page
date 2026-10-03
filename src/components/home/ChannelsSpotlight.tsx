@@ -23,8 +23,8 @@ export function ChannelsSpotlight() {
           <SectionHeading
             align="left"
             eyebrow="Channels"
-            title="Your agent, in your pocket"
-            lede="Pair a channel with a six-character code that works for 15 minutes. Then message your agent from the road and get the same tools, receipts and approvals."
+            title="It only speaks when there's something to say"
+            lede="A few things a morning, not thirty, on WhatsApp or Telegram. Message it back from the road and get the same tools, receipts and approvals. Pairing takes a six-character code."
           />
           <ul className="grid gap-5">
             {CHANNELS.map((channel, index) => (

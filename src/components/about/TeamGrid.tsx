@@ -12,7 +12,7 @@ export function TeamGrid() {
         <SectionHeading
           eyebrow="Leadership"
           title="A small team that uses its own agents"
-          lede="We sell to small teams because we are one. Everyone here hands their own busywork to Dexisphere."
+          lede="We sell to small teams because we are one. Everyone here hands the jobs they never get to to Dexisphere."
         />
         <Stagger as="ul" className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {TEAM.map((member) => (

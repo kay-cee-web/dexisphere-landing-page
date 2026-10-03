@@ -44,9 +44,9 @@ export const CONNECTOR_SENDER_BLOCKS: ContentBlock[] = [
       ["Sender", "A Twilio number in +E.164 format, like `+15551234567`, or an alphanumeric sender ID of up to 11 characters."],
     ],
   },
-  { type: "h3", text: "WhatsApp Business and Facebook" },
+  { type: "h3", text: "WhatsApp Business" },
   {
     type: "p",
-    text: "WhatsApp Business and Facebook connect through Meta, inside the Macrid app. Press **Set up in Macrid**, finish Meta's signup there, then come back. Dexisphere can't read back whether WhatsApp Business is connected, so its card keeps showing **Set up in Macrid** even when it is, and it never blocks a task.",
+    text: "WhatsApp Business connects through Meta, inside the Macrid app. Press **Set up in Macrid**, finish Meta's signup there, then come back. Dexisphere can't read back whether WhatsApp Business is connected, so its card keeps showing **Set up in Macrid** even when it is, and it never blocks a task.",
   },
 ];

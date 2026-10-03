@@ -19,7 +19,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata: Metadata = pageMeta(ROUTES.about, {
   title: "About",
   description:
-    "Why we're building Dexisphere: AI agents that take the busywork off small marketing and sales teams, and show a receipt for everything they do.",
+    "Why we're building Dexisphere: an AI agent that runs the parts of your business you never get to, and only messages you when something needs you.",
 });
 
 export default function AboutPage() {
@@ -29,10 +29,10 @@ export default function AboutPage() {
         eyebrow="About Dexisphere"
         title={
           <>
-            Give every small team an operator that <span className="text-gradient">never tires of the busywork</span>
+            Nothing in your business should wait for <span className="text-gradient">you to open a tab</span>
           </>
         }
-        lede="Finding leads, filing them, following up, moving deals, booking the call. It's the work that keeps a business alive, and it shouldn't eat the day of the people running it."
+        lede="The lead who replied while you were in a meeting. The quote that sat in drafts until it went cold. The post you meant to publish on Monday. It's the work that keeps a business alive, and it shouldn't wait for the people running it."
         actions={
           <>
             <ButtonLink href={APP_LINKS.register} size="lg">

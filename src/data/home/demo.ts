@@ -1,38 +1,38 @@
 import type { DemoToolCall } from "@/types/demo";
 
-/** The hero's scripted agent run. Tool names and numbers are illustrative. */
+/** The hero's scripted agent run. Step names are customer-facing labels, not exact tool names. Figures are illustrative. */
 export const HERO_DEMO = {
   agent: "Weekly growth run",
   model: "Claude Sonnet 5",
-  task: "Find new dental clinics in Austin and start outreach, post this week's content, check the ads, recap today's sales call and keep an eye on cash. WhatsApp me only if something needs me.",
+  task: "Find new dental clinics in Lagos and start outreach, draft this week's posts, check what the ads spent, recap today's sales call and keep an eye on payments. WhatsApp me only if something needs me.",
   tools: [
-    { name: "find_prospects", detail: "Google Places · dentists · Austin, TX", result: "32 found" },
-    { name: "send_outreach", detail: "Email + SMS sequence · 32 clinics", result: "32 started" },
-    { name: "publish_posts", detail: "LinkedIn + Instagram · 3 posts", result: "3 posted" },
-    { name: "review_ads", detail: "Meta Ads · 4 campaigns", result: "1 paused" },
-    { name: "join_meeting", detail: "Sales call with Brightsmile · 38 min", result: "5 action items" },
-    { name: "check_cashflow", detail: "Stripe + bank · last 24h", result: "1 flagged", tone: "warn" },
+    { name: "find_customers", detail: "Google Places · dentists · Lagos", result: "32 found" },
+    { name: "send_email", detail: "Intro email · 32 clinics", result: "32 sent" },
+    { name: "Draft the week's posts", detail: "LinkedIn + Instagram · 3 posts", result: "3 drafted" },
+    { name: "Check ad spend", detail: "Meta Ads · this week", result: "₦67,500" },
+    { name: "Write up the call", detail: "Sales call with Brightsmile · 38 min", result: "2 tasks" },
+    { name: "Check payments", detail: "Paystack + Stripe · last 24h", result: "1 failed", tone: "warn" },
   ] satisfies DemoToolCall[],
   reply:
-    "All done. Outreach is live to 32 clinics, 3 posts are up, and I paused an ad spending $40/day with no clicks. One thing needs you: invoice **#1042** is 9 days overdue — I've messaged you on WhatsApp.",
+    "All done. Outreach is out to 32 clinics, 3 posts are waiting for your approval, and the ads spent ₦67,500 this week. One thing needs you: Brightsmile's **₦240,000** renewal failed this morning — I've messaged you on WhatsApp.",
   receipt: {
-    area: "Growth · Content · Ads · Money",
+    area: "New business · Social · Ads · Money",
     stats: [
       { label: "Leads", value: "32" },
-      { label: "Posts", value: "3" },
+      { label: "Drafts", value: "3" },
       { label: "Flagged", value: "1" },
     ],
     lines: [
-      "32 clinics added to outreach",
-      "3 posts published",
-      "Ad “Spring promo” paused",
-      "Meeting notes + 5 tasks saved",
+      "32 clinics emailed",
+      "3 posts drafted for approval",
+      "Ad spend this week: ₦67,500",
+      "Call notes + 2 tasks saved",
     ],
   },
   approval: {
     channel: "Sent to your WhatsApp",
-    question: "Invoice #1042 ($2,400) is 9 days overdue. Send a reminder?",
-    confirm: "Send reminder",
+    question: "Brightsmile's ₦240,000 renewal failed this morning. Email them a polite heads-up?",
+    confirm: "Send email",
     decline: "Not now",
   },
   usage: "−2,180 tokens · 47,820 left",

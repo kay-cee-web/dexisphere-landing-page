@@ -29,9 +29,9 @@ export function PlatformBento() {
     <Section id="platform">
       <Container width="wide" className="grid gap-14">
         <SectionHeading
-          eyebrow="Platform"
-          title="Everything an agent needs to do the job"
-          lede="Real tools to act with, receipts to prove it, and controls that keep you in charge of every message that leaves."
+          eyebrow="You stay in control"
+          title="It does the work. You keep the keys."
+          lede="Every connection authorised by you, every send waiting for your yes if you want it, and a receipt for everything it did."
         />
         <Stagger className="grid gap-5 lg:grid-cols-6">
           {PLATFORM_CARDS.map((card) => (

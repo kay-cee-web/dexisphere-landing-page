@@ -13,9 +13,9 @@ export function WorkflowShowcase() {
         <div className="grid gap-8">
           <SectionHeading
             align="left"
-            eyebrow="Scheduled work"
-            title="Put the weekly grind on autopilot"
-            lede="Ask once and your agent repeats the job on a schedule: find new prospects every Monday, follow up every Thursday, report every Friday."
+            eyebrow="Get on with your work"
+            title="It runs whether or not you're logged in"
+            lede="Ask once and it repeats the job: new customers every Monday, the follow-up on Thursday, the revenue summary before the week starts. When something needs a decision, it messages you."
           />
           <Reveal delay={0.1}>
             <ul className="grid gap-3">

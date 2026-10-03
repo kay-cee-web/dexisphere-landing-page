@@ -25,7 +25,7 @@ export default function BlogPage() {
       <PageHero
         eyebrow="Blog"
         title="Notes from the agent frontier"
-        lede="Prompt playbooks, product deep dives and stories from teams who hand their busywork to agents."
+        lede="Prompt playbooks, product deep dives and stories from businesses that hand the jobs they never get to to an agent."
       />
       <section className="pb-20 sm:pb-28">
         <Container width="wide" className="grid gap-14">

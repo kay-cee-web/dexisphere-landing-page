@@ -11,8 +11,8 @@ export function VideoSection() {
       <Container width="wide" className="grid gap-12">
         <SectionHeading
           eyebrow="See it in action"
-          title="Watch how agents do the work"
-          lede="A two-minute walkthrough: from a plain-language task to a finished receipt."
+          title="Watch it work"
+          lede="Two minutes: one sentence in, the finished job and its receipt out."
         />
         <Reveal y={24}>
           <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[20px] border border-line bg-ink/5 shadow-lift">

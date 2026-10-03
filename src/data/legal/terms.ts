@@ -87,6 +87,7 @@ const SECTIONS_EARLY: LegalSection[] = [
           "You confirm you have the rights and permissions for the content and contact data you bring into Dexisphere.",
           "When you connect an account, you authorise Dexisphere and your agents to act in it as you instruct, for example sending email from your mailbox or reading your calendar.",
           "Only connect accounts you own or are authorised to manage, such as a Facebook Page, Google Business Profile listing or WhatsApp Business number. What your agents read from or do in them must follow that platform's rules.",
+          "If you connect YouTube, you agree to be bound by the [YouTube Terms of Service](https://www.youtube.com/t/terms).",
           `The [Privacy Policy](${ROUTES.privacy}) lists every integration and what it can access.`,
           "You can disconnect accounts, unlink channels and delete agents or records at any time.",
         ],

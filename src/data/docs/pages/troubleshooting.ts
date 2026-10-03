@@ -76,7 +76,7 @@ export const TROUBLESHOOTING: DocPage = {
         "**The popup was blocked.** Allow popups for the app, then press **Connect** again.",
         "**The popup was closed early.** Finish the provider's sign-in and approval screens until the popup closes, then check the card again.",
         "**The wrong account was approved.** Disconnect, then connect again and pick the right Google or Microsoft account.",
-        "**It's a Macrid-app connector.** WhatsApp Business and Facebook usually show **Set up in Macrid**, because their status often can't be read here. That's expected.",
+        "**It's a Macrid-app connector.** WhatsApp Business usually shows **Set up in Macrid**, because their status often can't be read here. That's expected.",
         "**The page is stale.** Reload the Connectors tab. Connections are shared by all agents, so any agent's tab shows the same state.",
       ],
     },

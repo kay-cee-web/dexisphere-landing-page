@@ -23,16 +23,16 @@ import { pageMeta } from "@/lib/seo";
 export const metadata: Metadata = pageMeta(ROUTES.features, {
   title: "Features",
   description:
-    "Everything Dexisphere agents can do: real tools, work receipts, ask before sending, a sending switch, WhatsApp and Telegram channels, scheduled work and your choice of AI model.",
+    "An AI agent that finds your customers, drafts your content, watches your ads, sits in your meetings and watches your money, then messages you when something actually needs you.",
 });
 
 export default function FeaturesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Features"
-        title="Every capability, one platform"
-        lede="Agents that prospect, send, update your CRM, build funnels and report back, with receipts, approvals and a sending switch keeping you in charge."
+        eyebrow="What it does"
+        title="Your business keeps moving while you're not looking"
+        lede="Dexisphere finds your customers, runs your outreach, drafts your content, watches your ads, sits in your meetings and watches your money. Then it messages you when something actually needs you."
         actions={
           <>
             <ButtonLink href={APP_LINKS.register} size="lg">
@@ -50,9 +50,9 @@ export default function FeaturesPage() {
       <Section id="core" className="pt-4 sm:pt-8">
         <Container width="wide" className="grid gap-12">
           <SectionHeading
-            eyebrow="The core eight"
+            eyebrow="Under every job"
             title="What every agent comes with"
-            lede="The same foundations sit under every task, whether it's a prospect run or a Monday report."
+            lede="Whether it's a prospect run or Monday's revenue summary, the same ground rules apply."
           />
           <FeatureGrid features={CORE_FEATURES} columns={4} />
         </Container>
@@ -67,7 +67,7 @@ export default function FeaturesPage() {
           <SectionHeading
             eyebrow="Compare"
             title="Dexisphere vs. the alternatives"
-            lede="Doing it by hand gets it done, slowly. A chatbot tells you how. An agent does it and shows you what changed."
+            lede="ChatGPT doesn't know your pipeline, can't see your inbox, and stops the moment you close the tab. Dexisphere is connected to your business and keeps working while you're away."
           />
           <ComparisonTable />
         </Container>

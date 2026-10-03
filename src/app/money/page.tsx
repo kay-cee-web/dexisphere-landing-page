@@ -4,8 +4,8 @@ import { PRODUCT_CONTENT } from "@/data/products";
 import { ROUTES } from "@/data/navigation";
 import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = pageMeta(ROUTES.product("analytics"), PRODUCT_CONTENT.analytics.meta);
+export const metadata: Metadata = pageMeta(ROUTES.product("money"), PRODUCT_CONTENT["money"].meta);
 
 export default function Page() {
-  return <ProductPage slug="analytics" />;
+  return <ProductPage slug="money" />;
 }

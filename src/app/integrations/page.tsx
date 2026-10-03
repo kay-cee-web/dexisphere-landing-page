@@ -11,7 +11,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata: Metadata = pageMeta(ROUTES.integrations, {
   title: "Integrations",
   description:
-    "Connect Gmail, Outlook, SMTP, Twilio, WhatsApp Business, Google Places, Mailchimp and more once, and every Dexisphere agent can use them.",
+    "Connect Google, Outlook, your mailbox, Twilio, WhatsApp, Stripe, Paystack, your social and ad accounts, Slack, Shopify and more once, and every Dexisphere agent can use them.",
 });
 
 export default function IntegrationsPage() {
@@ -20,7 +20,7 @@ export default function IntegrationsPage() {
       <PageHero
         eyebrow="Integrations"
         title="Works with the accounts you already use"
-        lede={`${INTEGRATIONS.length} connectors and channels for email, messaging, prospect sources and email platforms. Your agents send from your addresses and work in your tools.`}
+        lede={`${INTEGRATIONS.length} connectors and channels for email, messaging, prospecting, payments, social and ads, and the work tools you already use. Your agents send from your addresses and work in your tools.`}
       >
         <IntegrationsBrowser />
       </PageHero>

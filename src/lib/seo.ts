@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { SITE_NAME } from "./config";
 
 /** Shared SEO copy: root metadata, the share image and the home page's JSON-LD. */
-export const SITE_TAGLINE = "AI agents that do your marketing and sales busywork";
+export const SITE_TAGLINE = "The AI agent that runs the parts of your business you never get to";
 
 export const SITE_TITLE = `${SITE_NAME} · ${SITE_TAGLINE}`;
 
 export const SITE_DESCRIPTION =
-  "Dexisphere AI agents automate your workflows: they find prospects, run email, SMS and WhatsApp outreach, triage incoming messages, keep your CRM and data clean, and show a receipt for every change. Free forever plan.";
+  "An AI agent that finds your customers, runs your outreach, drafts your content, watches your ads, sits in your meetings and watches your money, then messages you on WhatsApp when something actually needs you. Free forever plan.";
 
 /**
  * A page that sets `openGraph` replaces the root's whole object, so spread this
@@ -43,15 +43,15 @@ export const SITE_KEYWORDS = [
   "AI agents",
   "AI sales agent",
   "AI marketing automation",
-  "AI workflow automation",
+  "AI meeting notetaker",
+  "payment alerts",
+  "social media content",
   "lead generation",
   "prospecting tool",
   "cold email outreach",
   "WhatsApp marketing",
   "SMS marketing",
   "CRM automation",
-  "support triage",
-  "data orchestration",
-  "funnel builder",
+  "small business AI assistant",
   "Dexisphere",
 ];

@@ -6,7 +6,7 @@ export const PLATFORM_CARDS: { id: BentoId; eyebrow: string; title: string; desc
     eyebrow: "40+ real tools",
     title: "It does the work, not just the talking",
     description:
-      "Agents run on our servers with the same tools you click through by hand: prospect search, lists, leads, deals, tasks, appointments, email, SMS, WhatsApp, funnels and automations.",
+      "It runs on our servers with the tools you'd click through by hand: finding customers, lists, deals, tasks, appointments, email, SMS, WhatsApp and scheduled jobs.",
   },
   {
     id: "receipts",

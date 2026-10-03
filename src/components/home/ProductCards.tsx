@@ -7,15 +7,15 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ROUTES } from "@/data/navigation";
 import { PRODUCTS } from "@/data/products/catalog";
 
-/** Six product areas, one agent category each. */
+/** The five jobs, one page each. */
 export function ProductCards() {
   return (
     <Section tone="raised" bordered id="products">
       <Container width="wide" className="grid gap-14">
         <SectionHeading
-          eyebrow="Six areas, one workspace"
-          title="An agent for every part of the pipeline"
-          lede="From the first search to the booked call and the support that follows, each area comes with the tools and ready-made tasks an agent needs."
+          eyebrow="Five jobs, one agent"
+          title="The parts of your business you never get to"
+          lede="You have a CRM, an inbox, a calendar, a payment dashboard, a mailing list, three social logins and an ads manager. They all work. And every one of them is waiting for you to open it."
           actions={
             <Link href={ROUTES.features} className="inline-flex items-center gap-1 text-[14.5px] font-medium text-accent hover:underline">
               Explore every feature <ArrowRight aria-hidden className="size-4" />
@@ -40,13 +40,15 @@ export function ProductCards() {
                   <h3 className="text-[20px] font-semibold text-ink">{product.name}</h3>
                   <p className="text-[14.5px] leading-relaxed text-muted">{product.tagline}</p>
                 </div>
-                <ul className="mt-auto flex flex-wrap gap-1.5">
-                  {product.tools.map((tool) => (
-                    <li key={tool} className="rounded-[7px] bg-raised px-2 py-1 font-mono text-[11px] text-muted ring-1 ring-inset ring-line">
-                      {tool}
-                    </li>
-                  ))}
-                </ul>
+                {product.tools.length > 0 && (
+                  <ul className="mt-auto flex flex-wrap gap-1.5">
+                    {product.tools.map((tool) => (
+                      <li key={tool} className="rounded-[7px] bg-raised px-2 py-1 font-mono text-[11px] text-muted ring-1 ring-inset ring-line">
+                        {tool}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </Link>
             </StaggerItem>
           ))}

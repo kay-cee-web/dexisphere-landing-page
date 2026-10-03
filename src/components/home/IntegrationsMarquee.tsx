@@ -24,17 +24,25 @@ export function IntegrationsMarquee() {
     <Section>
       <Container width="wide" className="grid gap-12">
         <SectionHeading
-          eyebrow="Integrations"
-          title="Works with the accounts you already use"
-          lede="Send from your own mailbox and number, find prospects on Google, sync lists to your email platform, and talk to agents on WhatsApp or Telegram."
+          eyebrow="Connections"
+          title="One agent. One memory. Everything you already use."
+          lede={
+            <span className="grid gap-3">
+              <span>It could draft that quote because it had been in the meeting, it knew the deal, and it had your email address.</span>
+              <span>
+                It can tell you what the ads spent <em>and</em> what came in, because it watches your ad accounts and your payment processors.
+              </span>
+              <span>In most businesses those are four separate pieces of software, and the only thing joining them together is you.</span>
+            </span>
+          }
           actions={
             <ButtonLink href={ROUTES.integrations} variant="secondary">
-              See all integrations <ArrowRight />
+              See all connections <ArrowRight />
             </ButtonLink>
           }
         />
       </Container>
-      <p className="sr-only">Integrations: {INTEGRATIONS.map((item) => item.name).join(", ")}.</p>
+      <p className="sr-only">Connections:{INTEGRATIONS.map((item) => item.name).join(", ")}.</p>
       <div
         aria-hidden
         className="group mt-12 grid gap-3 overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_12%,#000_88%,transparent)]"
@@ -51,6 +59,7 @@ export function IntegrationsMarquee() {
           </ul>
         ))}
       </div>
+      <p className="mt-8 text-center text-[14.5px] text-faint">More added regularly. Ask for one.</p>
     </Section>
   );
 }

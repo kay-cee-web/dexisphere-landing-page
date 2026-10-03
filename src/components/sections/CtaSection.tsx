@@ -19,16 +19,16 @@ type CtaSectionProps = {
 
 const DEFAULT_TITLE = (
   <>
-    Hand the busywork to
+    Set it up
     <br />
-    <span className="text-brand">an agent.</span>
+    <span className="text-brand">this afternoon.</span>
   </>
 );
 
 /** The closing call to action every marketing page ends on. */
 export function CtaSection({
   title = DEFAULT_TITLE,
-  lede = "Describe what you'd do by hand today. Your agent finds the leads, drafts the messages, updates the pipeline and leaves you a receipt.",
+  lede = "Connect what you already use. Tell it what you want handled. Then go and do something else.",
   actions,
   assurances = DEFAULT_ASSURANCES,
 }: CtaSectionProps) {

@@ -5,7 +5,7 @@ import { IconTile } from "@/components/ui/IconTile";
 import { ROUTES } from "@/data/navigation";
 import { PRODUCTS } from "@/data/products/catalog";
 
-/** The six product areas as compact links under the /features hero. */
+/** The five jobs as compact links under the /features hero. */
 export function AreaLinks() {
   return (
     <Stagger as="ul" className="mx-auto grid w-full max-w-5xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -18,7 +18,7 @@ export function AreaLinks() {
             <IconTile Icon={product.Icon} size="sm" />
             <span className="grid min-w-0 flex-1 gap-0.5">
               <span className="text-[14px] font-medium text-ink">{product.name}</span>
-              <span className="truncate font-mono text-[11px] text-faint">{product.tools.slice(0, 2).join(" · ")}</span>
+              <span className="truncate text-[12.5px] text-faint">{product.tagline}</span>
             </span>
             <ArrowUpRight aria-hidden className="size-4 text-faint transition-colors group-hover:text-accent" />
           </Link>

@@ -9,8 +9,7 @@ export function HowItWorks() {
       <Container width="wide" className="grid gap-16">
         <SectionHeading
           eyebrow="How it works"
-          title="From a sentence to a finished job"
-          lede="No workflow builder to learn. Say what you want done and check the receipt."
+          title="Three steps, about ten minutes"
         />
         <StepsList steps={HOW_IT_WORKS} />
       </Container>

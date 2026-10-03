@@ -5,8 +5,8 @@ import { useEffect, useRef, useState } from "react";
 const PHRASES = [
   "Find your customers.",
   "Run your outreach.",
-  "Post your content.",
-  "Manage your ads.",
+  "Draft your content.",
+  "Watch your ads.",
   "Sit in your meetings.",
   "Watch your money.",
   "Hear back on WhatsApp.",

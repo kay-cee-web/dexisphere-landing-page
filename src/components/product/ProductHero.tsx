@@ -47,14 +47,16 @@ export function ProductHero({ product, content }: ProductHeroProps) {
                 </li>
               ))}
             </ul>
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-faint">Tools</span>
-              {product.tools.map((tool) => (
-                <code key={tool} className="rounded-[6px] border border-line bg-surface px-1.5 py-0.5 font-mono text-[11.5px] text-muted">
-                  {tool}
-                </code>
-              ))}
-            </div>
+            {product.tools.length > 0 && (
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-faint">Tools</span>
+                {product.tools.map((tool) => (
+                  <code key={tool} className="rounded-[6px] border border-line bg-surface px-1.5 py-0.5 font-mono text-[11.5px] text-muted">
+                    {tool}
+                  </code>
+                ))}
+              </div>
+            )}
           </Reveal>
         </div>
         <Reveal delay={0.15} className="min-w-0">

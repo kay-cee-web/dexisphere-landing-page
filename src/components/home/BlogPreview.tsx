@@ -15,8 +15,8 @@ export function BlogPreview() {
           <SectionHeading
             align="left"
             eyebrow="From the blog"
-            title="Playbooks for teams that sell"
-            lede="Prompts, processes and product notes for getting more done with agents."
+            title="Playbooks for the jobs you never get to"
+            lede="Prompts, processes and product notes for handing more of the business to your agent."
           />
           <ButtonLink href={ROUTES.blog} variant="secondary">
             All articles <ArrowRight />

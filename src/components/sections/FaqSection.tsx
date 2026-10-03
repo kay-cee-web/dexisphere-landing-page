@@ -15,14 +15,14 @@ type FaqSectionProps = {
 };
 
 /** Heading on the left, accordion on the right; stacks on phones. */
-export function FaqSection({ faqs, title = "Questions, answered", eyebrow = "FAQ", tone }: FaqSectionProps) {
+export function FaqSection({ faqs, title = "Questions people ask first", eyebrow = "FAQ", tone }: FaqSectionProps) {
   return (
     <Section tone={tone} id="faq">
       <Container width="wide" className="grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
         <div className="grid content-start gap-6 lg:sticky lg:top-28">
           <SectionHeading eyebrow={eyebrow} title={title} align="left" />
           <Reveal delay={0.1} className="max-w-[38ch] text-[15px] leading-relaxed text-muted">
-            Everything you need to know about Dexisphere agents, pricing, privacy and integrations.
+            What it can see, what it can do, and what it costs.
             Can&apos;t find what you need?
           </Reveal>
           <Reveal delay={0.15}>

@@ -45,8 +45,8 @@ export function ProvenResults() {
       <Container width="wide" className="grid gap-14">
         <SectionHeading
           eyebrow="Proven results"
-          title="What teams get back when agents do the busywork"
-          lede="Five teams, five kinds of busywork, and what changed once an agent took it over."
+          title="Your business keeps moving while you're not looking"
+          lede="Five businesses, five jobs they never got to, and what changed once the agent took them over."
         />
         <div className="flex flex-col gap-6 md:gap-[16vh]">
           {CASE_STUDIES.map((study, i) => (

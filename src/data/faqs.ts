@@ -3,39 +3,44 @@ import type { Faq } from "@/types/marketing";
 /** General questions: home page and pricing page. Answers must match the app's real behaviour. */
 export const GENERAL_FAQS: Faq[] = [
   {
-    question: "Do I need any technical knowledge to set up Dexisphere?",
+    question: "Does it read my email?",
     answer:
-      "Not at all. Dexisphere is designed for people who have never written a line of code. Sign up, pick a plan and start telling your agent what to do in plain language. There are no scripts to write, no APIs to configure and no dashboards to learn — the agent handles the execution for you.",
+      "Only the accounts you connect, and only what you've granted. You choose each one separately: connecting your calendar doesn't give it your inbox, and connecting Gmail lets it send from your address without reading your mail. Disconnect any of them at any time.",
   },
   {
-    question: "What does a Dexisphere agent actually do?",
+    question: "Will it post things I haven't seen?",
     answer:
-      "You describe a task in plain language, like 'find roofing companies in Leeds and add the ones with a phone number to a new list'. The agent runs on our servers with real tools for prospecting, your CRM, email, SMS, WhatsApp, funnels and automations, so it does the work instead of telling you how.",
+      "No. Posts are drafted and held for your approval. The same goes for emails and messages if you turn on Ask before sending: it shows you the draft, the recipients and its checks, then waits for you to say send.",
   },
   {
-    question: "How do AI credits work, and do I need external AI accounts?",
+    question: "Can it change my ad budgets or move my money?",
     answer:
-      "Your AI credits come ready to use out of the box. You don't need to create accounts with OpenAI, Anthropic or any other provider, generate API keys, or handle any technical configuration. Your plan includes a token allowance that powers every agent turn. If you prefer, you can add your own AI key and turns run on that instead.",
+      "No. Ad and payment connections are read-only. It tells you what's spending and what's coming in; it cannot send, refund, charge, or change a budget. Those decisions stay with you.",
   },
   {
-    question: "Is my data private and secure?",
+    question: "Do I need to be technical?",
     answer:
-      "Absolutely. Every workspace runs in its own isolated environment, meaning your data, leads and conversations are completely separated from other users. We encrypt data at rest and in transit, and your sending accounts and API keys are never shared. You get professional-grade protection without having to configure anything yourself.",
+      "No. You talk to it the way you'd talk to someone who works for you, on the web, WhatsApp or Telegram. There are no flowcharts to build and no automations to wire up.",
   },
   {
-    question: "How do I know what an agent changed?",
+    question: "Will it work with the tools I already have?",
     answer:
-      "Every reply comes with a work receipt: the leads it added, deals it moved, tasks and appointments it created and campaigns it sent, each linking to the record. Your Records pages show everything agents have created.",
+      "It connects to most of what small businesses use: Google and Microsoft, six payment processors, eight mailing platforms, six social networks and their ad accounts, Shopify, Slack, Jira and GitHub. If something's missing, ask.",
   },
   {
-    question: "Can an agent send messages without my approval?",
+    question: "Will it message me all day?",
     answer:
-      "Only if you let it. Turn on 'Ask before sending' and the agent shows you the draft, the recipients and its checks, then waits for you to say send. Each agent also has a sending switch: turned off, it can still research and draft but can't send anything.",
+      "No. It sends a short morning briefing of what needs you, and alerts when something actually matters. On a day when nothing needs a decision, it sends nothing at all.",
   },
   {
-    question: "What's the difference between Dexisphere and doing it myself with automation tools?",
+    question: "How is this different from ChatGPT?",
     answer:
-      "With traditional tools you build workflows, manage integrations and maintain automations yourself. Dexisphere removes all of that complexity. Tell the agent what you need done and it handles prospecting, outreach, support triage, data syncing, CRM updates and funnels on its own, with connection checks and receipts so you can see it's all running — so you can focus on closing deals, not managing software. If you need full control, you can still connect your own accounts and keys.",
+      "ChatGPT doesn't know your pipeline, can't see your inbox, and stops the moment you close the tab. Dexisphere is connected to your business and keeps working while you're away.",
+  },
+  {
+    question: "Do I need my own AI account?",
+    answer:
+      "No. Your plan includes the tokens that power every agent turn. If you'd rather, bring your own OpenAI, Anthropic or Google key and run on your own credits instead.",
   },
   {
     question: "How does pricing work?",
@@ -43,14 +48,9 @@ export const GENERAL_FAQS: Faq[] = [
       "Plans are one-time lifetime licences, not subscriptions. Start on Free Forever, then buy Solo, Business or Agency once. After checkout you get a licence code and redeem it in the app, and your allowances update straight away.",
   },
   {
-    question: "What can I do with a Dexisphere agent?",
+    question: "What happens when I stop?",
     answer:
-      "Your agent works around the clock, even when your laptop is closed. It can automate recurring workflows on a schedule, find prospects on Google, clean, dedupe and sync your lead data, draft and send outreach over email, SMS and WhatsApp, triage incoming messages into tasks and deals, manage your CRM pipeline, build landing pages and funnels, and report back with receipts for every change. Think of it as a digital team member that never sleeps and is always ready to help.",
-  },
-  {
-    question: "Which tools and channels does it work with?",
-    answer:
-      "Send from SMTP, Gmail or Outlook, text through Twilio or the shared sender, and broadcast on WhatsApp Business. Find prospects with Google Places, sync lists to Mailchimp, Brevo, Klaviyo and more, and talk to your agent on WhatsApp, Telegram or the browser extension.",
+      "Disconnect any account in a click, and each connection stops the moment you do. If you want to leave altogether, ask us to close your account and we'll delete your data.",
   },
 ];
 

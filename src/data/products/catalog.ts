@@ -1,6 +1,6 @@
-import { Bot, ChartColumn, Funnel, Radar, Send, SquareKanban, type LucideIcon } from "lucide-react";
+import { ChartColumn, Megaphone, UserSearch, Video, Wallet, type LucideIcon } from "lucide-react";
 
-export type ProductSlug = "agents" | "prospecting" | "outreach" | "crm" | "funnels" | "analytics";
+export type ProductSlug = "new-business" | "social-media" | "advertising" | "meetings" | "money";
 
 export type ProductMeta = {
   slug: ProductSlug;
@@ -8,53 +8,46 @@ export type ProductMeta = {
   /** One line for menus and cards. */
   tagline: string;
   Icon: LucideIcon;
-  /** Tool names the agent really has for this area (shown as mono chips). */
+  /** Tool names the agent really has for this area (mono chips). Empty when the work runs outside named tools. */
   tools: string[];
 };
 
-/** The six product pages, in menu order. One per agent category in the app. */
+/** The five jobs Dexisphere takes off your plate, in menu order. One page each. */
 export const PRODUCTS: ProductMeta[] = [
   {
-    slug: "agents",
-    name: "AI Agents",
-    tagline: "Describe the job in a sentence. An agent plans it and does it.",
-    Icon: Bot,
-    tools: ["schedule_automation", "check_connections", "plan_usage"],
+    slug: "new-business",
+    name: "New business",
+    tagline: "Find customers and write to them, from one sentence.",
+    Icon: UserSearch,
+    tools: ["find_prospects", "score_leads", "send_email", "check_sending_domain"],
   },
   {
-    slug: "prospecting",
-    name: "Prospecting",
-    tagline: "Find businesses worth contacting and file them into clean lists.",
-    Icon: Radar,
-    tools: ["find_prospects", "find_duplicates", "score_leads"],
+    slug: "social-media",
+    name: "Social media",
+    tagline: "The week's posts drafted in your voice, waiting for your yes.",
+    Icon: Megaphone,
+    tools: [],
   },
   {
-    slug: "outreach",
-    name: "Outreach",
-    tagline: "Email, SMS and WhatsApp campaigns, verified before they send.",
-    Icon: Send,
-    tools: ["send_email", "send_sms", "send_whatsapp", "verify_emails"],
-  },
-  {
-    slug: "crm",
-    name: "CRM",
-    tagline: "Leads, deals, tasks and appointments that keep themselves current.",
-    Icon: SquareKanban,
-    tools: ["create_deal", "move_deal_stage", "book_appointment"],
-  },
-  {
-    slug: "funnels",
-    name: "Funnels",
-    tagline: "Landing pages, pop-ups and sticky bars built from a brief.",
-    Icon: Funnel,
-    tools: ["create_funnel", "update_funnel", "list_funnels"],
-  },
-  {
-    slug: "analytics",
-    name: "Analytics",
-    tagline: "Plain-language reports on campaigns, funnels and pipeline.",
+    slug: "advertising",
+    name: "Advertising",
+    tagline: "Watch every ad account without opening an ads manager.",
     Icon: ChartColumn,
-    tools: ["campaign_performance", "pipeline_summary", "list_campaigns"],
+    tools: [],
+  },
+  {
+    slug: "meetings",
+    name: "Meetings",
+    tagline: "It sits in your calls and remembers what you promised.",
+    Icon: Video,
+    tools: ["create_task", "list_calendar_events"],
+  },
+  {
+    slug: "money",
+    name: "Money",
+    tagline: "Read-only on your payments. It sees your sales, never moves them.",
+    Icon: Wallet,
+    tools: ["schedule_automation"],
   },
 ];
 

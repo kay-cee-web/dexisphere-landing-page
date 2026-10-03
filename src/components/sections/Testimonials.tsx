@@ -42,7 +42,7 @@ function TestimonialCard({ item }: { item: Testimonial }) {
 /** Scrolling marquee of testimonial cards (matches the Tapotik template). */
 export function Testimonials({
   items = TESTIMONIALS,
-  title = "Loved by teams who hate busywork",
+  title = "From people who stopped opening every tab",
   lede = "Founders, agencies and sales teams hand their agents the work they used to click through by hand.",
   tone,
 }: TestimonialsProps) {

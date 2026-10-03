@@ -22,7 +22,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Talk to a human"
-        lede="Agents do the busywork. Questions about plans, licences or a stubborn connector still go to people, and we answer every one."
+        lede="Your agent handles the work. Questions about plans, licences or a stubborn connection still go to people, and we answer every one."
       >
         <ContactChannels />
       </PageHero>
