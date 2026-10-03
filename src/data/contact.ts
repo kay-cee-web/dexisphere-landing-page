@@ -54,7 +54,7 @@ export const CONTACT_TOPICS: ContactTopic[] = [
 export type SupportHours = { city: string; timeZone: string; hours: string };
 
 export const SUPPORT_HOURS: SupportHours[] = [
-  { city: "Lagos", timeZone: "WAT · UTC+1", hours: "Mon–Fri, 08:00–18:00" },
+  { city: "New York", timeZone: "EDT · UTC−4", hours: "Mon–Fri, 08:00–18:00" },
   { city: "London", timeZone: "BST · UTC+1", hours: "Mon–Fri, 09:00–17:30" },
   { city: "Austin", timeZone: "CDT · UTC−5", hours: "Mon–Fri, 09:00–17:00" },
 ];

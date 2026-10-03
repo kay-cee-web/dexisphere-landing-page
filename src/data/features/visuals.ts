@@ -8,7 +8,7 @@ import type { PillTone } from "@/components/ui/Pill";
 export type FanOutBranch = { area: string; Icon: LucideIcon; tools: string[]; status: { label: string; tone: PillTone } };
 
 export const FAN_OUT: { task: string; branches: FanOutBranch[]; receipt: string[] } = {
-  task: "Every Monday, find new dentists in Lagos, file them into a list and draft an intro email for me to approve.",
+  task: "Every Monday, find new dentists in Austin, file them into a list and draft an intro email for me to approve.",
   branches: [
     { area: "Prospecting", Icon: Radar, tools: ["find_prospects", "find_duplicates"], status: { label: "24 found", tone: "good" } },
     { area: "Lists", Icon: ListPlus, tools: ["create_list", "add_to_list"], status: { label: "+24 leads", tone: "good" } },
@@ -29,7 +29,7 @@ export const AUTOMATIONS: Automation[] = [
 
 export const APPROVAL_GATE = {
   run: "Weekly prospect run",
-  draft: "Intro email · Lagos dentists · week 38",
+  draft: "Intro email · Austin dentists · week 38",
   recipients: 22,
   held: 2,
 };
@@ -37,7 +37,7 @@ export const APPROVAL_GATE = {
 export type ReceiptLogEntry = { time: string; area: string; tone: PillTone; text: string };
 
 export const RECEIPT_LOG: ReceiptLogEntry[] = [
-  { time: "09:02", area: "Lists", tone: "good", text: "Added 24 leads to Lagos dentists · week 38" },
+  { time: "09:02", area: "Lists", tone: "good", text: "Added 24 leads to Austin dentists · week 38" },
   { time: "09:03", area: "Outreach", tone: "warn", text: "Drafted Intro email, waiting for approval" },
   { time: "11:40", area: "CRM", tone: "accent", text: "Moved Harbor Physio to Proposal" },
   { time: "11:41", area: "Calendar", tone: "violet", text: "Booked Northside Dental, Thu 10:00" },

@@ -22,7 +22,7 @@ export const ADVERTISING_CONTENT: ProductContent = {
     model: "claude-sonnet-5",
     task: "Write five ads for the shoe repair offer, each from a different angle, and say who each one is for.",
     tools: [
-      { name: "Read the offer", detail: "Same-week repairs · Lagos", result: "done" },
+      { name: "Read the offer", detail: "Same-week repairs · Brooklyn", result: "done" },
       { name: "Find the angles", detail: "Price, speed, care, trust, story", result: "5 angles" },
       { name: "Write the ads", detail: "Headline, body and call to action", result: "5 ads" },
     ],

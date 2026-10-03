@@ -9,7 +9,7 @@ export const HOW_IT_WORKS: Step[] = [
   },
   {
     title: "Say what you want handled",
-    description: "In plain language. “Find me customers in Lagos.” “Run my social.” “Sit in my calls.” No flowcharts, no automation builder.",
+    description: "In plain language. “Find me customers in Austin.” “Run my social.” “Sit in my calls.” No flowcharts, no automation builder.",
     Icon: MessageSquareText,
   },
   {

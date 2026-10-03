@@ -22,7 +22,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     tags: ["Case study", "New business"],
     metric: { value: "20", label: "practices emailed", detail: "64 found, 44 dropped, from one sentence." },
     problem: "The prospect list that never got past a spreadsheet, and the intro emails that never got written.",
-    approach: "'Find dentists in Lagos and email the best twenty.' The agent searched, scored what it found, wrote one email per practice and checked the domain wouldn't land in spam.",
+    approach: "'Find dentists in Austin and email the best twenty.' The agent searched, scored what it found, wrote one email per practice and checked the domain wouldn't land in spam.",
     outcome: "Twenty emails went out from the studio's own address, and every lead filed in a list, ready for the follow-up.",
     tone: "violet",
   },
@@ -43,7 +43,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     metric: { value: "1", label: "wasted campaign caught", detail: "Spending all week, and nobody had checked." },
     problem: "The ads had been running all week, across two ads managers, and nobody had checked either of them.",
     approach: "Dexisphere watches spend on every connected ad account, and the payment processor shows what actually came in, without opening a single ads manager.",
-    outcome: "Abuja was spending with nothing to show for it. The owner paused it themselves, because changing budgets stays with you.",
+    outcome: "The Dallas campaign was spending with nothing to show for it. The owner paused it themselves, because changing budgets stays with you.",
     tone: "teal",
   },
   {

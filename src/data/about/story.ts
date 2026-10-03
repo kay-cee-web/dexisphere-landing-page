@@ -41,7 +41,7 @@ export const MILESTONES: Milestone[] = [
 export type Office = { city: string; country: string; timeZone: string; note: string };
 
 export const OFFICES: Office[] = [
-  { city: "Lagos", country: "Nigeria", timeZone: "WAT · UTC+1", note: "Engineering and support" },
+  { city: "New York", country: "United States", timeZone: "EDT · UTC−4", note: "Engineering and support" },
   { city: "London", country: "United Kingdom", timeZone: "BST · UTC+1", note: "Sales and partnerships" },
   { city: "Austin", country: "United States", timeZone: "CDT · UTC−5", note: "Customer success" },
 ];

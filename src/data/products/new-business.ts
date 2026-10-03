@@ -20,9 +20,9 @@ export const NEW_BUSINESS_CONTENT: ProductContent = {
   demo: {
     agent: "New business",
     model: "claude-sonnet-5",
-    task: "Find dentists in Lagos and email the best twenty. Ask me before anything goes out.",
+    task: "Find dentists in Austin and email the best twenty. Ask me before anything goes out.",
     tools: [
-      { name: "find_prospects", detail: "dentists · Lagos", result: "64 found" },
+      { name: "find_prospects", detail: "dentists · Austin", result: "64 found" },
       { name: "find_duplicates", detail: "Checking against your lists", result: "8 on file" },
       { name: "score_leads", detail: "Ranking the rest", result: "top 20" },
       { name: "check_sending_domain", detail: "SPF, DKIM and DMARC", result: "pass" },
@@ -56,7 +56,7 @@ export const NEW_BUSINESS_CONTENT: ProductContent = {
     title: "One sentence in, a campaign out",
     lede: "No filters to set up, no lists to dedupe, no copy to stare at.",
     items: [
-      { title: "Say who you're after", description: "“Find dentists in Lagos and email the best twenty.” The niche, the area and what makes a good one.", Icon: MessageSquare },
+      { title: "Say who you're after", description: "“Find dentists in Austin and email the best twenty.” The niche, the area and what makes a good one.", Icon: MessageSquare },
       { title: "It does the legwork", description: "Searches, drops the dead ends, files the rest into a list, writes the emails and checks your domain.", Icon: ListPlus },
       { title: "You say send", description: "See the draft, the recipients and the checks. Send, don't send, or ask for changes.", Icon: Hand },
     ],

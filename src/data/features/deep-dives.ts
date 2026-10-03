@@ -12,7 +12,7 @@ export const DEEP_DIVES = {
     id: "real-tools",
     eyebrow: "Say what you want handled",
     title: "One sentence in, the actual work out",
-    lede: "In plain language. “Find me customers in Lagos.” “Plan this week's posts.” “Sit in my calls.” No flowcharts, no automation builder. Each job fans out into real work across the accounts you've connected.",
+    lede: "In plain language. “Find me customers in Austin.” “Plan this week's posts.” “Sit in my calls.” No flowcharts, no automation builder. Each job fans out into real work across the accounts you've connected.",
     points: [
       { title: "Across what you already use", body: "Your lists and pipeline, your mailbox, your calendar, your social and ad accounts, your payments." },
       { title: "Checks before sends", body: "Addresses are verified and your sending domain is checked. If a send would land in spam, it holds it." },
