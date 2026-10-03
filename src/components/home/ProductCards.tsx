@@ -9,13 +9,14 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ROUTES } from "@/data/navigation";
 import { productBySlug, type ProductSlug } from "@/data/products/catalog";
 import { cn } from "@/lib/cn";
+import { STACK_CARD, STACK_REVEAL_Y, STACK_ROW_LAYOUT, STACK_TONES, type StackTone } from "./stackedCards";
 
 /** Agent output: mono, like everything the agent says. `K` marks the words it emphasises. */
 function AgentLog({ children, className }: { children: ReactNode; className?: string }) {
   return (
     <pre
       className={cn(
-        "overflow-x-auto whitespace-pre-wrap rounded-[16px] border border-line bg-surface p-5 font-mono text-[12.5px] leading-[1.75] text-muted shadow-float sm:p-6 sm:text-[13.5px]",
+        "overflow-x-auto whitespace-pre-wrap rounded-[20px] bg-surface p-5 font-mono text-[12.5px] leading-[1.75] text-muted ring-1 ring-inset ring-line sm:p-6 sm:text-[13.5px]",
         className,
       )}
     >
@@ -57,6 +58,7 @@ const LEDGER = [
 
 type Job = {
   slug: ProductSlug;
+  tone: StackTone;
   title: string;
   paragraphs: ReactNode[];
   caption?: string;
@@ -66,6 +68,7 @@ type Job = {
 const JOBS: Job[] = [
   {
     slug: "new-business",
+    tone: "violet",
     title: "Find customers and write to them, from one sentence",
     paragraphs: [
       "It searches. Reads their websites. Scores them. Writes the emails. Checks your sending domain won't put you in spam — and holds the send if it would.",
@@ -88,6 +91,7 @@ const JOBS: Job[] = [
   },
   {
     slug: "social-media",
+    tone: "sky",
     title: "Your social posts, written for the week",
     paragraphs: [
       "Posting consistently is three jobs — thinking of something to say, making something to look at, and remembering to put it out. Almost nobody does all three.",
@@ -95,7 +99,7 @@ const JOBS: Job[] = [
     ],
     figure: (
       <div className="grid gap-4">
-        <HairlineGrid itemCount={SOCIAL_STEPS.length} columns={2} className="shadow-float">
+        <HairlineGrid itemCount={SOCIAL_STEPS.length} columns={2}>
           {SOCIAL_STEPS.map((step, i) => (
             <div key={step.title} className="grid content-start gap-2 bg-surface p-5">
               <span className="grid size-6 place-items-center rounded-full bg-accent-soft text-[12px] font-semibold text-accent">
@@ -118,6 +122,7 @@ const JOBS: Job[] = [
   },
   {
     slug: "advertising",
+    tone: "teal",
     title: "Know what your ads cost, and what came in",
     paragraphs: [
       "Connect your Meta, TikTok and LinkedIn ad accounts and it watches them — spend, reach, clicks, cost per result — without you opening a single ads manager.",
@@ -125,7 +130,7 @@ const JOBS: Job[] = [
     ],
     caption: "It reports. It doesn't spend — changing budgets stays with you.",
     figure: (
-      <div className="rounded-[16px] bg-night p-5 font-mono text-[12.5px] shadow-float sm:p-7 sm:text-[14px]">
+      <div className="rounded-[20px] bg-night p-5 font-mono text-[12.5px] sm:p-7 sm:text-[14px]">
         <p className="mb-3 text-[11px] uppercase tracking-[0.1em] text-[#9499B5]">This week · by campaign</p>
         <ul>
           {LEDGER.map((row) => (
@@ -148,6 +153,7 @@ const JOBS: Job[] = [
   },
   {
     slug: "meetings",
+    tone: "pink",
     title: "It remembers what you promised",
     paragraphs: [
       "You're on a call. Dexisphere is in it, listening. Halfway through, you say you'll send the revised proposal by Friday. You'll forget. It won't.",
@@ -167,6 +173,7 @@ const JOBS: Job[] = [
   },
   {
     slug: "money",
+    tone: "accent",
     title: "It watches what comes in",
     paragraphs: [
       "Connected to your payment processors, read-only. It can see your sales. It can't move a cent.",
@@ -186,7 +193,7 @@ const JOBS: Job[] = [
 export function ProductCards() {
   return (
     <Section tone="raised" bordered id="products">
-      <Container width="wide" className="grid gap-16 sm:gap-24">
+      <Container width="wide" className="grid gap-14">
         <SectionHeading
           eyebrow="Five jobs, one agent"
           title="The parts of your business you never get to"
@@ -197,37 +204,48 @@ export function ProductCards() {
             </Link>
           }
         />
-        {JOBS.map((job, i) => {
-          const product = productBySlug(job.slug);
-          const flip = i % 2 === 1;
-          return (
-            <div key={job.slug} className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-              <Reveal className="grid gap-4">
-                <div className="flex items-center gap-3">
-                  <IconTile Icon={product.Icon} size="sm" />
-                  <span className="text-[14.5px] font-medium text-accent">{product.name}</span>
-                </div>
-                <h3 className="text-[26px] font-semibold leading-[1.12] text-ink sm:text-[34px]">{job.title}</h3>
-                {job.paragraphs.map((paragraph, j) => (
-                  <p key={j} className="text-[16px] leading-relaxed text-muted sm:text-[17px]">
-                    {paragraph}
-                  </p>
-                ))}
-                {job.caption && <p className="max-w-[36em] text-[14.5px] leading-relaxed text-faint">{job.caption}</p>}
-                <Link
-                  href={ROUTES.product(job.slug)}
-                  className="mt-1 inline-flex w-fit items-center gap-1 text-[14.5px] font-medium text-accent hover:underline"
-                >
-                  More on {product.name.toLowerCase()} <ArrowRight aria-hidden className="size-4" />
-                </Link>
-              </Reveal>
-              <Reveal y={28} delay={0.1} className={cn("min-w-0", flip && "lg:order-first")}>
-                {job.figure}
-              </Reveal>
+        <div className="flex flex-col gap-6 md:gap-[16vh]">
+          {JOBS.map((job, i) => (
+            <div key={job.slug} className={cn("flex md:sticky", STACK_ROW_LAYOUT[i % STACK_ROW_LAYOUT.length])}>
+              <JobCard job={job} index={i} />
             </div>
-          );
-        })}
+          ))}
+        </div>
       </Container>
     </Section>
+  );
+}
+
+function JobCard({ job, index }: { job: Job; index: number }) {
+  const product = productBySlug(job.slug);
+  return (
+    <Reveal as="article" y={STACK_REVEAL_Y} className={cn("grid gap-8", STACK_CARD, STACK_TONES[job.tone].card)}>
+      <header className="grid grid-cols-[auto_1fr_auto] items-center gap-4">
+        <span className="font-mono text-[15px] text-ink">{String(index + 1).padStart(2, "0")}</span>
+        <h3 className="text-center text-[18px] font-semibold text-ink sm:text-[21px]">{job.title}</h3>
+        <span className="hidden items-center gap-2 text-[14px] font-semibold text-ink sm:flex">
+          <IconTile Icon={product.Icon} size="sm" tone="neutral" />
+          {product.name}
+        </span>
+      </header>
+
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-10">
+        <div className="grid content-start gap-4">
+          {job.paragraphs.map((paragraph, j) => (
+            <p key={j} className="max-w-[46ch] border-l-2 border-ink/20 pl-5 text-[15px] leading-relaxed text-ink">
+              {paragraph}
+            </p>
+          ))}
+          {job.caption && <p className="max-w-[46ch] pl-5.5 text-[13.5px] leading-snug text-muted">{job.caption}</p>}
+          <Link
+            href={ROUTES.product(job.slug)}
+            className="mt-1 inline-flex w-fit items-center gap-1 pl-5.5 text-[14.5px] font-medium text-ink hover:underline"
+          >
+            More on {product.name.toLowerCase()} <ArrowRight aria-hidden className="size-4" />
+          </Link>
+        </div>
+        <div className="min-w-0">{job.figure}</div>
+      </div>
+    </Reveal>
   );
 }

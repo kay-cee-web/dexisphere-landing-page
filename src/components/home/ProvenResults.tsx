@@ -4,41 +4,9 @@ import { Container, Section } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { cn } from "@/lib/cn";
 import { CASE_STUDIES, type CaseStudy } from "@/data/home/results";
+import { STACK_CARD, STACK_REVEAL_Y, STACK_ROW_LAYOUT, STACK_TONES } from "./stackedCards";
 
-/**
- * AIFusionX's stacked case studies: each card sits in a sticky row with its own
- * top offset and alignment (left, centre, right), so on scroll the next card
- * slides up over the last one and they fan out. Pure CSS; stacks flat on phones.
- */
-const ROW_LAYOUT = [
-  "md:top-[128px] md:justify-start",
-  "md:top-[104px] md:justify-center",
-  "md:top-[152px] md:justify-end",
-];
-
-const TONES: Record<CaseStudy["tone"], { card: string; panel: string }> = {
-  violet: {
-    card: "bg-[color-mix(in_srgb,var(--violet)_26%,var(--surface))]",
-    panel: "bg-[color-mix(in_srgb,var(--violet)_12%,var(--surface))]",
-  },
-  sky: {
-    card: "bg-[color-mix(in_srgb,var(--sky)_24%,var(--surface))]",
-    panel: "bg-[color-mix(in_srgb,var(--sky)_10%,var(--surface))]",
-  },
-  teal: {
-    card: "bg-[color-mix(in_srgb,var(--teal)_24%,var(--surface))]",
-    panel: "bg-[color-mix(in_srgb,var(--teal)_10%,var(--surface))]",
-  },
-  pink: {
-    card: "bg-[color-mix(in_srgb,var(--pink)_20%,var(--surface))]",
-    panel: "bg-[color-mix(in_srgb,var(--pink)_8%,var(--surface))]",
-  },
-  accent: {
-    card: "bg-[color-mix(in_srgb,var(--accent)_22%,var(--surface))]",
-    panel: "bg-[color-mix(in_srgb,var(--accent)_9%,var(--surface))]",
-  },
-};
-
+/** AIFusionX's stacked case studies; see stackedCards.ts for how the stack works. */
 export function ProvenResults() {
   return (
     <Section id="results">
@@ -50,7 +18,7 @@ export function ProvenResults() {
         />
         <div className="flex flex-col gap-6 md:gap-[16vh]">
           {CASE_STUDIES.map((study, i) => (
-            <div key={study.title} className={cn("flex md:sticky", ROW_LAYOUT[i % ROW_LAYOUT.length])}>
+            <div key={study.title} className={cn("flex md:sticky", STACK_ROW_LAYOUT[i % STACK_ROW_LAYOUT.length])}>
               <CaseCard study={study} index={i} />
             </div>
           ))}
@@ -61,16 +29,9 @@ export function ProvenResults() {
 }
 
 function CaseCard({ study, index }: { study: CaseStudy; index: number }) {
-  const tone = TONES[study.tone];
+  const tone = STACK_TONES[study.tone];
   return (
-    <Reveal
-      as="article"
-      y={40}
-      className={cn(
-        "grid w-full gap-8 rounded-[28px] p-5 shadow-lift ring-1 ring-inset ring-line sm:p-8 md:w-[75%] md:min-h-115",
-        tone.card,
-      )}
-    >
+    <Reveal as="article" y={STACK_REVEAL_Y} className={cn("grid gap-8", STACK_CARD, tone.card)}>
       <header className="grid grid-cols-[auto_1fr_auto] items-start gap-4">
         <span className="font-mono text-[15px] text-ink">{String(index + 1).padStart(2, "0")}</span>
         <h3 className="text-center text-[18px] font-semibold text-ink sm:text-[21px]">{study.title}</h3>
