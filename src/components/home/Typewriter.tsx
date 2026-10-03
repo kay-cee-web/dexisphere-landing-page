@@ -3,14 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 
 const PHRASES = [
-  "Get the busywork done.",
-  "Find your prospects.",
+  "Find your customers.",
   "Run your outreach.",
-  "Keep your CRM current.",
-  "Build your funnels.",
-  "Track your analytics.",
-  "Schedule your follow-ups.",
-  "Verify your emails.",
+  "Post your content.",
+  "Manage your ads.",
+  "Sit in your meetings.",
+  "Watch your money.",
+  "Hear back on WhatsApp.",
 ];
 
 const TYPE_SPEED = 60;

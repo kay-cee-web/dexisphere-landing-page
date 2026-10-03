@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Bot, Paperclip, Mic, ArrowUp } from "lucide-react";
+import { Bot, Paperclip, Mic, ArrowUp, MessageCircle } from "lucide-react";
 import { InlineText } from "@/components/content/InlineText";
 import { ReceiptCard } from "@/components/demo/ReceiptCard";
 import { ToolCallRow } from "@/components/demo/ToolCallRow";
@@ -9,7 +9,7 @@ import { Pill } from "@/components/ui/Pill";
 import { HERO_DEMO } from "@/data/home/demo";
 import { useTimeline } from "@/hooks/useTimeline";
 
-const { agent, model, task, tools, reply, receipt, usage } = HERO_DEMO;
+const { agent, model, task, tools, reply, receipt, approval, usage } = HERO_DEMO;
 const REPLY_STEP = tools.length + 1;
 const RECEIPT_STEP = tools.length + 2;
 const fade = { initial: { opacity: 0, y: 10 }, animate: { opacity: 1, y: 0 }, exit: { opacity: 0 } };
@@ -31,7 +31,7 @@ export function HeroDemo() {
             <span className="font-mono text-[11px] text-faint">{model}</span>
           </span>
           <Pill tone="warn" dot className="ml-auto hidden sm:inline-flex">
-            Ask before sending
+            WhatsApps you if needed
           </Pill>
         </header>
 
@@ -65,10 +65,16 @@ export function HeroDemo() {
               {step >= RECEIPT_STEP ? (
                 <motion.div key="receipt" {...fade} className="grid gap-4">
                   <ReceiptCard {...receipt} badge={<Pill tone="accent">This turn</Pill>} className="shadow-float" />
-                  <div className="flex items-center gap-2 rounded-[12px] border border-warn/30 bg-warn-soft p-3 text-[12.5px] text-ink">
-                    <span className="flex-1">Send the intro to 35 clinics?</span>
-                    <span className="rounded-[7px] bg-accent px-2.5 py-1 font-medium text-accent-ink">Send</span>
-                    <span className="rounded-[7px] border border-line bg-surface px-2.5 py-1 text-muted">Don&apos;t send</span>
+                  <div className="grid gap-2.5 rounded-[12px] border border-warn/30 bg-warn-soft p-3 text-[12.5px] text-ink">
+                    <span className="inline-flex items-center gap-1.5 font-mono text-[10.5px] uppercase tracking-[0.06em] text-muted">
+                      <MessageCircle aria-hidden className="size-3.5 text-good" />
+                      {approval.channel}
+                    </span>
+                    <span>{approval.question}</span>
+                    <span className="flex gap-2">
+                      <span className="rounded-[7px] bg-accent px-2.5 py-1 font-medium text-accent-ink">{approval.confirm}</span>
+                      <span className="rounded-[7px] border border-line bg-surface px-2.5 py-1 text-muted">{approval.decline}</span>
+                    </span>
                   </div>
                 </motion.div>
               ) : (
@@ -76,7 +82,7 @@ export function HeroDemo() {
                   <span className="relative h-0.5 w-24 overflow-hidden rounded-full bg-line">
                     <span className="absolute inset-y-0 left-0 w-2/5 animate-trace rounded-full bg-accent" />
                   </span>
-                  <span className="text-[12.5px] text-muted">Comparing your records before and after this turn…</span>
+                  <span className="text-[12.5px] text-muted">Working through the job — you'll only hear from me if something needs you…</span>
                 </motion.div>
               )}
             </AnimatePresence>

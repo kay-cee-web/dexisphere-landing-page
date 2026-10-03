@@ -37,8 +37,9 @@ export function HomeHero() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="max-w-[62ch] text-[16px] leading-relaxed text-muted sm:text-[19px]">
-              Dexisphere agents automate your workflows: they find prospects, run email, SMS and WhatsApp outreach,
-              triage incoming messages, keep your CRM and data clean, then show you a receipt for every change.
+              Dexisphere is an AI agent that finds your customers, runs your outreach, creates and posts your content,
+              manages your ads, sits in your meetings and watches your money — then messages you on WhatsApp when
+              something actually needs you.
             </p>
           </Reveal>
           <Reveal delay={0.15} className="flex flex-wrap justify-center gap-3">
