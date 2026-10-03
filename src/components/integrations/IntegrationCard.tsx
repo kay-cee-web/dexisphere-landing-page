@@ -1,4 +1,4 @@
-import { IconTile } from "@/components/ui/IconTile";
+import { IntegrationLogo } from "@/components/integrations/IntegrationLogo";
 import { Pill } from "@/components/ui/Pill";
 import type { Integration } from "@/data/integrations";
 import { AUTH_TONES } from "@/data/integrations-page";
@@ -8,7 +8,9 @@ export function IntegrationCard({ integration }: { integration: Integration }) {
   return (
     <article className="grid h-full content-start gap-4 rounded-[18px] border border-line bg-surface p-5 transition-[border-color,box-shadow] hover:border-accent/40 hover:shadow-float">
       <div className="flex items-start justify-between gap-3">
-        <IconTile Icon={integration.Icon} tone="neutral" />
+        <span aria-hidden className="grid size-10 shrink-0 place-items-center rounded-[11px] bg-raised ring-1 ring-inset ring-line">
+          <IntegrationLogo integration={integration} className="size-5.5" />
+        </span>
         <Pill tone={AUTH_TONES[integration.auth]}>{integration.auth}</Pill>
       </div>
       <div className="grid gap-1">

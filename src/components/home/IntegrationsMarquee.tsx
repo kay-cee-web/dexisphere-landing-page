@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { IntegrationLogo } from "@/components/integrations/IntegrationLogo";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container, Section } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -11,7 +12,7 @@ const ROWS = [INTEGRATIONS.slice(0, half), INTEGRATIONS.slice(half)];
 function Chip({ item }: { item: Integration }) {
   return (
     <li className="flex shrink-0 items-center gap-2.5 rounded-[12px] border border-line bg-surface px-4 py-3">
-      <item.Icon aria-hidden className="size-[18px] text-accent" strokeWidth={1.75} />
+      <IntegrationLogo integration={item} className="size-5" />
       <span className="whitespace-nowrap text-[14px] font-medium text-ink">{item.name}</span>
     </li>
   );
