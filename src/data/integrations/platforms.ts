@@ -29,7 +29,7 @@ export const EMAIL_PLATFORM_INTEGRATIONS: Integration[] = [
 export const PAYMENT_INTEGRATIONS: Integration[] = [
   payment("Stripe", "stripe.svg", "Payments, refunds and payouts, with an alert when money lands.", "A secret or restricted key (we suggest a restricted, read-only key)"),
   payment("PayPal", "paypal.svg", "Transactions and disputes from your PayPal balance.", "Your app's client ID and secret, with Transaction Search on"),
-  payment("Paystack", "paystack.svg", "Naira payments, refunds and settlements as they happen.", "Your secret key"),
+  payment("Paystack", "paystack.svg", "Payments, refunds and settlements as they happen.", "Your secret key"),
   payment("Flutterwave", "flutterwave.png", "Multi-currency payments across Africa, in one feed.", "Your secret key"),
   payment("Paddle", "paddle.png", "Subscription revenue, renewals and refunds.", "A Paddle Billing API key"),
   payment("Lemon Squeezy", "lemon-squeezy.svg", "Orders, subscriptions and refunds from your store.", "Your API key"),

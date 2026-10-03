@@ -9,7 +9,7 @@ export const MONEY_CONTENT: ProductContent = {
   },
   hero: {
     headline: "It watches what comes in.",
-    lede: "Connected to your payment processors, read-only. It can see your sales. It can't move a naira. A payment lands, you know. A payment fails, you know. And once a week, the summary you'd never sit down and write yourself.",
+    lede: "Connected to your payment processors, read-only. It can see your sales. It can't move money. A payment lands, you know. A payment fails, you know. And once a week, the summary you'd never sit down and write yourself.",
     bullets: [
       "Stripe, PayPal, Paystack, Flutterwave, Paddle and Lemon Squeezy",
       "Alerts the moment a payment lands, fails or is disputed",
@@ -22,26 +22,26 @@ export const MONEY_CONTENT: ProductContent = {
     model: "claude-sonnet-5",
     task: "What came in this week, and how does it compare with last week?",
     tools: [
-      { name: "Read Stripe", detail: "Payments · last 7 days", result: "₦120,000" },
-      { name: "Read Paystack", detail: "Payments · last 7 days", result: "₦341,000" },
-      { name: "Read Flutterwave", detail: "Payments · last 7 days", result: "₦25,000" },
+      { name: "Read Stripe", detail: "Payments · last 7 days", result: "14 payments" },
+      { name: "Read Paystack", detail: "Payments · last 7 days", result: "38 payments" },
+      { name: "Read Flutterwave", detail: "Payments · last 7 days", result: "3 payments" },
     ],
-    reply: "₦486,000 came in this week, against ₦310,000 last week. Paystack did most of the work. No failed payments, and one refund of ₦8,500 on Tuesday.",
+    reply: "55 payments came in this week, against 35 last week. Paystack did most of the work. No failed payments, and one refund on Tuesday.",
     visual: {
       kind: "chart",
-      title: "This week by processor (₦ thousands)",
+      title: "This week by processor (payments)",
       bars: [
-        { label: "Stripe", value: 120 },
-        { label: "Paystack", value: 341 },
-        { label: "Flutterwave", value: 25 },
+        { label: "Stripe", value: 14 },
+        { label: "Paystack", value: 38 },
+        { label: "Flutterwave", value: 3 },
       ],
     },
     receipt: {
       area: "Money · this week",
       badge: { label: "+57%", tone: "good" },
       stats: [
-        { label: "In", value: "₦486k" },
-        { label: "Last week", value: "₦310k" },
+        { label: "Payments", value: 55 },
+        { label: "Last week", value: 35 },
         { label: "Refunds", value: 1 },
       ],
     },
@@ -64,7 +64,7 @@ export const MONEY_CONTENT: ProductContent = {
     lede: "A read-only key from each processor. That's the setup.",
     items: [
       { title: "Add a read-only key", description: "From Stripe, Paystack or whichever you use. Each one is tested, then stored encrypted.", Icon: Wallet },
-      { title: "Say what you want to hear about", description: "“Tell me about any payment over ₦100,000.” “Every Monday, how was the week?”", Icon: MessageSquare },
+      { title: "Say what you want to hear about", description: "“Tell me about any big payment.” “Every Monday, how was the week?”", Icon: MessageSquare },
       { title: "Hear about it", description: "Alerts when money moves, a summary once a week, and silence when there's nothing to say.", Icon: BadgeCheck },
     ],
   },
@@ -73,7 +73,7 @@ export const MONEY_CONTENT: ProductContent = {
     lede: "Real tasks from the app's idea library.",
     items: [
       { title: "Revenue this month", task: "Every Monday, total what came in this month in each currency, after fees, and say where the month lands at this pace.", outcome: "The number you'd never sit down and add up.", Icon: CalendarClock },
-      { title: "New payment alert", task: "Every hour, check my payment accounts and tell me about any payment over ₦500,000: who paid and what for.", outcome: "Big payments, the moment they land.", Icon: Bell },
+      { title: "New payment alert", task: "Every hour, check my payment accounts and tell me about any payment above the amount I set: who paid and what for.", outcome: "Big payments, the moment they land.", Icon: Bell },
       { title: "Refunds and disputes", task: "Every Monday, list last week's refunds and disputes, what each one cost and who they were for.", outcome: "The money going back out, before it becomes a pattern.", Icon: RotateCcw },
       { title: "Did they pay?", task: "When I name a client or an amount, check my payment accounts and tell me whether and when it was paid.", outcome: "An answer without opening three dashboards.", Icon: Receipt },
     ],

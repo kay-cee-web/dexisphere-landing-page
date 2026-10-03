@@ -31,7 +31,7 @@ export const SERVICES: Service[] = [
   },
   {
     title: "Watch what comes in",
-    description: "Read-only access to your payment processors. A payment lands, you know. A payment fails, you know. It can see your sales. It can't move a naira.",
+    description: "Read-only access to your payment processors. A payment lands, you know. A payment fails, you know. It can see your sales. It can't move money.",
     href: ROUTES.product("money"),
     Icon: Wallet,
   },
