@@ -7,6 +7,7 @@ import { SmartLink } from "@/components/ui/SmartLink";
 import { ROUTES } from "@/data/navigation";
 import { APP_LINKS } from "@/lib/config";
 import { HeroDemo } from "./HeroDemo";
+import { HeroStats } from "./HeroStats";
 import { Typewriter } from "./Typewriter";
 
 const ASSURANCES = ["Free forever plan", "No credit card required", "Lifetime deals from $59"];
@@ -43,7 +44,7 @@ export function HomeHero() {
             </p>
           </Reveal>
           <Reveal delay={0.15} className="flex flex-wrap justify-center gap-3">
-            <ButtonLink href={APP_LINKS.register} size="lg">
+            <ButtonLink href={APP_LINKS.register} size="lg" className="animate-pulse-glow">
               Start free <ArrowRight />
             </ButtonLink>
             <ButtonLink href="#how-it-works" size="lg" variant="secondary">
@@ -61,9 +62,10 @@ export function HomeHero() {
             </ul>
           </Reveal>
         </div>
-        <Reveal delay={0.25} y={32}>
+        <Reveal delay={0.25} y={48}>
           <HeroDemo />
         </Reveal>
+        <HeroStats />
       </Container>
     </section>
   );

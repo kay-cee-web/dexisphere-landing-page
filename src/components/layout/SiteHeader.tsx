@@ -8,13 +8,15 @@ import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import type { SearchEntry } from "@/data/docs/types";
 import { APP_LINKS } from "@/lib/config";
 import { cn } from "@/lib/cn";
 import { DesktopNav } from "./DesktopNav";
 import { MobileNav } from "./MobileNav";
+import { SiteSearch } from "./SiteSearch";
 
 /** Sticky header: transparent over the hero, a blurred bar once the page scrolls, solid while the mobile menu is open. */
-export function SiteHeader() {
+export function SiteHeader({ searchEntries }: { searchEntries: SearchEntry[] }) {
   const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState(false);
   useMotionValueEvent(scrollY, "change", (y) => setScrolled(y > 8));
@@ -43,6 +45,7 @@ export function SiteHeader() {
           </Link>
           <DesktopNav />
           <div className="ml-auto flex shrink-0 items-center gap-1 sm:gap-2">
+            <SiteSearch entries={searchEntries} />
             <ThemeToggle compact className="sm:hidden" />
             <ThemeToggle className="hidden sm:inline-flex" />
             <div className="hidden items-center gap-2 lg:flex">

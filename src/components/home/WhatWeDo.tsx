@@ -1,3 +1,4 @@
+import { Sparkles } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { Container, Section } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -11,7 +12,9 @@ export function WhatWeDo() {
         <SectionHeading
           align="left"
           eyebrow="What it does"
+          icon={Sparkles}
           title="Nothing in your business moves until you move it"
+          highlight="until you move it"
           lede="Your inbox, CRM, calendar, payments, mailing list, social logins and ads manager all work. And every one of them is waiting for you to open it. Dexisphere opens them for you."
         />
         <Reveal y={28}>

@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Newspaper } from "lucide-react";
 import { PostCard } from "@/components/blog/PostCard";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 import { ButtonLink } from "@/components/ui/ButtonLink";
@@ -15,7 +15,9 @@ export function BlogPreview() {
           <SectionHeading
             align="left"
             eyebrow="From the blog"
+            icon={Newspaper}
             title="Playbooks for the jobs you never get to"
+            highlight="Playbooks"
             lede="Prompts, processes and product notes for handing more of the business to your agent."
           />
           <ButtonLink href={ROUTES.blog} variant="secondary">

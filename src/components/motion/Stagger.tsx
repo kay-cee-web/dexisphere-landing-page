@@ -15,7 +15,7 @@ const item: Variants = {
   shown: { opacity: 1, y: 0, transition: { duration: 0.55, ease: EASE_OUT } },
 };
 
-type StaggerProps = { children: ReactNode; className?: string; as?: "div" | "ul" | "ol" };
+type StaggerProps = { children: ReactNode; className?: string; as?: "div" | "ul" | "ol" | "dl" };
 
 /** Reveals its StaggerItem children one after another when scrolled into view. */
 export function Stagger({ children, className, as = "div" }: StaggerProps) {

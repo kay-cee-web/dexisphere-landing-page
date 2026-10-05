@@ -1,10 +1,10 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Layers } from "lucide-react";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Reveal } from "@/components/motion/Reveal";
 import { Container, Section } from "@/components/ui/Container";
 import { HairlineGrid } from "@/components/ui/HairlineGrid";
-import { IconTile } from "@/components/ui/IconTile";
+import { IconSwap } from "@/components/ui/IconSwap";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ROUTES } from "@/data/navigation";
 import { productBySlug, type ProductSlug } from "@/data/products/catalog";
@@ -196,7 +196,9 @@ export function ProductCards() {
       <Container width="wide" className="grid gap-14">
         <SectionHeading
           eyebrow="Five jobs, one agent"
+          icon={Layers}
           title="The parts of your business you never get to"
+          highlight="you never get to"
           lede="You have a CRM, an inbox, a calendar, a payment dashboard, a mailing list, three social logins and an ads manager. They all work. And every one of them is waiting for you to open it."
           actions={
             <Link href={ROUTES.features} className="inline-flex items-center gap-1 text-[14.5px] font-medium text-accent hover:underline">
@@ -219,12 +221,14 @@ export function ProductCards() {
 function JobCard({ job, index }: { job: Job; index: number }) {
   const product = productBySlug(job.slug);
   return (
-    <Reveal as="article" y={STACK_REVEAL_Y} className={cn("grid gap-8", STACK_CARD, STACK_TONES[job.tone].card)}>
+    <Reveal as="article" y={STACK_REVEAL_Y} className={cn("group grid gap-8", STACK_CARD, STACK_TONES[job.tone].card)}>
       <header className="grid grid-cols-[auto_1fr_auto] items-center gap-4">
         <span className="font-mono text-[15px] text-ink">{String(index + 1).padStart(2, "0")}</span>
         <h3 className="text-center text-[18px] font-semibold text-ink sm:text-[21px]">{job.title}</h3>
         <span className="hidden items-center gap-2 text-[14px] font-semibold text-ink sm:flex">
-          <IconTile Icon={product.Icon} size="sm" tone="neutral" />
+          <span className="grid size-8 place-items-center overflow-hidden rounded-[9px] bg-brand text-white">
+            <IconSwap Icon={product.Icon} className="size-4" />
+          </span>
           {product.name}
         </span>
       </header>

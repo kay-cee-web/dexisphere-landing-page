@@ -1,4 +1,4 @@
-import type { DocSearchEntry } from "@/data/docs/types";
+import type { SearchEntry } from "@/data/docs/types";
 
 export type DocSearchResult = {
   key: string;
@@ -11,7 +11,7 @@ export type DocSearchResult = {
 
 const MAX_RESULTS = 20;
 
-const pageResult = (entry: DocSearchEntry): DocSearchResult => ({
+const pageResult = (entry: SearchEntry): DocSearchResult => ({
   key: entry.href,
   href: entry.href,
   title: entry.title,
@@ -23,7 +23,7 @@ const pageResult = (entry: DocSearchEntry): DocSearchResult => ({
  * Every word of the query must appear. Pages match on title, description and
  * group; headings match on their own text. Title hits rank first.
  */
-export function searchDocs(entries: DocSearchEntry[], query: string): DocSearchResult[] {
+export function searchDocs(entries: SearchEntry[], query: string): DocSearchResult[] {
   const terms = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
   if (!terms.length) return entries.map(pageResult);
 

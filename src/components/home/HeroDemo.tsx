@@ -1,102 +1,146 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Bot, Paperclip, Mic, ArrowUp, MessageCircle } from "lucide-react";
+import { Sparkles, Zap } from "lucide-react";
 import { InlineText } from "@/components/content/InlineText";
-import { ReceiptCard } from "@/components/demo/ReceiptCard";
-import { ToolCallRow } from "@/components/demo/ToolCallRow";
+import { CountUp } from "@/components/motion/CountUp";
 import { Pill } from "@/components/ui/Pill";
 import { HERO_DEMO } from "@/data/home/demo";
 import { useTimeline } from "@/hooks/useTimeline";
+import { cn } from "@/lib/cn";
 
-const { agent, model, task, tools, reply, receipt, approval, usage } = HERO_DEMO;
-const REPLY_STEP = tools.length + 1;
-const RECEIPT_STEP = tools.length + 2;
-const fade = { initial: { opacity: 0, y: 10 }, animate: { opacity: 1, y: 0 }, exit: { opacity: 0 } };
+const { url, nav, model, task, steps, reply, tokens, usage } = HERO_DEMO;
+const DONE = steps.length;
+/** The three "streaming" lines in the reply bubble, at full length. */
+const STREAM = [92, 64, 78];
+const EASE = [0.22, 1, 0.36, 1] as const;
 
-/** A scripted agent run: task → tool calls → reply → receipt, looping while on screen. */
+/** Tapotik's hero window: the agent's chat in an app frame, with two cards floating off its edges. */
 export function HeroDemo() {
-  const { ref, step } = useTimeline<HTMLDivElement>(RECEIPT_STEP, { interval: 1000, hold: 6000 });
+  const { ref, step } = useTimeline<HTMLDivElement>(DONE, { interval: 900, hold: 6000 });
+  const done = step >= DONE;
 
   return (
     <div ref={ref} className="relative mx-auto w-full max-w-5xl">
-      <div aria-hidden className="absolute -inset-x-8 -top-8 bottom-0 -z-10 rounded-[40px] bg-accent/10 blur-3xl" />
-      <div className="overflow-hidden rounded-[22px] border border-line bg-surface/90 shadow-lift backdrop-blur">
-        <header className="flex items-center gap-3 border-b border-line px-4 py-3">
-          <span className="grid size-8 place-items-center rounded-[9px] bg-ink text-ground">
-            <Bot aria-hidden className="size-4" />
-          </span>
-          <span className="grid min-w-0">
-            <span className="truncate text-[14px] font-medium text-ink">{agent}</span>
-            <span className="font-mono text-[11px] text-faint">{model}</span>
-          </span>
-          <Pill tone="warn" dot className="ml-auto hidden sm:inline-flex">
-            WhatsApps you if needed
-          </Pill>
-        </header>
+      <div aria-hidden className="absolute -inset-x-8 top-8 -z-10 h-full rounded-[40px] bg-linear-to-r from-accent/25 via-violet/20 to-teal/15 blur-3xl" />
 
-        <div className="grid lg:grid-cols-[1.45fr_1fr]">
-          <div className="grid content-start gap-4 p-4 sm:p-6 lg:min-h-[500px]" aria-live="polite">
-            <div className="ml-auto max-w-[85%] rounded-[16px] rounded-br-[6px] bg-accent px-4 py-3 text-[14px] leading-relaxed text-accent-ink">
-              {task}
-            </div>
-            <ul className="grid gap-2">
-              {tools.map((tool, index) => (
-                <li key={tool.name}>
-                  <ToolCallRow call={tool} status={step > index + 1 ? "done" : step === index + 1 ? "running" : "queued"} />
+      <div className="relative overflow-hidden rounded-[20px] border border-line bg-surface/85 shadow-lift backdrop-blur-xl">
+        <div className="flex items-center gap-2 border-b border-line px-5 py-3.5">
+          <span className="size-3 rounded-full bg-bad/70" />
+          <span className="size-3 rounded-full bg-warn/70" />
+          <span className="size-3 rounded-full bg-good/70" />
+          <span className="mx-auto flex h-7 w-full max-w-sm items-center justify-center gap-2 rounded-[8px] bg-raised font-mono text-[12px] text-muted">
+            <Sparkles aria-hidden className="size-3.5 text-accent" />
+            {url}
+          </span>
+        </div>
+
+        <div className="grid sm:grid-cols-12">
+          <aside className="hidden border-r border-line p-4 sm:col-span-3 sm:block">
+            <ul className="grid gap-1">
+              {nav.map(({ label, Icon }, i) => (
+                <li
+                  key={label}
+                  className={cn(
+                    "flex items-center gap-2.5 rounded-[8px] px-3 py-2 text-[12.5px] font-medium",
+                    i === 0 ? "bg-accent/15 text-accent" : "text-muted",
+                  )}
+                >
+                  <Icon aria-hidden className="size-4" />
+                  {label}
                 </li>
               ))}
             </ul>
-            <AnimatePresence>
-              {step >= REPLY_STEP && (
-                <motion.div {...fade} className="grid gap-2">
-                  <p className="max-w-[92%] rounded-[16px] rounded-bl-[6px] border border-line bg-raised px-4 py-3 text-[14px] leading-relaxed text-ink">
-                    <InlineText text={reply} />
-                  </p>
-                  <span className="font-mono text-[11px] text-faint">{usage}</span>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
-          <aside className="grid content-start gap-4 border-t border-line bg-raised p-4 sm:p-6 lg:border-l lg:border-t-0">
-            <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-faint">Work receipt</p>
-            <AnimatePresence mode="wait">
-              {step >= RECEIPT_STEP ? (
-                <motion.div key="receipt" {...fade} className="grid gap-4">
-                  <ReceiptCard {...receipt} badge={<Pill tone="accent">This turn</Pill>} className="shadow-float" />
-                  <div className="grid gap-2.5 rounded-[12px] border border-warn/30 bg-warn-soft p-3 text-[12.5px] text-ink">
-                    <span className="inline-flex items-center gap-1.5 font-mono text-[10.5px] uppercase tracking-[0.06em] text-muted">
-                      <MessageCircle aria-hidden className="size-3.5 text-good" />
-                      {approval.channel}
-                    </span>
-                    <span>{approval.question}</span>
-                    <span className="flex gap-2">
-                      <span className="rounded-[7px] bg-accent px-2.5 py-1 font-medium text-accent-ink">{approval.confirm}</span>
-                      <span className="rounded-[7px] border border-line bg-surface px-2.5 py-1 text-muted">{approval.decline}</span>
-                    </span>
-                  </div>
-                </motion.div>
-              ) : (
-                <motion.div key="waiting" {...fade} className="grid place-items-center gap-3 rounded-[14px] border border-dashed border-line px-4 py-12 text-center">
-                  <span className="relative h-0.5 w-24 overflow-hidden rounded-full bg-line">
-                    <span className="absolute inset-y-0 left-0 w-2/5 animate-trace rounded-full bg-accent" />
-                  </span>
-                  <span className="text-[12.5px] text-muted">Working through the job — you'll only hear from me if something needs you…</span>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <div aria-hidden className="mt-6 grid gap-2">
+              <span className="h-2 w-3/4 rounded-full bg-raised" />
+              <span className="h-2 w-1/2 rounded-full bg-raised" />
+              <span className="h-2 w-2/3 rounded-full bg-raised" />
+            </div>
           </aside>
-        </div>
 
-        <footer className="flex items-center gap-2 border-t border-line px-4 py-3">
-          <span className="flex-1 truncate text-[13.5px] text-faint">Tell your agent what to do next…</span>
-          <Paperclip aria-hidden className="size-4 text-faint" />
-          <Mic aria-hidden className="size-4 text-faint" />
-          <span className="grid size-8 place-items-center rounded-[9px] bg-accent text-accent-ink">
-            <ArrowUp aria-hidden className="size-4" />
+          <div className="flex flex-col gap-4 p-5 sm:col-span-9 sm:p-6 lg:min-h-[340px]" aria-live="polite">
+            <p className="ml-auto max-w-[80%] rounded-[16px] rounded-br-[4px] bg-accent px-4 py-2.5 text-[13px] leading-relaxed text-accent-ink sm:text-[14px]">
+              {task}
+            </p>
+            <div className="flex items-start gap-3">
+              <span className="grid size-7 shrink-0 place-items-center rounded-[8px] bg-brand text-white">
+                <Sparkles aria-hidden className="size-3.5" />
+              </span>
+              <div className="grid max-w-[88%] gap-2.5 rounded-[16px] rounded-tl-[4px] border border-line bg-surface/70 px-4 py-3 backdrop-blur">
+                <AnimatePresence mode="wait" initial={false}>
+                  {done ? (
+                    <motion.p key="reply" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-[13px] leading-relaxed text-ink sm:text-[14px]">
+                      <InlineText text={reply} />
+                    </motion.p>
+                  ) : (
+                    <motion.div key="stream" exit={{ opacity: 0 }} className="grid gap-2.5">
+                      <p className="text-[13px] text-ink/90 sm:text-[14px]">Working through your morning, one job at a time…</p>
+                      <div aria-hidden className="grid gap-1.5">
+                        {STREAM.map((width, i) => (
+                          <motion.span
+                            key={i}
+                            className={cn("h-2 rounded-full", i === 0 ? "bg-linear-to-r from-accent/60 to-violet/60" : "bg-raised")}
+                            animate={{ width: `${(width * Math.min(step + 1, DONE)) / DONE}%` }}
+                            transition={{ duration: 0.8, ease: EASE }}
+                          />
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+                <span className="flex items-center gap-1.5 pt-1 font-mono text-[10.5px] text-faint">
+                  <span className={cn("size-1.5 rounded-full bg-teal", !done && "animate-pulse")} />
+                  {done ? usage : `${model} · working`}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <FloatingCards step={step} />
+    </div>
+  );
+}
+
+/** Tokens on the left, the run's checklist on the right; desktop only, like Tapotik's. */
+function FloatingCards({ step }: { step: number }) {
+  const card = "absolute hidden rounded-[14px] border border-line bg-surface/90 p-3.5 shadow-lift backdrop-blur-xl lg:block";
+  return (
+    <div aria-hidden>
+      <div className={cn(card, "-left-6 top-1/4 w-44 animate-float")}>
+        <div className="flex items-center gap-2">
+          <span className="grid size-8 place-items-center rounded-[8px] bg-teal/15 text-teal">
+            <Zap className="size-4" />
           </span>
-        </footer>
+          <span className="grid">
+            <span className="text-[12px] font-semibold text-ink">Tokens used</span>
+            <span className="text-[10.5px] text-muted">this run</span>
+          </span>
+        </div>
+        <CountUp value={tokens} className="mt-2 block font-display text-[24px] font-bold text-gradient" />
+      </div>
+
+      <div className={cn(card, "-right-4 top-8 w-52 animate-float-slow")}>
+        <div className="flex items-center justify-between">
+          <span className="text-[12px] font-semibold text-ink">Agent run</span>
+          <Pill tone={step >= DONE ? "good" : "accent"}>{step >= DONE ? "Done" : "Running"}</Pill>
+        </div>
+        <ul className="mt-2.5 grid gap-1.5">
+          {steps.map((label, i) => (
+            <li key={label} className="flex items-center gap-2">
+              <span className={cn("size-1.5 rounded-full transition-colors", step > i ? "bg-good" : "bg-line")} />
+              <span className="text-[10.5px] text-muted">{label}</span>
+              <span className="ml-auto h-1 w-16 overflow-hidden rounded-full bg-raised">
+                <motion.span
+                  className="block h-full rounded-full bg-linear-to-r from-accent to-teal"
+                  animate={{ width: step > i ? "100%" : "0%" }}
+                  transition={{ duration: 0.6, ease: EASE }}
+                />
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

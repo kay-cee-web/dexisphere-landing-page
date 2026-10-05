@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { ROUTES } from "@/data/navigation";
 import { APP_LINKS } from "@/lib/config";
 
-const DEFAULT_ASSURANCES = ["Free forever plan", "No credit card required", "Lifetime deals, no renewals"];
+const DEFAULT_ASSURANCES = ["Free forever plan", "No credit card required", "Lifetime deals, no renewals", "Nothing sends without your OK"];
 
 type CtaSectionProps = {
   title?: ReactNode;
@@ -53,10 +53,13 @@ export function CtaSection({
             )}
           </div>
           {assurances.length > 0 && (
-            <ul className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <ul className="mt-8 flex flex-wrap justify-center gap-2">
               {assurances.map((item) => (
-                <li key={item} className="inline-flex items-center gap-1.5 text-[13px] text-muted">
-                  <Check aria-hidden className="size-3.5 text-accent" />
+                <li
+                  key={item}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface/70 px-3 py-1 text-[13px] text-muted backdrop-blur"
+                >
+                  <Check aria-hidden className="size-3.5 text-good" />
                   {item}
                 </li>
               ))}

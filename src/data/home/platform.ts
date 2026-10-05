@@ -1,8 +1,11 @@
+import { Cpu, Hand, MessageCircle, ReceiptText, Wrench, type LucideIcon } from "lucide-react";
+
 export type BentoId = "tools" | "receipts" | "approvals" | "channels" | "models";
 
-export const PLATFORM_CARDS: { id: BentoId; eyebrow: string; title: string; description: string }[] = [
+export const PLATFORM_CARDS: { id: BentoId; Icon: LucideIcon; eyebrow: string; title: string; description: string }[] = [
   {
     id: "tools",
+    Icon: Wrench,
     eyebrow: "40+ real tools",
     title: "It does the work, not just the talking",
     description:
@@ -10,24 +13,28 @@ export const PLATFORM_CARDS: { id: BentoId; eyebrow: string; title: string; desc
   },
   {
     id: "receipts",
+    Icon: ReceiptText,
     eyebrow: "Work receipts",
     title: "A receipt for every turn",
     description: "See exactly which leads were added, deals moved and campaigns sent, each linked to the record.",
   },
   {
     id: "approvals",
+    Icon: Hand,
     eyebrow: "Ask before sending",
     title: "Nothing goes out without your OK",
     description: "Review the draft, recipients and checks, then say send. Or flip the sending switch off entirely.",
   },
   {
     id: "channels",
+    Icon: MessageCircle,
     eyebrow: "Channels",
     title: "Message your agent anywhere",
     description: "Pair WhatsApp, Telegram or the browser extension with a six-character code.",
   },
   {
     id: "models",
+    Icon: Cpu,
     eyebrow: "Your choice of model",
     title: "Claude, GPT or Gemini",
     description: "Pick the model per agent, or bring your own AI key so turns run on your account.",

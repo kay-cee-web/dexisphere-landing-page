@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { InlineScript } from "@/components/ui/InlineScript";
+import { SITE_SEARCH_INDEX } from "@/data/site-search";
 import { SITE_NAME, SITE_URL } from "@/lib/config";
 import { OPEN_GRAPH_BASE, SITE_DESCRIPTION, SITE_KEYWORDS, SITE_TITLE } from "@/lib/seo";
 import { THEME_BOOT_SCRIPT } from "@/lib/theme";
@@ -59,7 +60,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           >
             Skip to content
           </a>
-          <SiteHeader />
+          <SiteHeader searchEntries={SITE_SEARCH_INDEX} />
           <main id="main" className="flex-1">
             {children}
           </main>

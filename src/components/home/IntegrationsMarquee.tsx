@@ -1,10 +1,12 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Plug } from "lucide-react";
 import { IntegrationLogo } from "@/components/integrations/IntegrationLogo";
+import { Reveal } from "@/components/motion/Reveal";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container, Section } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { INTEGRATIONS, type Integration } from "@/data/integrations";
 import { ROUTES } from "@/data/navigation";
+import { ConnectionsFlow } from "./ConnectionsFlow";
 
 const half = Math.ceil(INTEGRATIONS.length / 2);
 const ROWS = [INTEGRATIONS.slice(0, half), INTEGRATIONS.slice(half)];
@@ -18,29 +20,40 @@ function Chip({ item }: { item: Integration }) {
   );
 }
 
-/** Two rows of connectors drifting in opposite directions; pauses on hover. */
+/**
+ * Tapotik's workflow-builder layout: heading left, lede right, the flow
+ * diagram under both, then two rows of connectors drifting in opposite
+ * directions (pauses on hover).
+ */
 export function IntegrationsMarquee() {
   return (
     <Section>
-      <Container width="wide" className="grid gap-12">
-        <SectionHeading
-          eyebrow="Connections"
-          title="One agent. One memory. Everything you already use."
-          lede={
-            <span className="grid gap-3">
-              <span>It could draft that quote because it had been in the meeting, it knew the deal, and it had your email address.</span>
-              <span>
-                It can tell you what the ads spent <em>and</em> what came in, because it watches your ad accounts and your payment processors.
-              </span>
-              <span>In most businesses those are four separate pieces of software, and the only thing joining them together is you.</span>
-            </span>
-          }
-          actions={
-            <ButtonLink href={ROUTES.integrations} variant="secondary">
+      <Container width="wide" className="grid gap-14">
+        <div className="grid items-end gap-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+          <SectionHeading
+            align="left"
+            eyebrow="Connections"
+            icon={Plug}
+            title={
+              <>
+                One agent. One memory. <span className="text-gradient">Everything you already use.</span>
+              </>
+            }
+          />
+          <Reveal delay={0.1} className="grid gap-3 text-[16px] leading-relaxed text-muted sm:text-[17px]">
+            <p>It could draft that quote because it had been in the meeting, it knew the deal, and it had your email address.</p>
+            <p>
+              It can tell you what the ads spent <em>and</em> what came in, because it watches your ad accounts and your payment processors.
+            </p>
+            <p>In most businesses those are four separate pieces of software, and the only thing joining them together is you.</p>
+            <ButtonLink href={ROUTES.integrations} variant="secondary" className="mt-2 w-fit">
               See all connections <ArrowRight />
             </ButtonLink>
-          }
-        />
+          </Reveal>
+        </div>
+        <Reveal delay={0.1} y={24} className="mx-auto w-full max-w-5xl">
+          <ConnectionsFlow />
+        </Reveal>
       </Container>
       <p className="sr-only">Connections:{INTEGRATIONS.map((item) => item.name).join(", ")}.</p>
       <div

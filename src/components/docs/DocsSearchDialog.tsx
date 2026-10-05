@@ -5,14 +5,28 @@ import { FileText, Hash, Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useId, useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { EASE_OUT } from "@/components/motion/Reveal";
-import type { DocSearchEntry } from "@/data/docs/types";
+import type { SearchEntry } from "@/data/docs/types";
 import { cn } from "@/lib/cn";
 import { searchDocs } from "./search";
 
-type DocsSearchDialogProps = { entries: DocSearchEntry[]; onClose: () => void };
+type DocsSearchDialogProps = {
+  entries: SearchEntry[];
+  onClose: () => void;
+  /** Accessible name of the dialog and its input. */
+  label?: string;
+  placeholder?: string;
+  /** Shown under "No results for …". */
+  emptyHint?: string;
+};
 
 /** Command palette: type to filter, ↑/↓ to move, Enter to open, Esc to close. */
-export function DocsSearchDialog({ entries, onClose }: DocsSearchDialogProps) {
+export function DocsSearchDialog({
+  entries,
+  onClose,
+  label = "Search documentation",
+  placeholder = "Search guides, settings, errors…",
+  emptyHint = "Try a feature name like “pairing code” or “SMTP”.",
+}: DocsSearchDialogProps) {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
   const [query, setQuery] = useState("");
@@ -63,7 +77,7 @@ export function DocsSearchDialog({ entries, onClose }: DocsSearchDialogProps) {
       <motion.div
         role="dialog"
         aria-modal="true"
-        aria-label="Search documentation"
+        aria-label={label}
         initial={{ opacity: 0, y: -8, scale: 0.98 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: -8, scale: 0.98 }}
@@ -80,8 +94,8 @@ export function DocsSearchDialog({ entries, onClose }: DocsSearchDialogProps) {
             aria-controls={`${baseId}-list`}
             aria-activedescendant={results[active] ? optionId(active) : undefined}
             aria-autocomplete="list"
-            aria-label="Search documentation"
-            placeholder="Search guides, settings, errors…"
+            aria-label={label}
+            placeholder={placeholder}
             value={query}
             onChange={(event) => {
               setQuery(event.target.value);
@@ -116,7 +130,7 @@ export function DocsSearchDialog({ entries, onClose }: DocsSearchDialogProps) {
         </ul>
         {!results.length && (
           <p role="status" className="px-4 pb-8 pt-4 text-center text-[14px] text-muted">
-            No results for “{query.trim()}”. Try a feature name like “pairing code” or “SMTP”.
+            No results for “{query.trim()}”. {emptyHint}
           </p>
         )}
         <div className="hidden items-center gap-4 border-t border-line bg-raised px-4 py-2 font-mono text-[11px] text-faint sm:flex">

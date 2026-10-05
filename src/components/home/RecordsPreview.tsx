@@ -1,3 +1,4 @@
+import { ChartColumn } from "lucide-react";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 import { Reveal } from "@/components/motion/Reveal";
 import { Container, Section } from "@/components/ui/Container";
@@ -12,7 +13,9 @@ export function RecordsPreview() {
       <Container width="wide" className="grid gap-14">
         <SectionHeading
           eyebrow="Records & analytics"
+          icon={ChartColumn}
           title="See everything your agents touched"
+          highlight="everything your agents touched"
           lede="Lists, leads, deals, tasks, appointments, campaigns and funnels, in one place with the numbers that matter."
         />
         <div className="grid items-start gap-10 lg:grid-cols-[1fr_2fr]">

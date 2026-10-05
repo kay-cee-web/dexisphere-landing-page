@@ -1,4 +1,4 @@
-import { ArrowUpRight, Infinity as InfinityIcon, RefreshCcw, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, Infinity as InfinityIcon, RefreshCcw, ShieldCheck, Tag } from "lucide-react";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 import { Container, Section } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -33,7 +33,7 @@ export function PricingPlans({
   return (
     <Section tone={tone} id="pricing">
       <Container width="wide" className="grid gap-12">
-        <SectionHeading eyebrow="Pricing" title={title} lede={lede} as={as} />
+        <SectionHeading eyebrow="Pricing" icon={Tag} title={title} highlight="Pay once." lede={lede} as={as} />
         <div className="mx-auto inline-flex rounded-full border border-line bg-surface p-1 text-[13.5px]">
           <span className="rounded-full bg-ink px-4 py-1.5 font-medium text-ground">Lifetime</span>
           <span className="px-4 py-1.5 text-muted">One-time payment</span>

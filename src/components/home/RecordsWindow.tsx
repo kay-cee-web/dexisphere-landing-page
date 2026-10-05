@@ -1,7 +1,8 @@
 import { Pill } from "@/components/ui/Pill";
-import { RECORD_BARS, RECORD_KPIS, RECORD_ROWS, RECORD_TABS } from "@/data/home/records";
+import { RECORD_BARS, RECORD_ROWS, RECORD_TABS } from "@/data/home/records";
 import { cn } from "@/lib/cn";
 import { GrowBars } from "./GrowBars";
+import { RecordsKpis } from "./RecordsKpis";
 
 const STATUS_TONE = { Sent: "good", Scheduled: "accent", Draft: "neutral" } as const;
 
@@ -25,17 +26,7 @@ export function RecordsWindow() {
       </div>
 
       <div className="grid gap-4 p-4 sm:p-5">
-        <dl className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-          {RECORD_KPIS.map((kpi) => (
-            <div key={kpi.label} className="rounded-[12px] border border-line bg-raised p-3">
-              <dt className="text-[12px] text-muted">{kpi.label}</dt>
-              <dd className="mt-1 flex items-baseline gap-2">
-                <span className="font-display text-[22px] font-semibold tabular-nums text-ink">{kpi.value}</span>
-                <span className="font-mono text-[11px] text-good">{kpi.change}</span>
-              </dd>
-            </div>
-          ))}
-        </dl>
+        <RecordsKpis />
 
         <div className="rounded-[12px] border border-line p-4">
           <div className="mb-3 flex items-center justify-between">

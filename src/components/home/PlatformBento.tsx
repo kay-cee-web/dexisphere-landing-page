@@ -1,7 +1,9 @@
+import { ShieldCheck } from "lucide-react";
 import type { ReactNode } from "react";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 import { Eyebrow } from "@/components/ui/Card";
 import { Container, Section } from "@/components/ui/Container";
+import { IconSwap } from "@/components/ui/IconSwap";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PLATFORM_CARDS, type BentoId } from "@/data/home/platform";
 import { cn } from "@/lib/cn";
@@ -30,7 +32,9 @@ export function PlatformBento() {
       <Container width="wide" className="grid gap-14">
         <SectionHeading
           eyebrow="You stay in control"
+          icon={ShieldCheck}
           title="It does the work. You keep the keys."
+          highlight="You keep the keys."
           lede="Every connection authorised by you, every send waiting for your yes if you want it, and a receipt for everything it did."
         />
         <Stagger className="grid gap-5 lg:grid-cols-6">
@@ -44,7 +48,12 @@ export function PlatformBento() {
               )}
             >
               <div className="grid content-start gap-3">
-                <Eyebrow className="text-accent">{card.eyebrow}</Eyebrow>
+                <div className="flex items-center justify-between gap-3">
+                  <Eyebrow className="text-accent">{card.eyebrow}</Eyebrow>
+                  <span className="grid size-10 shrink-0 place-items-center overflow-hidden rounded-[12px] bg-brand text-white shadow-glow">
+                    <IconSwap Icon={card.Icon} className="size-[18px]" />
+                  </span>
+                </div>
                 <h3 className="text-[21px] font-semibold leading-tight text-ink">{card.title}</h3>
                 <p className="text-[14.5px] leading-relaxed text-muted">{card.description}</p>
               </div>

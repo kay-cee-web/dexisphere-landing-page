@@ -1,4 +1,4 @@
-import { Star } from "lucide-react";
+import { Quote, Star } from "lucide-react";
 import { Container, Section } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TESTIMONIALS } from "@/data/testimonials";
@@ -49,7 +49,7 @@ export function Testimonials({
   return (
     <Section tone={tone}>
       <Container width="wide" className="grid gap-14">
-        <SectionHeading eyebrow="Testimonials" title={title} lede={lede} />
+        <SectionHeading eyebrow="Testimonials" icon={Quote} title={title} highlight="stopped opening every tab" lede={lede} />
       </Container>
       <p className="sr-only">{items.map((t) => `${t.name}: "${t.quote}"`).join(". ")}</p>
       <div

@@ -25,11 +25,13 @@ export type DocPage = {
   nextSteps?: DocSlug[];
 };
 
-/** What the client-side search needs, built on the server from every page. */
-export type DocSearchEntry = {
+/** What the client-side search needs, built on the server. The site-wide search uses its own groups. */
+export type SearchEntry = {
   href: string;
   title: string;
   description: string;
-  group: DocGroup;
+  group: string;
   headings: { id: string; text: string }[];
 };
+
+export type DocSearchEntry = SearchEntry & { group: DocGroup };

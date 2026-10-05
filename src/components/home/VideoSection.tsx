@@ -1,3 +1,4 @@
+import { PlayCircle } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { Container, Section } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -11,7 +12,9 @@ export function VideoSection() {
       <Container width="wide" className="grid gap-12">
         <SectionHeading
           eyebrow="See it in action"
+          icon={PlayCircle}
           title="Watch it work"
+          highlight="it work"
           lede="Two minutes: one sentence in, the finished job and its receipt out."
         />
         <Reveal y={24}>

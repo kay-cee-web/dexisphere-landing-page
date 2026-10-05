@@ -1,11 +1,24 @@
+import { MailOpen, MessageSquare, MousePointerClick, Send, type LucideIcon } from "lucide-react";
+
 /** Sample figures for the Records preview (illustrative, labelled "Example workspace" on the page). */
 export const RECORD_TABS = ["Lists", "Leads", "Deals", "Tasks", "Campaigns", "Funnels", "Analytics"];
 
-export const RECORD_KPIS = [
-  { label: "Emails sent", value: "1,284", change: "+18%" },
-  { label: "Open rate", value: "41.2%", change: "+3.1 pts" },
-  { label: "SMS delivered", value: "96%", change: "+1.4 pts" },
-  { label: "Funnel views", value: "3,902", change: "+22%" },
+export type RecordKpi = {
+  label: string;
+  value: number;
+  suffix?: string;
+  decimals?: number;
+  change: string;
+  Icon: LucideIcon;
+  /** Daily values for the sparkline, oldest first. Any scale. */
+  trend: number[];
+};
+
+export const RECORD_KPIS: RecordKpi[] = [
+  { label: "Emails sent", value: 1284, change: "+18%", Icon: Send, trend: [31, 40, 36, 52, 47, 60, 58, 71] },
+  { label: "Open rate", value: 41.2, suffix: "%", decimals: 1, change: "+3.1 pts", Icon: MailOpen, trend: [36, 37, 35, 38, 39, 38, 40, 41] },
+  { label: "SMS delivered", value: 96, suffix: "%", change: "+1.4 pts", Icon: MessageSquare, trend: [93, 94, 94, 95, 94, 95, 96, 96] },
+  { label: "Funnel views", value: 3902, change: "+22%", Icon: MousePointerClick, trend: [380, 420, 390, 470, 510, 490, 560, 610] },
 ];
 
 /** Relative heights (0–100) for sends per day over two weeks. */

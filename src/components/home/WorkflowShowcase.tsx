@@ -1,4 +1,4 @@
-import { CircleCheck } from "lucide-react";
+import { CircleCheck, Repeat } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { Container, Section } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -14,7 +14,9 @@ export function WorkflowShowcase() {
           <SectionHeading
             align="left"
             eyebrow="Get on with your work"
+            icon={Repeat}
             title="It runs whether or not you're logged in"
+            highlight="whether or not you're logged in"
             lede="Ask once and it repeats the job: new customers every Monday, the follow-up on Thursday, the revenue summary before the week starts. When something needs a decision, it messages you."
           />
           <Reveal delay={0.1}>
