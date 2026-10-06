@@ -7,7 +7,7 @@ import { MotionProvider } from "@/components/motion/MotionProvider";
 import { InlineScript } from "@/components/ui/InlineScript";
 import { SITE_SEARCH_INDEX } from "@/data/site-search";
 import { SITE_NAME, SITE_URL } from "@/lib/config";
-import { OPEN_GRAPH_BASE, SITE_DESCRIPTION, SITE_KEYWORDS, SITE_TITLE } from "@/lib/seo";
+import { OPEN_GRAPH_BASE, SHARE_IMAGE, SITE_DESCRIPTION, SITE_KEYWORDS, SITE_TITLE } from "@/lib/seo";
 import { THEME_BOOT_SCRIPT } from "@/lib/theme";
 import "./globals.css";
 
@@ -25,10 +25,10 @@ export const metadata: Metadata = {
   creator: SITE_NAME,
   publisher: SITE_NAME,
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
-  // og:title/description fall back to each page's own; the share image comes
-  // from app/opengraph-image.tsx and applies to every route.
-  openGraph: OPEN_GRAPH_BASE,
-  twitter: { card: "summary_large_image" },
+  // og:title/description fall back to each page's own; the share image is
+  // public/share.jpg on every route.
+  openGraph: { ...OPEN_GRAPH_BASE, images: SHARE_IMAGE },
+  twitter: { card: "summary_large_image", images: SHARE_IMAGE },
   icons: {
     icon: [
       { url: "/image/dexisphere-icon100.png", type: "image/png", sizes: "100x100" },

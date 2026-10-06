@@ -16,13 +16,15 @@ export const SITE_DESCRIPTION =
 export const OPEN_GRAPH_BASE = { siteName: SITE_NAME, type: "website", locale: "en_US" } as const;
 
 /**
- * app/opengraph-image.tsx, for pages that set their own `openGraph` (which drops
- * the inherited image).
+ * public/share.jpg (a 1200x630 copy of public/image.png, kept under 300 KB so
+ * WhatsApp shows it), the share image for every route. Pages that set their own
+ * `openGraph` drop the inherited one, so pageMeta adds it back.
  */
 export const SHARE_IMAGE = {
-  url: "/opengraph-image",
+  url: "/share.jpg",
   width: 1200,
   height: 630,
+  type: "image/jpeg",
   alt: `${SITE_NAME}: ${SITE_TAGLINE}`,
 };
 
