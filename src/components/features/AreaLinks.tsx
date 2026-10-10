@@ -13,7 +13,7 @@ export function AreaLinks() {
         <StaggerItem as="li" key={product.slug}>
           <Link
             href={ROUTES.product(product.slug)}
-            className="group flex h-full items-center gap-3 rounded-[14px] border border-line bg-surface px-4 py-3 transition-[border-color,box-shadow] hover:border-accent/40 hover:shadow-float"
+            className="group flex h-full items-center gap-3 rounded-[14px] border border-line bg-surface px-4 py-3 shadow-surface transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:border-accent/30 hover:shadow-surface-lg"
           >
             <IconTile Icon={product.Icon} size="sm" />
             <span className="grid min-w-0 flex-1 gap-0.5">

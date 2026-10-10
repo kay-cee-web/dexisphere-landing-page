@@ -5,6 +5,7 @@ import { Eyebrow } from "@/components/ui/Card";
 import { Container, Section } from "@/components/ui/Container";
 import { IconSwap } from "@/components/ui/IconSwap";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Spotlight } from "@/components/ui/Spotlight";
 import { PLATFORM_CARDS, type BentoId } from "@/data/home/platform";
 import { cn } from "@/lib/cn";
 import { ApprovalsVisual, ChannelsVisual, ModelsVisual, ReceiptsVisual, ToolsVisual } from "./BentoVisuals";
@@ -43,10 +44,11 @@ export function PlatformBento() {
               key={card.id}
               as="article"
               className={cn(
-                "group relative grid content-start gap-6 overflow-hidden rounded-[20px] border border-line bg-raised p-6 transition-[border-color,box-shadow] hover:border-accent/40 hover:shadow-float sm:p-7",
+                "group group/spot relative grid content-start gap-6 overflow-hidden rounded-[20px] border border-line bg-raised p-6 shadow-surface transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:border-accent/30 hover:shadow-surface-lg sm:p-7",
                 SPANS[card.id],
               )}
             >
+              <Spotlight />
               <div className="grid content-start gap-3">
                 <div className="flex items-center justify-between gap-3">
                   <Eyebrow className="text-accent">{card.eyebrow}</Eyebrow>

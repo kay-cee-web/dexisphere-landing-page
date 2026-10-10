@@ -8,7 +8,7 @@ import { APPROVAL_GATE, AUTOMATIONS } from "@/data/features/visuals";
 /** The agent's automations as a list, and a scheduled send waiting at the approval gate. */
 export function ScheduledWorkVisual() {
   return (
-    <div className="overflow-hidden rounded-[20px] border border-line bg-surface shadow-lift">
+    <div className="overflow-hidden rounded-[20px] glass-strong shadow-lift">
       <header className="flex items-center gap-2 border-b border-line px-4 py-3">
         <CalendarClock aria-hidden className="size-4 text-accent" />
         <p className="text-[14px] font-medium text-ink">Scheduled work</p>

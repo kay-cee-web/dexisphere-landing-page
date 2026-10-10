@@ -6,7 +6,7 @@ import { SubscribeForm } from "./SubscribeForm";
 /** The mid-page "get updates" card between releases. */
 export function SubscribeCard() {
   return (
-    <Reveal className="relative isolate grid gap-6 overflow-hidden rounded-[20px] border border-line bg-surface p-6 sm:p-8 md:grid-cols-[1fr_1.1fr] md:items-center md:gap-10">
+    <Reveal className="relative isolate grid gap-6 overflow-hidden rounded-[20px] border border-line bg-surface p-6 shadow-surface sm:p-8 md:grid-cols-[1fr_1.1fr] md:items-center md:gap-10">
       <div aria-hidden className="bg-glow absolute inset-0 -z-10 opacity-80" />
       <div className="flex items-start gap-4">
         <IconTile Icon={Mail} />

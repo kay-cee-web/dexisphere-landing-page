@@ -11,7 +11,7 @@ export function PostCard({ post, className }: { post: PostMeta; className?: stri
     <Link
       href={ROUTES.post(post.slug)}
       className={cn(
-        "group flex h-full flex-col overflow-hidden rounded-[18px] border border-line bg-surface transition-[border-color,box-shadow] hover:border-accent/40 hover:shadow-float",
+        "group flex h-full flex-col overflow-hidden rounded-[18px] border border-line bg-surface shadow-surface transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:border-accent/30 hover:shadow-surface-lg",
         className,
       )}
     >

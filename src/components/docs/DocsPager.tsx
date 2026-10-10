@@ -14,7 +14,7 @@ function PagerCard({ page, direction }: { page: DocPage; direction: "previous" |
       href={docHref(page.slug)}
       rel={next ? "next" : "prev"}
       className={cn(
-        "group grid gap-1.5 rounded-[14px] border border-line bg-surface p-4 transition-[border-color,box-shadow] hover:border-accent/40 hover:shadow-float",
+        "group grid gap-1.5 rounded-[14px] border border-line bg-surface p-4 shadow-surface transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:border-accent/30 hover:shadow-surface-lg",
         next ? "text-right sm:col-start-2" : "text-left",
       )}
     >

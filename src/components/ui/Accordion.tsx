@@ -13,7 +13,7 @@ export function Accordion({ items, className }: { items: AccordionItem[]; classN
   const baseId = useId();
 
   return (
-    <div className={cn("divide-y divide-line overflow-hidden rounded-[18px] border border-line bg-surface", className)}>
+    <div className={cn("divide-y divide-line overflow-hidden rounded-[18px] glass-strong shadow-surface", className)}>
       {items.map((item, index) => {
         const isOpen = open === index;
         const panelId = `${baseId}-panel-${index}`;

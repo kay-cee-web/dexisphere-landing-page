@@ -10,7 +10,7 @@ export function UseCaseGrid({ items }: { items: UseCase[] }) {
         <StaggerItem
           as="article"
           key={useCase.title}
-          className="grid h-full content-start gap-5 rounded-[18px] border border-line bg-surface p-6 sm:p-7"
+          className="grid h-full content-start gap-5 rounded-[18px] border border-line bg-surface p-6 shadow-surface sm:p-7"
         >
           <div className="flex items-center gap-3">
             <IconTile Icon={useCase.Icon} tone="violet" />

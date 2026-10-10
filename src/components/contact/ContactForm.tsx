@@ -47,7 +47,7 @@ export function ContactForm() {
   const describedBy = (key: keyof ContactValues) => (errors[key] ? `contact-${key}-error` : undefined);
 
   return (
-    <form noValidate onSubmit={submit} className="grid gap-5 rounded-[20px] border border-line bg-surface p-6 sm:p-8">
+    <form noValidate onSubmit={submit} className="grid gap-5 rounded-[20px] border border-line bg-surface p-6 shadow-surface sm:p-8">
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Full name" htmlFor="contact-name">
           <Input id="contact-name" autoComplete="name" value={values.name} onChange={(e) => update("name")(e.target.value)}

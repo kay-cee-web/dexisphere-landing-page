@@ -1,6 +1,7 @@
 import { ArrowRight, Check, PlayCircle } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { ButtonLink } from "@/components/ui/ButtonLink";
+import { AuroraBackdrop } from "@/components/ui/AuroraBackdrop";
 import { Container } from "@/components/ui/Container";
 import { Pill } from "@/components/ui/Pill";
 import { SmartLink } from "@/components/ui/SmartLink";
@@ -15,14 +16,13 @@ const ASSURANCES = ["Free forever plan", "No credit card required", "Lifetime de
 export function HomeHero() {
   return (
     <section className="relative isolate overflow-hidden pb-20 pt-14 sm:pb-28 sm:pt-20">
-      <div aria-hidden className="bg-grid absolute inset-0 -z-10 opacity-70" />
-      <div aria-hidden className="bg-glow absolute inset-0 -z-10" />
+      <AuroraBackdrop />
       <Container width="wide" className="grid gap-14 sm:gap-16">
         <div className="mx-auto grid max-w-4xl justify-items-center gap-6 text-center">
           <Reveal>
             <SmartLink
               href={ROUTES.changelog}
-              className="inline-flex items-center gap-2 rounded-full border border-line bg-surface/80 py-1 pl-1 pr-3 text-[13px] text-muted backdrop-blur transition-colors hover:text-ink"
+              className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 py-1 pl-1 pr-3 text-[13px] text-ink shadow-[0_0_20px_-4px_var(--glow)] transition-colors hover:border-accent/50"
             >
               <Pill tone="accent">New</Pill>
               Work receipts for every agent turn

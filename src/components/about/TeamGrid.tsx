@@ -19,7 +19,7 @@ export function TeamGrid() {
             <StaggerItem
               as="li"
               key={member.name}
-              className="grid content-start gap-5 rounded-[18px] border border-line bg-surface p-6"
+              className="grid content-start gap-5 rounded-[18px] border border-line bg-surface p-6 shadow-surface"
             >
               <div className="flex items-center gap-4">
                 <span

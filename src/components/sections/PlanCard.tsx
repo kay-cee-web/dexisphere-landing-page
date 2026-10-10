@@ -12,10 +12,11 @@ export function PlanCard({ plan, previous }: { plan: Plan; previous?: Plan }) {
   return (
     <article
       className={cn(
-        "relative flex h-full flex-col overflow-hidden rounded-[20px] border bg-surface",
-        plan.popular ? "border-accent shadow-lift ring-1 ring-accent" : "border-line",
+        "relative flex h-full flex-col overflow-hidden rounded-[24px] border bg-surface",
+        plan.popular ? "border-accent/50 shadow-[0_0_60px_-16px_var(--glow)]" : "border-line shadow-surface",
       )}
     >
+      {plan.popular && <div aria-hidden className="beam absolute inset-x-0 top-0 mx-auto h-px w-2/3" />}
       <div className="grid gap-4 p-6">
         <div className="flex items-center justify-between gap-3">
           <h3 className="text-[18px] font-semibold text-ink">{plan.name}</h3>

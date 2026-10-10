@@ -10,7 +10,7 @@ export function ValuesList({ values }: { values: Feature[] }) {
         <StaggerItem
           as="li"
           key={value.title}
-          className="relative grid content-start gap-4 overflow-hidden rounded-[18px] border border-line bg-surface p-6 sm:p-8"
+          className="relative grid content-start gap-4 overflow-hidden rounded-[18px] border border-line bg-surface p-6 shadow-surface sm:p-8"
         >
           <span aria-hidden className="absolute right-6 top-5 font-mono text-[13px] text-faint">
             {String(index + 1).padStart(2, "0")}

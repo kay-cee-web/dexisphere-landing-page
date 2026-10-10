@@ -9,7 +9,7 @@ import { ApplicationForm } from "./ApplicationForm";
 export function ApplySection({ role }: { role: string }) {
   return (
     <Reveal as="section">
-      <div id="apply" className="grid scroll-mt-24 gap-6 rounded-[20px] border border-line bg-surface p-6 sm:p-8">
+      <div id="apply" className="grid scroll-mt-24 gap-6 rounded-[20px] border border-line bg-surface p-6 shadow-surface sm:p-8">
         <div className="grid gap-2">
           <Eyebrow className="text-accent">Apply</Eyebrow>
           <h2 className="text-[26px] font-semibold leading-tight text-ink">Apply for {role}</h2>

@@ -2,6 +2,7 @@ import { ArrowUpRight, Clock } from "lucide-react";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 import { IconTile } from "@/components/ui/IconTile";
 import { CONTACT_CHANNELS } from "@/data/contact";
+import { Spotlight } from "@/components/ui/Spotlight";
 
 /** Sales, Support and Press cards, each a mailto with a reply-time promise. */
 export function ContactChannels() {
@@ -11,8 +12,9 @@ export function ContactChannels() {
         <StaggerItem as="li" key={channel.title} className="h-full">
           <a
             href={`mailto:${channel.email}`}
-            className="group grid h-full content-start gap-4 rounded-[18px] border border-line bg-surface p-6 text-left transition-[border-color,box-shadow] hover:border-accent/40 hover:shadow-float"
+            className="group group/spot relative grid h-full overflow-hidden content-start gap-4 rounded-[18px] border border-line bg-surface p-6 text-left shadow-surface transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:border-accent/30 hover:shadow-surface-lg"
           >
+            <Spotlight />
             <div className="flex items-start justify-between gap-3">
               <IconTile Icon={channel.Icon} />
               <ArrowUpRight

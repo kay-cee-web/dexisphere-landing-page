@@ -73,7 +73,7 @@ export function ConnectionsFlow() {
   const gradientId = useId();
 
   return (
-    <div className="rounded-[28px] border border-line bg-surface p-5 shadow-lift sm:p-8">
+    <div className="rounded-[28px] glass-strong p-5 shadow-lift sm:p-8">
       <div className="mb-8 flex flex-wrap items-center gap-3">
         <FileText aria-hidden className="size-4 text-muted" />
         <span className="text-[14px] font-medium text-ink">after-every-client-call</span>
@@ -136,7 +136,7 @@ function FlowCard({ node, ref }: { node: FlowNode; ref: (el: HTMLLIElement | nul
   return (
     <li
       ref={ref}
-      className={cn("relative z-10 flex w-full items-center gap-3.5 rounded-[14px] border border-line bg-surface p-4 shadow-float", node.place)}
+      className={cn("relative z-10 flex w-full items-center gap-3.5 rounded-[14px] glass-strong p-4 shadow-surface", node.place)}
     >
       <span className={cn("grid size-10 shrink-0 place-items-center rounded-[10px] border", TONES[node.tone])}>
         <node.Icon aria-hidden className="size-4.5" />

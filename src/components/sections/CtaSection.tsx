@@ -1,6 +1,7 @@
 import { ArrowRight, Check } from "lucide-react";
 import type { ReactNode } from "react";
 import { Reveal } from "@/components/motion/Reveal";
+import { AuroraBackdrop } from "@/components/ui/AuroraBackdrop";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
 import { ROUTES } from "@/data/navigation";
@@ -35,9 +36,9 @@ export function CtaSection({
   return (
     <section className="py-20 sm:py-28">
       <Container width="wide">
-        <Reveal className="relative isolate overflow-hidden rounded-[28px] border border-line bg-surface px-6 py-16 text-center sm:px-12 sm:py-20">
-          <div aria-hidden className="bg-aurora absolute inset-0 -z-10 opacity-80" />
-          <div aria-hidden className="bg-grid absolute inset-0 -z-10 opacity-40" />
+        <Reveal className="relative isolate overflow-hidden rounded-[40px] border border-line bg-surface px-6 py-20 text-center sm:px-12 lg:py-28">
+          <AuroraBackdrop focus="center" />
+          <div aria-hidden className="beam absolute inset-x-0 top-0 h-px" />
           <h2 className="mx-auto max-w-3xl text-[34px] font-semibold leading-[1.05] sm:text-[52px]">{title}</h2>
           <p className="mx-auto mt-5 max-w-[56ch] text-[16px] leading-relaxed text-muted sm:text-[18px]">{lede}</p>
           <div className="mt-9 flex flex-wrap justify-center gap-3">
@@ -57,7 +58,7 @@ export function CtaSection({
               {assurances.map((item) => (
                 <li
                   key={item}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface/70 px-3 py-1 text-[13px] text-muted backdrop-blur"
+                  className="glass inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[13px] text-muted"
                 >
                   <Check aria-hidden className="size-3.5 text-good" />
                   {item}

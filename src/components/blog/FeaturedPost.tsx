@@ -13,7 +13,7 @@ export function FeaturedPost({ post }: { post: PostMeta }) {
     <Reveal>
       <Link
         href={ROUTES.post(post.slug)}
-        className="group grid overflow-hidden rounded-[20px] border border-line bg-surface transition-[border-color,box-shadow] hover:border-accent/40 hover:shadow-float lg:grid-cols-[1.1fr_1fr]"
+        className="group grid overflow-hidden rounded-[20px] border border-line bg-surface shadow-surface transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:border-accent/30 hover:shadow-surface-lg lg:grid-cols-[1.1fr_1fr]"
       >
         <div aria-hidden className="relative min-h-52 overflow-hidden border-b border-line bg-raised lg:min-h-80 lg:border-b-0 lg:border-r">
           <div className="bg-glow absolute inset-0 transition-transform duration-700 group-hover:scale-110" />

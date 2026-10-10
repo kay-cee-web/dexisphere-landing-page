@@ -10,7 +10,7 @@ export function ToolFanOut() {
   const callCount = FAN_OUT.branches.reduce((sum, branch) => sum + branch.tools.length, 0);
 
   return (
-    <div className="rounded-[20px] border border-line bg-surface p-4 shadow-lift sm:p-6">
+    <div className="rounded-[20px] glass-strong p-4 shadow-lift sm:p-6">
       <div className="grid gap-2 rounded-[14px] border border-line bg-raised px-4 py-3">
         <Eyebrow>Task</Eyebrow>
         <p className="text-[14px] leading-relaxed text-ink">{FAN_OUT.task}</p>

@@ -20,7 +20,7 @@ export function OfficesSection() {
             <StaggerItem
               as="li"
               key={office.city}
-              className="grid content-start gap-4 rounded-[18px] border border-line bg-surface p-6"
+              className="grid content-start gap-4 rounded-[18px] border border-line bg-surface p-6 shadow-surface"
             >
               <IconTile Icon={MapPin} size="sm" tone="neutral" />
               <div className="grid gap-1">

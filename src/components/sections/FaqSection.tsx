@@ -29,7 +29,7 @@ export function FaqSection({ faqs, title = "Questions people ask first", eyebrow
             lede="What it can see, what it can do, and what it costs."
             align="left"
           />
-          <Reveal delay={0.1} className="grid max-w-sm gap-4 rounded-[20px] border border-line bg-surface p-6 shadow-float">
+          <Reveal delay={0.1} className="grid max-w-sm gap-4 rounded-[20px] glass p-6 shadow-surface">
             <span className="grid size-10 place-items-center rounded-[12px] bg-brand text-white">
               <LifeBuoy aria-hidden className="size-5" />
             </span>

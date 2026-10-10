@@ -27,7 +27,7 @@ export function AgentChat() {
   }, [step]);
 
   return (
-    <div ref={ref} className="relative mx-auto flex h-120 w-full max-w-lg flex-col overflow-hidden rounded-[24px] border border-line bg-surface/85 shadow-lift backdrop-blur-xl">
+    <div ref={ref} className="relative mx-auto flex h-120 w-full max-w-lg flex-col overflow-hidden rounded-[24px] glass-strong shadow-lift">
       <header className="flex items-center justify-between border-b border-line px-5 py-3.5">
         <span className="flex items-center gap-2.5">
           <span className="grid size-8 place-items-center rounded-[8px] bg-brand text-white">

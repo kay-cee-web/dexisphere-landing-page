@@ -18,7 +18,7 @@ export function ChannelsStrip() {
   return (
     <Section id="channels">
       <Container width="wide">
-        <Reveal className="grid gap-10 rounded-[24px] border border-line bg-surface p-6 sm:p-10 lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-14">
+        <Reveal className="grid gap-10 rounded-[24px] border border-line bg-surface p-6 shadow-surface sm:p-10 lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-14">
           <div className="grid gap-6">
             <div className="flex flex-wrap gap-2">
               {CHANNELS.map(({ label, Icon }) => (

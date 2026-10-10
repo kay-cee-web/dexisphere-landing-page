@@ -13,7 +13,7 @@ const ROWS = [INTEGRATIONS.slice(0, half), INTEGRATIONS.slice(half)];
 
 function Chip({ item }: { item: Integration }) {
   return (
-    <li className="flex shrink-0 items-center gap-2.5 rounded-[12px] border border-line bg-surface px-4 py-3">
+    <li className="flex shrink-0 items-center gap-2.5 glass rounded-[12px] px-4 py-3">
       <IntegrationLogo integration={item} className="size-5" />
       <span className="whitespace-nowrap text-[14px] font-medium text-ink">{item.name}</span>
     </li>
@@ -51,7 +51,8 @@ export function IntegrationsMarquee() {
             </ButtonLink>
           </Reveal>
         </div>
-        <Reveal delay={0.1} y={24} className="mx-auto w-full max-w-5xl">
+        <Reveal delay={0.1} y={24} className="relative isolate mx-auto w-full max-w-5xl">
+          <div aria-hidden className="bg-dots mask-fade-center absolute -inset-x-16 -inset-y-12 -z-10" />
           <ConnectionsFlow />
         </Reveal>
       </Container>

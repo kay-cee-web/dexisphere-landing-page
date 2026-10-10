@@ -11,7 +11,7 @@ export function WorkflowPipeline() {
   const { ref, step } = useTimeline<HTMLDivElement>(WORKFLOW_NODES.length, { interval: 1100, hold: 3500 });
 
   return (
-    <div ref={ref} className="rounded-[22px] border border-line bg-surface p-4 shadow-lift sm:p-6">
+    <div ref={ref} className="rounded-[22px] glass-strong p-4 shadow-lift sm:p-6">
       <div className="mb-5 flex items-center gap-2">
         <span className="text-[14px] font-medium text-ink">Weekly prospect run</span>
         <Pill tone="good" dot className="ml-auto">
@@ -22,7 +22,7 @@ export function WorkflowPipeline() {
         <span aria-hidden className="absolute bottom-6 left-[27px] top-6 w-px bg-line" />
         <motion.span
           aria-hidden
-          className="absolute left-[27px] top-6 w-px origin-top bg-accent"
+          className="absolute left-[27px] top-6 w-px origin-top bg-linear-to-b from-accent to-teal"
           style={{ height: "calc(100% - 48px)" }}
           animate={{ scaleY: Math.max(0, step - 1) / (WORKFLOW_NODES.length - 1) }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}

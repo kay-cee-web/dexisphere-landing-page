@@ -69,7 +69,7 @@ function ServiceCard({ service }: { service: Service }) {
   return (
     <Link
       href={service.href}
-      className="group flex h-full flex-col gap-6 rounded-[22px] border border-line bg-surface p-4 transition-[box-shadow,border-color] hover:border-accent/30 hover:shadow-lift"
+      className="group flex h-full flex-col gap-6 rounded-[22px] border border-line bg-surface p-4 shadow-surface transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:border-accent/30 hover:shadow-surface-lg"
     >
       <div
         className={cn(

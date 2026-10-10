@@ -9,7 +9,7 @@ const STATUS_TONE = { Sent: "good", Scheduled: "accent", Draft: "neutral" } as c
 /** A mock of the app's Records › Analytics view. */
 export function RecordsWindow() {
   return (
-    <div className="overflow-hidden rounded-[22px] border border-line bg-surface shadow-lift">
+    <div className="overflow-hidden rounded-[22px] glass-strong shadow-lift">
       <div className="flex items-center gap-1 overflow-x-auto border-b border-line px-3 py-2">
         {RECORD_TABS.map((tab) => (
           <span

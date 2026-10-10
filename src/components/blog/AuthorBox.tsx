@@ -6,7 +6,7 @@ import { AuthorAvatar } from "./AuthorAvatar";
 /** "Written by" card at the end of an article. */
 export function AuthorBox({ author }: { author: PostMeta["author"] }) {
   return (
-    <aside className="flex flex-col gap-4 rounded-[16px] border border-line bg-surface p-6 sm:flex-row sm:items-start">
+    <aside className="flex flex-col gap-4 rounded-[16px] border border-line bg-surface p-6 shadow-surface sm:flex-row sm:items-start">
       <AuthorAvatar name={author.name} size="lg" />
       <div className="grid gap-1.5">
         <Eyebrow>Written by</Eyebrow>

@@ -1,6 +1,7 @@
 import { ChartColumn } from "lucide-react";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 import { Reveal } from "@/components/motion/Reveal";
+import { TiltIn } from "@/components/motion/TiltIn";
 import { Container, Section } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RECORD_POINTS } from "@/data/home/records";
@@ -27,8 +28,11 @@ export function RecordsPreview() {
               </StaggerItem>
             ))}
           </Stagger>
-          <Reveal y={28}>
-            <RecordsWindow />
+          <Reveal y={28} className="relative isolate">
+            <div aria-hidden className="absolute -inset-x-8 top-8 -z-10 h-full rounded-[40px] bg-linear-to-r from-accent/20 via-violet/15 to-teal/10 blur-3xl" />
+            <TiltIn>
+              <RecordsWindow />
+            </TiltIn>
           </Reveal>
         </div>
       </Container>

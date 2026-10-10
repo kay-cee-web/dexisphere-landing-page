@@ -30,6 +30,12 @@
   --glow: rgb(91 91 247 / 0.25);
   --brand-from: #5b5bf7;
   --brand-to: #00c7ac;
+  /* Midpoint of the three-stop gradient on keywords and primary buttons; the same in both themes. */
+  --brand-via: #8b5cf6;
+  /* Frosted surfaces: a see-through fill, its hairline and the lit top edge of a card. */
+  --glass: rgb(255 255 255 / 0.6);
+  --glass-line: rgb(11 16 32 / 0.08);
+  --sheen: rgb(255 255 255 / 0.9);
   /* Dark artwork: the same in both themes, so dark doesn't redefine them. */
   --night: #070b1c;
   --night-ink: #f5f6fc;
@@ -75,6 +81,9 @@
     --glow: rgb(91 91 247 / 0.35);
     --brand-from: #5b5bf7;
     --brand-to: #00f5d4;
+    --glass: rgb(14 19 37 / 0.55);
+    --glass-line: rgb(232 234 246 / 0.1);
+    --sheen: rgb(232 234 246 / 0.08);
     --shadow-float: 0 1px 2px rgb(0 0 0 / 0.32), 0 16px 40px -24px rgb(0 0 0 / 0.72);
     --shadow-lift: 0 1px 2px rgb(0 0 0 / 0.4), 0 28px 56px -28px rgb(0 0 0 / 0.85);
     color-scheme: dark;
@@ -108,6 +117,9 @@
   --glow: rgb(91 91 247 / 0.35);
   --brand-from: #5b5bf7;
   --brand-to: #00f5d4;
+  --glass: rgb(14 19 37 / 0.55);
+  --glass-line: rgb(232 234 246 / 0.1);
+  --sheen: rgb(232 234 246 / 0.08);
   --shadow-float: 0 1px 2px rgb(0 0 0 / 0.32), 0 16px 40px -24px rgb(0 0 0 / 0.72);
   --shadow-lift: 0 1px 2px rgb(0 0 0 / 0.4), 0 28px 56px -28px rgb(0 0 0 / 0.85);
   color-scheme: dark;

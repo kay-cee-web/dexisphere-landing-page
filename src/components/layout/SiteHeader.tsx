@@ -15,7 +15,7 @@ import { DesktopNav } from "./DesktopNav";
 import { MobileNav } from "./MobileNav";
 import { SiteSearch } from "./SiteSearch";
 
-/** Sticky header: transparent over the hero, a blurred bar once the page scrolls, solid while the mobile menu is open. */
+/** Sticky header: a floating glass bar that firms up once the page scrolls, solid while the mobile menu is open. */
 export function SiteHeader({ searchEntries }: { searchEntries: SearchEntry[] }) {
   const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState(false);
@@ -31,12 +31,8 @@ export function SiteHeader({ searchEntries }: { searchEntries: SearchEntry[] }) 
     <div className="sticky top-0 z-50 px-4 pt-3 sm:px-6 lg:px-8">
       <header
         className={cn(
-          "mx-auto max-w-7xl rounded-2xl border transition-[background-color,border-color,box-shadow] duration-300",
-          menuOpen
-            ? "border-line bg-ground shadow-float"
-            : scrolled
-              ? "border-line bg-ground/80 shadow-float backdrop-blur-xl"
-              : "border-transparent bg-transparent",
+          "mx-auto max-w-7xl rounded-2xl transition-[background-color,border-color,box-shadow] duration-300",
+          menuOpen ? "border border-line bg-ground shadow-float" : scrolled ? "glass-strong shadow-surface" : "glass",
         )}
       >
         <div className="flex h-14 items-center gap-3 px-4 sm:gap-6 sm:px-5">

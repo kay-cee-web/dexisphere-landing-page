@@ -14,7 +14,7 @@ type TestimonialsProps = {
 
 function TestimonialCard({ item }: { item: Testimonial }) {
   return (
-    <article className="flex w-[340px] shrink-0 flex-col gap-4 rounded-[18px] border border-line bg-surface p-6">
+    <article className="flex w-[340px] shrink-0 flex-col gap-4 rounded-[18px] glass p-6 shadow-surface">
       <div className="flex gap-0.5">
         {Array.from({ length: 5 }).map((_, i) => (
           <Star key={i} aria-hidden className="size-4 fill-warn text-warn" />

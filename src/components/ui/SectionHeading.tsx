@@ -1,6 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
+import { MaskedLine } from "@/components/motion/MaskedLine";
 import { Reveal } from "@/components/motion/Reveal";
 import { Eyebrow } from "./Card";
 
@@ -68,7 +69,7 @@ export function SectionHeading({
           Heading === "h1" ? "text-[40px] sm:text-[56px] lg:text-[64px]" : "text-[32px] sm:text-[44px]",
         )}
       >
-        {withHighlight(title, highlight)}
+        <MaskedLine>{withHighlight(title, highlight)}</MaskedLine>
       </Heading>
       {lede && (
         <p className={cn("text-[16px] leading-relaxed text-muted sm:text-[18px]", centered && "max-w-[60ch]")}>{lede}</p>

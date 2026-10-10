@@ -1,0 +1,76 @@
+/* ── Finish layer: glass, light and glow ──────────────────────────────────
+   The frosted surfaces, lit edges and light beams shared by every page.
+   Everything reads tokens, so both themes follow without extra rules. */
+
+/* Frosted panel: what's behind shows through, blurred. */
+@utility glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-line);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  backdrop-filter: blur(16px) saturate(150%);
+}
+
+/* The same, nearly opaque, for windows and bars that carry text. */
+@utility glass-strong {
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+  border: 1px solid var(--glass-line);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  backdrop-filter: blur(24px) saturate(150%);
+}
+
+/* Card shadows with a lit top edge. */
+@utility shadow-surface {
+  box-shadow: inset 0 1px 0 0 var(--sheen), var(--shadow-float);
+}
+
+@utility shadow-surface-lg {
+  box-shadow: inset 0 1px 0 0 var(--sheen), var(--shadow-lift);
+}
+
+/* Primary button fill: the gradient is twice the button's width and slides across on hover. */
+@utility cta-fill {
+  background-image: linear-gradient(110deg, var(--brand-from), var(--brand-via) 50%, var(--brand-from));
+  background-size: 200% 100%;
+  box-shadow: 0 8px 32px -8px var(--glow);
+  &:hover {
+    background-position: 100% 0;
+    box-shadow: 0 12px 40px -8px var(--glow);
+  }
+}
+
+/* A hairline of light, for the top edge of a panel. Give it a height of 1px. */
+@utility beam {
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 60%, transparent), transparent);
+}
+
+/* The soft light that follows the pointer across a card (ui/Spotlight sets --x and --y). */
+@utility spotlight {
+  background: radial-gradient(
+    480px circle at var(--x, 50%) var(--y, 0px),
+    color-mix(in srgb, var(--accent) 14%, transparent),
+    transparent 65%
+  );
+}
+
+/* A dot matrix for diagram backdrops. */
+@utility bg-dots {
+  background-image: radial-gradient(var(--grid-line) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+/* Backdrops fade out toward their edges instead of ending on a line. */
+@utility mask-fade {
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black, transparent);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black, transparent);
+}
+
+@utility mask-fade-center {
+  -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black, transparent);
+  mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black, transparent);
+}
+
+/* Marquees dissolve at both ends. */
+@utility mask-fade-x {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+}

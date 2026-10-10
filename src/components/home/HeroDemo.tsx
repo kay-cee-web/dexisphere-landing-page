@@ -24,7 +24,7 @@ export function HeroDemo() {
     <div ref={ref} className="relative mx-auto w-full max-w-5xl">
       <div aria-hidden className="absolute -inset-x-8 top-8 -z-10 h-full rounded-[40px] bg-linear-to-r from-accent/25 via-violet/20 to-teal/15 blur-3xl" />
 
-      <div className="relative overflow-hidden rounded-[20px] border border-line bg-surface/85 shadow-lift backdrop-blur-xl">
+      <div className="glass-strong relative overflow-hidden rounded-[20px] shadow-lift">
         <div className="flex items-center gap-2 border-b border-line px-5 py-3.5">
           <span className="size-3 rounded-full bg-bad/70" />
           <span className="size-3 rounded-full bg-warn/70" />
@@ -66,7 +66,7 @@ export function HeroDemo() {
               <span className="grid size-7 shrink-0 place-items-center rounded-[8px] bg-brand text-white">
                 <Sparkles aria-hidden className="size-3.5" />
               </span>
-              <div className="grid max-w-[88%] gap-2.5 rounded-[16px] rounded-tl-[4px] border border-line bg-surface/70 px-4 py-3 backdrop-blur">
+              <div className="glass grid max-w-[88%] gap-2.5 rounded-[16px] rounded-tl-[4px] px-4 py-3">
                 <AnimatePresence mode="wait" initial={false}>
                   {done ? (
                     <motion.p key="reply" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-[13px] leading-relaxed text-ink sm:text-[14px]">
@@ -105,7 +105,7 @@ export function HeroDemo() {
 
 /** Tokens on the left, the run's checklist on the right; desktop only, like Tapotik's. */
 function FloatingCards({ step }: { step: number }) {
-  const card = "absolute hidden rounded-[14px] border border-line bg-surface/90 p-3.5 shadow-lift backdrop-blur-xl lg:block";
+  const card = "glass-strong absolute hidden rounded-[14px] p-3.5 shadow-lift lg:block";
   return (
     <div aria-hidden>
       <div className={cn(card, "-left-6 top-1/4 w-44 animate-float")}>

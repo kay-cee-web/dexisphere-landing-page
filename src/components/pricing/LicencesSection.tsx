@@ -29,7 +29,7 @@ export function LicencesSection() {
           }
         />
         <StepsList steps={LICENCE_STEPS} />
-        <Reveal className="grid gap-6 rounded-[20px] border border-line bg-surface p-6 sm:p-8 lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-8">
+        <Reveal className="grid gap-6 rounded-[20px] border border-line bg-surface p-6 shadow-surface sm:p-8 lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-8">
           <IconTile Icon={Handshake} size="lg" tone="violet" />
           <div className="grid gap-2">
             <div className="flex flex-wrap items-center gap-2">

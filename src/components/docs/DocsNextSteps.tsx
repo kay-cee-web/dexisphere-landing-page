@@ -22,7 +22,7 @@ export function DocsNextSteps({ slugs }: { slugs: DocSlug[] }) {
             <li key={slug}>
               <Link
                 href={docHref(slug)}
-                className="group flex h-full gap-4 rounded-[14px] border border-line bg-surface p-4 transition-[border-color,box-shadow] hover:border-accent/40 hover:shadow-float"
+                className="group flex h-full gap-4 rounded-[14px] border border-line bg-surface p-4 shadow-surface transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:border-accent/30 hover:shadow-surface-lg"
               >
                 {item && <IconTile Icon={item.Icon} size="sm" />}
                 <span className="grid min-w-0 flex-1 content-start gap-1">

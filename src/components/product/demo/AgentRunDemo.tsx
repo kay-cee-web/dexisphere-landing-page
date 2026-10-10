@@ -35,7 +35,7 @@ export function AgentRunDemo({ script }: { script: DemoScript }) {
       ref={ref}
       role="figure"
       aria-label={`Example run: ${script.task}`}
-      className="relative overflow-hidden rounded-[20px] border border-line bg-surface shadow-lift"
+      className="relative overflow-hidden rounded-[20px] glass-strong shadow-lift"
     >
       <header className="flex items-center gap-3 border-b border-line px-4 py-3">
         <IconTile Icon={Bot} size="sm" />

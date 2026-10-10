@@ -9,11 +9,8 @@ import { SocialLinks } from "./SocialIcons";
 export function SiteFooter() {
   return (
     <footer className="relative bg-surface">
-      {/* Gradient divider */}
-      <div
-        aria-hidden
-        className="h-px bg-linear-to-r from-transparent via-line to-transparent"
-      />
+      {/* A line of light along the top edge */}
+      <div aria-hidden className="beam h-px" />
 
       <Container
         width="wide"

@@ -9,7 +9,7 @@ const panel = "overflow-hidden rounded-[16px] border border-line bg-surface";
 /** Receipts log, the sending switch with its 24h counts, and your own accounts and keys. */
 export function ControlVisual() {
   return (
-    <div className="grid gap-3 rounded-[22px] border border-line bg-raised p-3 shadow-lift sm:grid-cols-2 sm:p-4">
+    <div className="grid gap-3 rounded-[22px] glass-strong p-3 shadow-lift sm:grid-cols-2 sm:p-4">
       <div className={`${panel} sm:col-span-2`}>
         <header className="flex items-center gap-2 border-b border-dashed border-line px-4 py-2.5">
           <Receipt aria-hidden className="size-4 text-accent" />
