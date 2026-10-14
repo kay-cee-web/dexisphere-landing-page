@@ -1,96 +1,81 @@
-import { Check, Globe, KeyRound, MessageCircle, Send } from "lucide-react";
-import { Pill } from "@/components/ui/Pill";
-import { MODEL_ROWS, TOOL_CHIPS } from "@/data/home/platform";
+import { ArrowUpRight, Check, KeyRound } from "lucide-react";
 import { ReceiptCard } from "@/components/demo/ReceiptCard";
+import { Pill } from "@/components/ui/Pill";
+import { MARKS, MODEL_ROWS } from "@/data/home/platform";
+import { cn } from "@/lib/cn";
+import { BentoStage, MarkImage, MarkTile } from "./BentoStage";
 
-export function ToolsVisual() {
-  return (
-    <div className="grid gap-2.5">
-      {TOOL_CHIPS.map((group) => (
-        <div key={group.area} className="flex flex-wrap items-center gap-2">
-          <span className="w-24 shrink-0 text-[12px] text-faint">{group.area}</span>
-          {group.tools.map((tool) => (
-            <span
-              key={tool}
-              className="rounded-[8px] border border-line bg-surface px-2 py-1 font-mono text-[11.5px] text-ink transition-colors group-hover:border-accent/30"
-            >
-              {tool}
-            </span>
-          ))}
-        </div>
-      ))}
-    </div>
-  );
-}
+export { ToolsVisual } from "./BentoOrbit";
+export { ApprovalsVisual, ChannelsVisual } from "./BentoMessages";
 
+/** Two receipts stacked like paper, the front one linked back to the sheet it changed. */
 export function ReceiptsVisual() {
   return (
-    <ReceiptCard
-      area="CRM"
-      badge={<Pill tone="good" dot>Done</Pill>}
-      stats={[
-        { label: "Leads", value: "31" },
-        { label: "Deals moved", value: "4" },
-      ]}
-      className="shadow-float"
-    />
-  );
-}
-
-export function ApprovalsVisual() {
-  return (
-    <div className="grid gap-2.5">
-      <div className="rounded-[12px] border border-line bg-surface p-3 text-[12.5px]">
-        <p className="text-muted">Subject</p>
-        <p className="text-ink">Quick question about {"{company}"}</p>
-        <p className="mt-2 font-mono text-[11px] text-faint">35 recipients · 35 verified · domain OK</p>
+    // Shares row one with the orbit, so it matches its height on desktop.
+    <BentoStage className="lg:h-72">
+      <div className="absolute inset-x-6 top-7 rotate-[-4deg] opacity-70 transition-transform duration-500 group-hover:rotate-[-6deg]">
+        <ReceiptCard
+          area="Outreach"
+          badge={<Pill tone="good" dot>Done</Pill>}
+          stats={[
+            { label: "Emails sent", value: "35" },
+            { label: "Verified", value: "35" },
+          ]}
+        />
       </div>
-      <div className="flex gap-2 text-[12.5px]">
-        <span className="rounded-[8px] bg-accent px-3 py-1.5 font-medium text-accent-ink">Send</span>
-        <span className="rounded-[8px] border border-line bg-surface px-3 py-1.5 text-muted">Don&apos;t send</span>
-        <span className="hidden rounded-[8px] border border-line bg-surface px-3 py-1.5 text-muted sm:inline">Ask for changes</span>
+      <div className="absolute inset-x-6 top-16 rotate-[2deg] transition-transform duration-500 group-hover:rotate-0">
+        <ReceiptCard
+          area="CRM"
+          badge={<Pill tone="good" dot>Done</Pill>}
+          stats={[
+            { label: "Leads", value: "31" },
+            { label: "Deals moved", value: "4" },
+          ]}
+          className="shadow-float"
+        />
       </div>
-    </div>
+      <span className="glass-strong absolute bottom-5 left-1/2 inline-flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full py-1.5 pl-1.5 pr-3 text-[12px] text-ink shadow-surface">
+        <MarkTile mark={MARKS.sheets} className="size-6 rounded-full" imageClassName="size-3.5" />
+        Linked to the record
+        <ArrowUpRight aria-hidden className="size-3.5 text-faint" />
+      </span>
+    </BentoStage>
   );
 }
 
-const CHANNELS = [
-  { name: "WhatsApp", Icon: MessageCircle, status: "Linked" },
-  { name: "Telegram", Icon: Send, status: "Linked" },
-  { name: "Extension", Icon: Globe, status: "Code 2CPQDL" },
-];
-
-export function ChannelsVisual() {
-  return (
-    <ul className="grid gap-2">
-      {CHANNELS.map(({ name, Icon, status }) => (
-        <li key={name} className="flex items-center gap-2.5 rounded-[10px] border border-line bg-surface px-3 py-2">
-          <Icon aria-hidden className="size-4 text-accent" />
-          <span className="flex-1 text-[13px] text-ink">{name}</span>
-          <Pill tone={status === "Linked" ? "good" : "neutral"} dot={status === "Linked"}>
-            {status}
-          </Pill>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
+/** The three providers as big app icons; the chosen one lit. */
 export function ModelsVisual() {
   return (
-    <ul className="grid gap-2">
-      {MODEL_ROWS.map((row, index) => (
-        <li key={row.model} className="flex items-center gap-2.5 rounded-[10px] border border-line bg-surface px-3 py-2">
-          <span className="grid min-w-0 flex-1">
-            <span className="text-[13px] text-ink">{row.model}</span>
-            <span className="text-[11.5px] text-faint">{row.family} · {row.note}</span>
-          </span>
-          {index === 0 && <Check aria-hidden className="size-4 text-accent" />}
-        </li>
-      ))}
-      <li className="flex items-center gap-2 px-1 pt-1 text-[12px] text-muted">
-        <KeyRound aria-hidden className="size-3.5 text-accent" /> Using your own key: no plan tokens used
-      </li>
-    </ul>
+    <BentoStage className="grid content-center gap-5 px-5">
+      <ul className="grid grid-cols-3 gap-3">
+        {MODEL_ROWS.map((row, index) => {
+          const chosen = index === 0;
+          return (
+            <li key={row.model} className="grid justify-items-center gap-2 text-center">
+              <span
+                className={cn(
+                  "relative grid size-16 place-items-center rounded-[18px] border bg-surface transition-transform duration-300 group-hover:-translate-y-1",
+                  chosen ? "border-accent/50 shadow-glow" : "border-line shadow-surface",
+                )}
+              >
+                <MarkImage mark={row.logo} className="size-8" />
+                {chosen && (
+                  <span className="absolute -right-1.5 -top-1.5 grid size-5 place-items-center rounded-full bg-accent text-accent-ink">
+                    <Check aria-hidden className="size-3" strokeWidth={3} />
+                  </span>
+                )}
+              </span>
+              <span className="grid">
+                <span className="text-[12.5px] font-medium leading-tight text-ink">{row.model}</span>
+                <span className="text-[11px] text-faint">{row.note}</span>
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+      <span className="glass-strong mx-auto inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[12px] text-muted shadow-surface">
+        <KeyRound aria-hidden className="size-3.5 text-accent" /> Your own key: no plan tokens used
+      </span>
+    </BentoStage>
   );
 }

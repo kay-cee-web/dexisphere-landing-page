@@ -15,7 +15,7 @@ const ASSURANCES = ["Free forever plan", "No credit card required", "Lifetime de
 
 export function HomeHero() {
   return (
-    <section className="relative isolate overflow-hidden pb-20 pt-14 sm:pb-28 sm:pt-20">
+    <section className="relative isolate overflow-hidden -mt-[var(--header-h)] pb-20 pt-[calc(var(--header-h)+3.5rem)] sm:pb-28 sm:pt-[calc(var(--header-h)+5rem)]">
       <AuroraBackdrop />
       <Container width="wide" className="grid gap-14 sm:gap-16">
         <div className="mx-auto grid max-w-4xl justify-items-center gap-6 text-center">

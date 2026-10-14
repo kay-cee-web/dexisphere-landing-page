@@ -61,7 +61,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             Skip to content
           </a>
           <SiteHeader searchEntries={SITE_SEARCH_INDEX} />
-          <main id="main" className="flex-1">
+          <main id="main" className="flex-1 pt-[var(--header-h)]">
             {children}
           </main>
           <SiteFooter />

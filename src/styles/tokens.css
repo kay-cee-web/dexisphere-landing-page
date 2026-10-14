@@ -4,6 +4,8 @@
    the OS preference (unless the user picked light), once for an explicit
    dark choice. Components only ever read tokens, through globals.css. */
 :root {
+  /* The floating header's footprint (pt-3 + h-14). Main is padded by it; heroes pull up under it. */
+  --header-h: 4.25rem;
   --ground: #f7f8fc;
   --surface: #ffffff;
   --raised: #eef0f8;

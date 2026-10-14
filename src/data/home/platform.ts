@@ -41,17 +41,43 @@ export const PLATFORM_CARDS: { id: BentoId; Icon: LucideIcon; eyebrow: string; t
   },
 ];
 
-/** A cross-section of the agent's real tool names, by area. */
-export const TOOL_CHIPS: { area: string; tools: string[] }[] = [
-  { area: "Prospecting", tools: ["find_prospects", "score_leads", "find_duplicates"] },
-  { area: "CRM", tools: ["create_deal", "move_deal_stage", "book_appointment"] },
-  { area: "Outreach", tools: ["send_email", "send_whatsapp", "verify_emails"] },
-  { area: "Funnels", tools: ["create_funnel", "update_funnel"] },
-  { area: "Automation", tools: ["schedule_automation", "check_connections"] },
+/** A brand mark in /public/integrations; `invert` for black marks that vanish on the dark theme. */
+export type BrandMark = { name: string; src: string; invert?: boolean };
+
+const mark = (name: string, file: string, invert?: boolean): BrandMark => ({ name, src: `/integrations/${file}`, invert });
+
+/** The tools card's orbit: connectors the agent works through, inner ring first. */
+export const ORBIT_INNER = [
+  mark("Gmail", "gmail.svg"),
+  mark("WhatsApp", "whatsapp.svg"),
+  mark("Google Calendar", "google-calendar.svg"),
+  mark("Google Sheets", "google-sheets.svg"),
 ];
 
-export const MODEL_ROWS = [
-  { family: "Anthropic", model: "Claude Sonnet 5", note: "Best balance" },
-  { family: "OpenAI", model: "GPT-5.6 Terra", note: "Balanced" },
-  { family: "Google", model: "Gemini 3 Flash", note: "Fast & efficient" },
+export const ORBIT_OUTER = [
+  mark("Stripe", "stripe.svg"),
+  mark("Slack", "slack.svg"),
+  mark("Shopify", "shopify.svg"),
+  mark("LinkedIn", "linkedin.svg"),
+  mark("Instagram", "instagram.svg"),
+  mark("Telegram", "telegram.svg"),
+  mark("PayPal", "paypal.svg"),
+  mark("Google Maps", "google-maps.svg"),
 ];
+
+/** Real tool names, floating beside the orbit. */
+export const TOOL_CHIPS = ["find_prospects", "create_deal", "send_whatsapp", "schedule_automation"];
+
+export const MODEL_ROWS = [
+  { family: "Anthropic", model: "Claude Sonnet 5", note: "Best balance", logo: mark("Claude", "claude.svg") },
+  { family: "OpenAI", model: "GPT-5.6 Terra", note: "Balanced", logo: mark("OpenAI", "openai.svg", true) },
+  { family: "Google", model: "Gemini 3 Flash", note: "Fast & efficient", logo: mark("Gemini", "gemini.svg") },
+];
+
+/** Marks the receipts, approvals and channels mocks show. */
+export const MARKS = {
+  whatsapp: mark("WhatsApp", "whatsapp.svg"),
+  telegram: mark("Telegram", "telegram.svg"),
+  gmail: mark("Gmail", "gmail.svg"),
+  sheets: mark("Google Sheets", "google-sheets.svg"),
+};

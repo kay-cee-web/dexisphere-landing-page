@@ -6,7 +6,7 @@ import { ROUTES } from "@/data/navigation";
 
 export default function NotFound() {
   return (
-    <section className="relative isolate overflow-hidden py-28 sm:py-40">
+    <section className="relative isolate overflow-hidden -mt-[var(--header-h)] pb-28 pt-[calc(var(--header-h)+7rem)] sm:pb-40 sm:pt-[calc(var(--header-h)+10rem)]">
       <AuroraBackdrop soft />
       <Container width="narrow" className="grid justify-items-center gap-6 text-center">
         <p className="font-mono text-[13px] text-accent">404 · find_page returned 0 results</p>

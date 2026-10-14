@@ -16,7 +16,7 @@ type ProductHeroProps = { product: ProductMeta; content: ProductContent };
 export function ProductHero({ product, content }: ProductHeroProps) {
   const { hero, demo } = content;
   return (
-    <section className="relative isolate overflow-hidden pb-16 pt-16 sm:pb-24 sm:pt-24">
+    <section className="relative isolate overflow-hidden -mt-[var(--header-h)] pb-16 pt-[calc(var(--header-h)+4rem)] sm:pb-24 sm:pt-[calc(var(--header-h)+6rem)]">
       <AuroraBackdrop soft />
       <Container width="wide" className="grid items-center gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
         <div className="grid min-w-0 content-start gap-8">

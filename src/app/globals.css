@@ -60,6 +60,8 @@
   --animate-float: float 7s ease-in-out infinite;
   --animate-float-slow: float 9s ease-in-out 1s infinite;
   --animate-pulse-glow: pulse-glow 2.8s ease-in-out infinite;
+  /* A slow full turn; set the speed per element with animation-duration. */
+  --animate-orbit: orbit 60s linear infinite;
   /* Page loader: the icon fills in 0.7s, then the overlay fades from 55% of 1.3s. */
   --animate-loader-fill: loader-fill 0.7s ease-out forwards;
   --animate-loader-dismiss: loader-dismiss 1.3s forwards;
@@ -158,6 +160,10 @@
 @keyframes pulse-glow {
   0%, 100% { box-shadow: 0 0 0 0 var(--glow); }
   50% { box-shadow: 0 0 0 8px transparent, 0 12px 40px -6px var(--glow); }
+}
+
+@keyframes orbit {
+  to { transform: rotate(360deg); }
 }
 
 @keyframes blink {

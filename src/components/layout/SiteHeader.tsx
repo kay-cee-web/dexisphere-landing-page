@@ -28,7 +28,8 @@ export function SiteHeader({ searchEntries }: { searchEntries: SearchEntry[] }) 
   const setMenuOpen = useCallback((open: boolean) => setMenuOpenOn(open ? pathname : null), [pathname]);
 
   return (
-    <div className="sticky top-0 z-50 px-4 pt-3 sm:px-6 lg:px-8">
+    // Takes no room in the flow, so each hero's backdrop runs up behind the bar.
+    <div className="sticky top-0 z-50 -mb-[var(--header-h)] px-4 pt-3 sm:px-6 lg:px-8">
       <header
         className={cn(
           "mx-auto max-w-7xl rounded-2xl transition-[background-color,border-color,box-shadow] duration-300",

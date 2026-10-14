@@ -20,7 +20,7 @@ const VISUALS: Record<BentoId, ReactNode> = {
 
 /** Row one: tools (wide) + receipts. Row two: approvals, channels, models. */
 const SPANS: Record<BentoId, string> = {
-  tools: "lg:col-span-4 lg:grid-cols-[1fr_1.1fr] lg:items-center",
+  tools: "lg:col-span-4",
   receipts: "lg:col-span-2",
   approvals: "lg:col-span-2",
   channels: "lg:col-span-2",
@@ -44,22 +44,22 @@ export function PlatformBento() {
               key={card.id}
               as="article"
               className={cn(
-                "group group/spot relative grid content-start gap-6 overflow-hidden rounded-[20px] border border-line bg-raised p-6 shadow-surface transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:border-accent/30 hover:shadow-surface-lg sm:p-7",
+                "group group/spot relative grid content-start gap-5 overflow-hidden rounded-[22px] border border-line bg-raised p-2.5 shadow-surface transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:border-accent/30 hover:shadow-surface-lg",
                 SPANS[card.id],
               )}
             >
               <Spotlight />
-              <div className="grid content-start gap-3">
-                <div className="flex items-center justify-between gap-3">
-                  <Eyebrow className="text-accent">{card.eyebrow}</Eyebrow>
-                  <span className="grid size-10 shrink-0 place-items-center overflow-hidden rounded-[12px] bg-brand text-white shadow-glow">
-                    <IconSwap Icon={card.Icon} className="size-[18px]" />
+              {VISUALS[card.id]}
+              <div className="grid content-start gap-2.5 px-3.5 pb-4 sm:px-4 sm:pb-5">
+                <div className="flex items-center gap-2.5">
+                  <span className="grid size-7 shrink-0 place-items-center overflow-hidden rounded-[9px] bg-brand text-white shadow-glow">
+                    <IconSwap Icon={card.Icon} className="size-3.5" />
                   </span>
+                  <Eyebrow className="text-accent">{card.eyebrow}</Eyebrow>
                 </div>
-                <h3 className="text-[21px] font-semibold leading-tight text-ink">{card.title}</h3>
-                <p className="text-[14.5px] leading-relaxed text-muted">{card.description}</p>
+                <h3 className="text-[20px] font-semibold leading-tight text-ink">{card.title}</h3>
+                <p className="max-w-[56ch] text-[14.5px] leading-relaxed text-muted">{card.description}</p>
               </div>
-              <div>{VISUALS[card.id]}</div>
             </StaggerItem>
           ))}
         </Stagger>
